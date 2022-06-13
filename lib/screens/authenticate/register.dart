@@ -11,6 +11,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final _key = GlobalKey<FormState>();
+  var elev=1;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class _RegisterState extends State<Register> {
               Card(
                 elevation: 2.0,
                 child: TextFormField(
-                  style: TextStyleShared().getTextStyle(18), 
+                  style: TextStyleShared().getTextStyle(18),
                   validator: (val) {
                     if (val!.length >= 6 &&
                         (val.endsWith("@gmail.com") ||
@@ -56,7 +57,7 @@ class _RegisterState extends State<Register> {
               Card(
                 elevation: 2.0,
                 child: TextFormField(
-                  style: TextStyleShared().getTextStyle(18), 
+                  style: TextStyleShared().getTextStyle(18),
                   validator: (val) {
                     if (val!.length >= 8) {
                       return null;
@@ -77,7 +78,10 @@ class _RegisterState extends State<Register> {
                   onPressed: () {
                     if (_key.currentState!.validate()) {}
                   },
-                  child: Text('Register',style: TextStyleShared().getTextStyle(16),)),
+                  child: Text(
+                    'Register',
+                    style: TextStyleShared().getTextStyle(16),
+                  )),
               TextButton(
                   onPressed: () {},
                   child: Text(
