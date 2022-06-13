@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">73677913030-511q3c1rsto2k42vpr354r0547umuaee.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">73677913030</string>
+    <string name="google_api_key" translatable="false">AIzaSyCyMXO-i1WsRhXjhox1q_NV-6a6fZdYc7Y</string>
+    <string name="google_app_id" translatable="false">1:73677913030:android:e6f082b0e2d2368b8650c7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCyMXO-i1WsRhXjhox1q_NV-6a6fZdYc7Y</string>
+    <string name="google_storage_bucket" translatable="false">tutory-e4dee.appspot.com</string>
+    <string name="project_id" translatable="false">tutory-e4dee</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "73677913030",
+    "project_id": "tutory-e4dee",
+    "storage_bucket": "tutory-e4dee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73677913030:android:e6f082b0e2d2368b8650c7",
+        "android_client_info": {
+          "package_name": "com.example.tutory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73677913030-511q3c1rsto2k42vpr354r0547umuaee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyMXO-i1WsRhXjhox1q_NV-6a6fZdYc7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73677913030-511q3c1rsto2k42vpr354r0547umuaee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
