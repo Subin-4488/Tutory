@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:tutory/screens/authenticate/signin.dart';
+import 'package:tutory/services/auth.dart';
+import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
 import 'package:tutory/shared/textstyle.dart';
 
@@ -11,87 +15,167 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final _key = GlobalKey<FormState>();
-  var elev=1;
+  double elev = 1.0;
+  String email = '';
+  String password = '';
+  bool load = false;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.signpost_outlined),
-        title: Text(
-          'Register',
-          style: TextStyleShared().getTextStyle(20),
-        ),
-        centerTitle: false,
-      ),
-      body: Container(
-        padding: EdgeInsets.all(18.0),
-        child: Form(
-          key: _key,
-          child: Column(
-            children: [
-              Expanded(
-                child: SizedBox(),
-              ),
-              Card(
-                elevation: 2.0,
-                child: TextFormField(
-                  style: TextStyleShared().getTextStyle(18),
-                  validator: (val) {
-                    if (val!.length >= 6 &&
-                        (val.endsWith("@gmail.com") ||
-                            val.endsWith("@yahoo.com"))) {
-                      return null;
-                    } else {
-                      return 'Enter valid email';
-                    }
-                  },
-                  decoration: TextFormFieldDecorator().getDecorator('Email'),
-                ),
-              ),
-              SizedBox(
-                height: size.height / 85,
-              ),
-              Card(
-                elevation: 2.0,
-                child: TextFormField(
-                  style: TextStyleShared().getTextStyle(18),
-                  validator: (val) {
-                    if (val!.length >= 8) {
-                      return null;
-                    } else {
-                      return 'Password must be atleast 8 characters long';
-                    }
-                  },
-                  decoration: TextFormFieldDecorator().getDecorator('password'),
-                ),
-              ),
-              SizedBox(
-                height: size.height / 85,
-              ),
-              ElevatedButton(
-                  style: ButtonStyle(
-                    elevation: MaterialStateProperty.all(2.0),
+    return load
+        ? LoadingShared()
+        : Scaffold(
+            body: Stack(
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/back.png'),
+                        fit: BoxFit.fill),
                   ),
-                  onPressed: () {
-                    if (_key.currentState!.validate()) {}
-                  },
-                  child: Text(
-                    'Register',
-                    style: TextStyleShared().getTextStyle(16),
-                  )),
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Register using phone',
-                    style: TextStyleShared().getTextStyle(16),
-                  ))
-            ],
-          ),
-        ),
-      ),
-    );
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: size.height / 10, left: size.height / 20),
+                  alignment: Alignment.topLeft,
+                  child: const Text(
+                    'TUTORY',
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Expanded(child: Container()),
+                    Container(
+                      height: size.height / 2,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25),
+                              topRight: Radius.circular(25))),
+                      padding: const EdgeInsets.all(18.0),
+                      child: Form(
+                        key: _key,
+                        child: Column(
+                          children: [
+                            const Expanded(
+                              child: SizedBox(),
+                            ),
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              child: const Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            SizedBox(
+                              height: size.height / 45,
+                            ),
+                            TextFormField(
+                              style: TextStyleShared().getTextStyle(16),
+                              validator: (val) {
+                                if (val!.length >= 6 &&
+                                    (val.endsWith("@gmail.com") ||
+                                        val.endsWith("@yahoo.com"))) {
+                                  return null;
+                                } else {
+                                  return 'Enter valid email';
+                                }
+                              },
+                              decoration: TextFormFieldDecorator()
+                                  .getDecorator('Email'),
+                              onChanged: (txt) {
+                                email = txt;
+                              },
+                            ),
+                            SizedBox(
+                              height: size.height / 45,
+                            ),
+                            TextFormField(
+                              obscureText: true,
+                              style: TextStyleShared().getTextStyle(16),
+                              onTap: () {
+                                elev = 2.0;
+                              },
+                              onChanged: (txt) {
+                                password = txt;
+                              },
+                              validator: (val) {
+                                if (val!.length >= 8) {
+                                  return null;
+                                } else {
+                                  return 'Password must be atleast 8 characters long';
+                                }
+                              },
+                              decoration: TextFormFieldDecorator()
+                                  .getDecorator('password'),
+                            ),
+                            SizedBox(
+                              height: size.height / 45,
+                            ),
+                            Container(
+                              width: size.width,
+                              child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(2.0),
+                                  ),
+                                  onPressed: () async {
+                                    if (_key.currentState!.validate()) {
+                                      setState(() {
+                                        load = true;
+                                      });
+                                      final user = await AuthService()
+                                          .registerEmailPass(email, password);
+                                      if (user != null) {
+                                        setState(() {
+                                          load = false;
+                                        });
+                                      } else {
+                                        setState(() {
+                                          load = false;
+                                          Fluttertoast.showToast(
+                                            gravity: ToastGravity.CENTER,
+                                              fontSize: 18,
+                                              textColor: Colors.red,
+                                              backgroundColor: Colors.transparent,
+                                              msg:
+                                                  'Try again');
+                                        });
+                                      }
+                                    }
+                                  },
+                                  child: Text(
+                                    'Register',
+                                    style: TextStyleShared()
+                                        .getTextStyle(16)
+                                        .copyWith(color: Colors.white),
+                                  )),
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return SignIn();
+                                  }));
+                                },
+                                child: Text(
+                                  'Sign in',
+                                  style: TextStyleShared().getTextStyle(16),
+                                ))
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          );
   }
 }

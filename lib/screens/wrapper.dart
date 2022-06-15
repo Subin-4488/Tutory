@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tutory/models/usermodel.dart';
 import 'package:tutory/screens/authenticate/authenticate.dart';
-import 'package:tutory/screens/home/home.dart';
+import 'package:tutory/screens/home/admin/adminhome.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class Wrapper extends StatelessWidget {
     final _user = Provider.of<UserModel?>(context);
 
     if (_user != null)
-      return Home();
+      return AdminHome();
     else
       return Authenticate();
   }
