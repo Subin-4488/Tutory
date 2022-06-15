@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   void navigate() async {
-    await Future.delayed(Duration(seconds: 3), () {
+    await Future.delayed(Duration(seconds: 5), () {
       setState(() {
         splash = false;
       });
@@ -49,7 +49,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.purple, fontFamily: 'Nunito'),
+      theme: ThemeData(primarySwatch: Colors.deepPurple, fontFamily: 'Nunito',
+      brightness: Brightness.light),
       home: splash
           ? Splash()
           : StreamProvider.value(

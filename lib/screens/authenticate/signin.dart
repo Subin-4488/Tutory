@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -8,7 +10,9 @@ import 'package:tutory/shared/textformfielddecorator.dart';
 import 'package:tutory/shared/textstyle.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+  static int selected = 0;
+
+  SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -20,7 +24,6 @@ class _SignInState extends State<SignIn> {
   String email = '';
   String password = '';
   bool load = false;
-  int selected = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +117,7 @@ class _SignInState extends State<SignIn> {
                               selectedBackgroundColors: [Colors.blue],
                               width: size.width / 8,
                               borderRadius: 15,
-                              selectedIndex: selected,
+                              selectedIndex:SignIn.selected,
                               selectedTextStyle: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
@@ -127,7 +130,7 @@ class _SignInState extends State<SignIn> {
                               //icons: const [Icons.arrow_left, Icons.arrow_right],
                               selectedLabelIndex: (index) {
                                 setState(() {
-                                  selected = index;
+                                  SignIn.selected = index;
                                 });
                               },
                               marginSelected: EdgeInsets.symmetric(
@@ -147,8 +150,17 @@ class _SignInState extends State<SignIn> {
                                       setState(() {
                                         load = true;
                                       });
-                                      final user = await AuthService()
-                                          .signInEmailPass(email, password);
+                                      final user;
+                                      if (SignIn.selected == 0) {
+                                        //admin
+                                        user = await AuthService()
+                                            .signInAdmin(email, password);
+                                      } else {
+                                        //user
+                                        user = await AuthService()
+                                            .signInEmailPass(email, password);
+                                      }
+
                                       if (user != null) {
                                         Navigator.pop(context);
                                         setState(() {

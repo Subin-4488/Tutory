@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tutory/models/usermodel.dart';
+import 'package:tutory/screens/home/admin/adminhome.dart';
 import 'package:tutory/services/database.dart';
 
 class AuthService {
@@ -62,5 +63,24 @@ class AuthService {
   //signout
   Future signOut() async {
     await auth.signOut();
+  }
+
+  //admin
+
+  //sign  in admin
+  Future<UserModel?> signInAdmin(String em, String pass) async {
+    try {
+      bool check = await Database(uid: 'a').verifyAdmin(em, pass);
+      if (check) {
+        UserCredential credential =
+            await auth.signInWithEmailAndPassword(email: em, password: pass);
+        User? user = credential.user;
+        if (user != null) return UserModel(uid: user.uid);
+        return null;
+      }
+      return null;
+    } catch (e) {
+      print(e);
+    }
   }
 }

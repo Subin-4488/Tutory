@@ -18,21 +18,12 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Stack(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage('assets/images/back.png'))
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: const Text('TUTORY',style: TextStyle(fontSize: 50,
-              fontWeight: FontWeight.bold),),
-            ),
-          ],
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fitWidth,
+              image: AssetImage('assets/images/logo_b.png'))
+          ),
         ),
       ),
     );
