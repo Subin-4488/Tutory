@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:tutory/models/leaders.dart';
 import 'package:tutory/models/usermodel.dart';
+import 'package:tutory/screens/home/admin/leaderboard.dart';
 
 class Database {
   final String uid;
@@ -18,6 +20,8 @@ class Database {
   //update user-collection data
   Future insertUser(String em, String ps) async {
     await _userCollection.doc(uid).set({'email': em, 'password': ps});
+    //create leader collection doc with score = 0
+    _addLeaderboardEntry(em);
   }
 
   //admin
@@ -51,5 +55,40 @@ class Database {
       }
     }
     return false;
+  }
+
+  //leaderboard
+
+  final CollectionReference _leaderboard =
+      FirebaseFirestore.instance.collection('leaderboard');
+
+  //create leaderboard during registration
+
+  Future _addLeaderboardEntry(String email) async {
+    //entry with score = 0 for new user
+    _leaderboard.doc(uid).set({'uid': uid, 'score': '0', 'email': email});
+  }
+
+  //get leaders
+  Future<List<Leaders>> getLeaderboard() async {
+    List<Leaders> list = [];
+    QuerySnapshot snapshot;
+
+    try {
+      snapshot = await _leaderboard.get();
+      for (var i in snapshot.docs.toList()) {
+        list.add(Leaders(
+            name: i.get('email'), score: i.get('score'), uid: i.get('uid')));
+      }
+    } catch (e) {
+      print(e);
+    }
+    // list.sort(
+    //   (a, b) {
+    //     return double.parse(a.score).compareTo(double.parse(b.score));
+    //   },
+    // );
+    // list.reversed;
+    return list;
   }
 }

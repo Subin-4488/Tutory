@@ -7,6 +7,7 @@ import 'package:tutory/shared/textformfielddecorator.dart';
 import 'package:tutory/shared/textstyle.dart';
 
 class Register extends StatefulWidget {
+  static int reg = 0;
   const Register({Key? key}) : super(key: key);
 
   @override
@@ -23,6 +24,10 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
+    setState(() {
+      Register.reg = 0;
+    });
 
     return load
         ? LoadingShared()
@@ -133,6 +138,7 @@ class _RegisterState extends State<Register> {
                                       final user = await AuthService()
                                           .registerEmailPass(email, password);
                                       if (user != null) {
+                                        Register.reg = 1;
                                         setState(() {
                                           load = false;
                                         });
@@ -140,12 +146,12 @@ class _RegisterState extends State<Register> {
                                         setState(() {
                                           load = false;
                                           Fluttertoast.showToast(
-                                            gravity: ToastGravity.CENTER,
+                                              gravity: ToastGravity.CENTER,
                                               fontSize: 18,
                                               textColor: Colors.red,
-                                              backgroundColor: Colors.transparent,
-                                              msg:
-                                                  'Try again');
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              msg: 'Try again');
                                         });
                                       }
                                     }

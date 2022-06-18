@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tutory/models/usermodel.dart';
 import 'package:tutory/screens/authenticate/authenticate.dart';
+import 'package:tutory/screens/authenticate/register.dart';
 import 'package:tutory/screens/authenticate/signin.dart';
 import 'package:tutory/screens/home/admin/adminhome.dart';
 import 'package:tutory/screens/home/user/userhome.dart';
@@ -21,8 +22,12 @@ class _WrapperState extends State<Wrapper> {
     if (_user != null) {
       setState(() {
         SignIn.selected;
+        Register.reg;
       });
-      if (SignIn.selected == 0) {
+
+      if (Register.reg == 1) {
+        return UserHome();
+      } else if (SignIn.selected == 0) {
         return AdminHome();
       } else {
         return UserHome();
