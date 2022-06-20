@@ -78,7 +78,7 @@ class Database {
       snapshot = await _leaderboard.get();
       for (var i in snapshot.docs.toList()) {
         list.add(Leaders(
-            name: i.get('email'), score: i.get('score'), uid: i.get('uid')));
+            email: i.get('email'), score: i.get('score'), uid: i.get('uid')));
       }
     } catch (e) {
       print(e);
@@ -90,5 +90,9 @@ class Database {
     // );
     // list.reversed;
     return list;
+  }
+
+  Future deleteUser() async{
+    
   }
 }

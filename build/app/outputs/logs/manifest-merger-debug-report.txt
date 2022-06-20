@@ -44,6 +44,7 @@ MERGED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:
 MERGED from [:firebase_auth] D:\flutter_projects\tutory\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:cloud_firestore] D:\flutter_projects\tutory\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] D:\flutter_projects\tutory\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:hexcolor] D:\flutter_projects\tutory\build\hexcolor\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:fluttertoast] D:\flutter_projects\tutory\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\subin\.gradle\caches\transforms-3\dbfa7ebedc55883fddc54b7b8a0244a3\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\subin\.gradle\caches\transforms-3\65d7f496e0c0fefec8fa7195c7c8a034\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
@@ -116,6 +117,8 @@ MERGED from [:cloud_firestore] D:\flutter_projects\tutory\build\cloud_firestore\
 MERGED from [:cloud_firestore] D:\flutter_projects\tutory\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] D:\flutter_projects\tutory\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] D:\flutter_projects\tutory\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:hexcolor] D:\flutter_projects\tutory\build\hexcolor\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:hexcolor] D:\flutter_projects\tutory\build\hexcolor\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:fluttertoast] D:\flutter_projects\tutory\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:fluttertoast] D:\flutter_projects\tutory\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\subin\.gradle\caches\transforms-3\dbfa7ebedc55883fddc54b7b8a0244a3\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
