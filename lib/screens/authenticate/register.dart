@@ -4,7 +4,6 @@ import 'package:tutory/screens/authenticate/signin.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
-import 'package:tutory/shared/textstyle.dart';
 
 class Register extends StatefulWidget {
   static int reg = 0;
@@ -83,7 +82,9 @@ class _RegisterState extends State<Register> {
                               height: size.height / 45,
                             ),
                             TextFormField(
-                              style: TextStyleShared().getTextStyle(16),
+                              style: const TextStyle(
+                                fontSize: 16
+                              ),
                               validator: (val) {
                                 if (val!.length >= 6 &&
                                     (val.endsWith("@gmail.com") ||
@@ -104,7 +105,7 @@ class _RegisterState extends State<Register> {
                             ),
                             TextFormField(
                               obscureText: true,
-                              style: TextStyleShared().getTextStyle(16),
+                              style: const TextStyle(fontSize: 16),
                               onTap: () {
                                 elev = 2.0;
                               },
@@ -156,12 +157,10 @@ class _RegisterState extends State<Register> {
                                       }
                                     }
                                   },
-                                  child: Text(
-                                    'Register',
-                                    style: TextStyleShared()
-                                        .getTextStyle(16)
-                                        .copyWith(color: Colors.white),
-                                  )),
+                                  child:const Text('Register',
+                                      style:  TextStyle(
+                                        color: Colors.white
+                                        ,fontSize: 16))),
                             ),
                             TextButton(
                                 onPressed: () {
@@ -170,9 +169,11 @@ class _RegisterState extends State<Register> {
                                     return SignIn();
                                   }));
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Sign in',
-                                  style: TextStyleShared().getTextStyle(16),
+                                  style:  TextStyle(
+                                fontSize: 16
+                              ),
                                 ))
                           ],
                         ),

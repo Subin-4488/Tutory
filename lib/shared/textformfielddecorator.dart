@@ -9,7 +9,7 @@ class TextFormFieldDecorator {
       focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.green)
       ),
-      hintText: hint,
+      labelText: hint,
     );
   }
 }

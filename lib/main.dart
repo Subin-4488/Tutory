@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   void navigate() async {
-    await Future.delayed(Duration(seconds: 5), () {
+    await Future.delayed(Duration(seconds: 3), () {
       setState(() {
         splash = false;
       });

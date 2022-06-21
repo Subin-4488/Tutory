@@ -1,9 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:tutory/models/leaders.dart';
-import 'package:tutory/models/usermodel.dart';
-import 'package:tutory/screens/home/admin/leaderboard.dart';
 
 class Database {
   final String uid;
@@ -92,7 +88,8 @@ class Database {
     return list;
   }
 
-  Future deleteUser() async{
-    
+  Future deleteUser() async {
+    await _leaderboard.doc(uid).delete();
+    await _userCollection.doc(uid).delete();
   }
 }

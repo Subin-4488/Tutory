@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -7,7 +5,6 @@ import 'package:tutory/screens/authenticate/signin.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
-import 'package:tutory/shared/textstyle.dart';
 
 class SignIn extends StatefulWidget {
   static int selected = 0;
@@ -71,7 +68,7 @@ class _SignInState extends State<SignIn> {
                               height: size.height / 45,
                             ),
                             TextFormField(
-                              style: TextStyleShared().getTextStyle(16),
+                              style: const TextStyle(fontSize: 16),
                               validator: (val) {
                                 if (val!.length >= 6 &&
                                     (val.endsWith("@gmail.com") ||
@@ -92,7 +89,7 @@ class _SignInState extends State<SignIn> {
                             ),
                             TextFormField(
                               obscureText: true,
-                              style: TextStyleShared().getTextStyle(16),
+                              style: const TextStyle(fontSize: 16),
                               onTap: () {
                                 elev = 2.0;
                               },
@@ -180,20 +177,20 @@ class _SignInState extends State<SignIn> {
                                       }
                                     }
                                   },
-                                  child: Text(
+                                  child:const Text(
                                     'SIGN IN',
-                                    style: TextStyleShared()
-                                        .getTextStyle(16)
-                                        .copyWith(color: Colors.white),
+                                    style:  TextStyle(fontSize: 16,color: Colors.white),
                                   )),
                             ),
                             TextButton(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Register',
-                                  style: TextStyleShared().getTextStyle(16),
+                                  style: TextStyle(
+                                    fontSize: 16
+                                  )
                                 ))
                           ],
                         ),

@@ -25,7 +25,7 @@ class _LeaderboardState extends State<Leaderboard> {
               height: size.height / 9,
             ),
             const Text(
-              'LEADERBOARD',
+              'Remove User', 
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -33,7 +33,7 @@ class _LeaderboardState extends State<Leaderboard> {
             ),
             Container(
               margin:
-                  EdgeInsets.only(left: size.width / 7, right: size.width / 15),
+                  EdgeInsets.only(left: size.width / 7, right: size.width / 20),
               child: Row(
                 children: [
                   const Expanded(
@@ -64,18 +64,24 @@ class _LeaderboardState extends State<Leaderboard> {
             SizedBox(
               height: size.height / 60,
             ),
-            Expanded(
+            Container(
               child: load
-                  ? LoadingShared()
+                  ? const LoadingShared()
                   : Container(
+                    height: size.height/1.4,  
+                    decoration: BoxDecoration(
+                      border: Border.all(width: .2),
+                      borderRadius: BorderRadius.circular(15)
+                    ),
                       alignment: Alignment.topCenter,
-                      margin: EdgeInsets.only(left: size.width / 12),
+                      margin: EdgeInsets.only(left: size.width / 12,  
+                      right: size.width / 18),  
                       child: FutureBuilder(
                           future: Database(uid: '0').getLeaderboard(),
                           builder: ((context,
                               AsyncSnapshot<List<Leaders>?> snapshot) {
                             List<Leaders>? list = snapshot.data;
-
+    
                             if (snapshot.connectionState ==
                                 ConnectionState.done) {
                               return ListView.builder(
@@ -84,6 +90,7 @@ class _LeaderboardState extends State<Leaderboard> {
                                     if (snapshot.hasData) {
                                       return Material(
                                         child: Card(
+                                          elevation: 0.6,
                                           child: ListTile(
                                             leading: const SizedBox(
                                               height: 30,
@@ -134,11 +141,15 @@ class _LeaderboardState extends State<Leaderboard> {
                                                                             () {
                                                                           load =
                                                                               true;
-                                                                          Database(
-                                                                              uid: list[index].uid).deleteUser();
+                                                                            Database(uid: list[index].uid)
+                                                                              .deleteUser();
                                                                           load =
                                                                               false;
-                                                                              Fluttert
+                                                                          Fluttertoast.showToast(
+                                                                              toastLength: Toast.LENGTH_LONG,
+                                                                              msg: 'User deleted successfully');
+                                                                          Navigator.of(context)
+                                                                              .pop();
                                                                         });
                                                                       },
                                                                       child:
@@ -146,12 +157,13 @@ class _LeaderboardState extends State<Leaderboard> {
                                                                         'Remove',
                                                                       )),
                                                             ),
-                                                            Expanded(
+                                                            const Expanded(
                                                                 child:
                                                                     SizedBox()),
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .only(
+                                                              margin:
+                                                                  const EdgeInsets
+                                                                          .only(
                                                                       right:
                                                                           15),
                                                               child:

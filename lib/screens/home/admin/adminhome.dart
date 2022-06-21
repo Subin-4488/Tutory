@@ -1,5 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tutory/screens/home/admin/addquestions.dart';
 import 'package:tutory/screens/home/admin/leaderboard.dart';
 import 'package:tutory/screens/home/admin/materials.dart';
 import 'package:tutory/screens/home/admin/setttings.dart';
@@ -31,15 +31,19 @@ class _AdminHomeState extends State<AdminHome> {
               Container(
                 alignment: Alignment.center,
                 child: select == 0
-                    ? Leaderboard()
+                    ? const Leaderboard()
                     : select == 1
-                        ? Materials()
+                        ?  Materials()
+                    :select==2?
+                      AddQuestions()
                         : AdminSettings(),
               ),
               Container(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.topLeft, 
                 child: IconButton(
-                    padding: const EdgeInsets.all(0),
+                  color: Colors.deepPurple,
+                  alignment: Alignment.topLeft,
+                    padding:  EdgeInsets.only(top: size.height/11),  
                     onPressed: () {
                       _key.currentState!.openDrawer(); 
                     },
@@ -61,15 +65,15 @@ class _AdminHomeState extends State<AdminHome> {
                 SizedBox(
                   height: size.height / 8,
                 ),
-                buildItem('Leaderboard', Icons.leaderboard, 0),
+                buildItem('Remove User', Icons.leaderboard, 0),
                 SizedBox(
                   height: size.height / 70,
                 ),
-                buildItem('Material', Icons.book, 1),
+                buildItem('Material', Icons.book, 1), 
                 SizedBox(
                   height: size.height / 70,
                 ),
-                buildItem('User Analytics', Icons.person, 2),
+                buildItem('Add Questions', Icons.person, 2), 
                 SizedBox(
                   height: size.height / 70,
                 ),
@@ -110,18 +114,18 @@ class _AdminHomeState extends State<AdminHome> {
           });
 
           Navigator.of(context).pop();
-          if (idx == 0) {
-            //leaderboard
-          } else if (idx == 1) {
-            //material
+          // if (idx == 0) {
+          //   //leaderboard
+          // } else if (idx == 1) {
+          //   //material
 
-          } else if (idx == 2) {
-            //user analytics
+          // } else if (idx == 2) {
+          //   //user analytics
 
-          } else {
-            //settings
+          // } else {
+          //   //settings
 
-          }
+          // }
         });
   }
 }
