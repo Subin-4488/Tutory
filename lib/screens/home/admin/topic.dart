@@ -30,6 +30,7 @@ class _TopicState extends State<Topic> {
 
   Widget generateCard(double width,AssetImage img,String topic){
     return Card(
+      color: Color.fromARGB(255, 3, 133, 232),
       child: Container(
         alignment: Alignment.center,
         height: 120,
@@ -39,8 +40,13 @@ class _TopicState extends State<Topic> {
             DecoratedBox(decoration: BoxDecoration(
               image: DecorationImage(image: img,fit: BoxFit.contain),
             )),
-            Text(topic,style: TextStyle())
+            Text(topic,style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold
+            ))
           ],
         ),
       ),
-    )
+    );
+  }
+}
