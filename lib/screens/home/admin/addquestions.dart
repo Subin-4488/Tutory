@@ -254,7 +254,6 @@ class _AddQuestionsState extends State<AddQuestions> {
                                     children: [
                                       Row(
                                         children: [
-                                          SizedBox(width: 5,),
                                           Expanded(
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
@@ -274,7 +273,6 @@ class _AddQuestionsState extends State<AddQuestions> {
                                                 },
                                                 child: const Text('Cancel')),
                                           ),
-                                          SizedBox(width: 5,),
                                         ],
                                       )
                                     ],
