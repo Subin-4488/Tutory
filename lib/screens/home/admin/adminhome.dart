@@ -37,7 +37,7 @@ class _AdminHomeState extends State<AdminHome> {
                         ?  Materials()
                     :select==2?
                       Topic()
-                        : AdminSettings(),
+                    : AdminSettings(),
               ),
               Container(
                 alignment: Alignment.topLeft, 

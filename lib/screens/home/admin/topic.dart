@@ -18,8 +18,8 @@ class _TopicState extends State<Topic> {
           SizedBox(height: 20,),
           Row(children: [
             const Expanded(child: SizedBox()), 
-            generateCard(const AssetImage('assets/images/crops.png'),'Agriculture'),
-            generateCard(const AssetImage('assets/images/entertainment.png'),'Entertainment'),
+            generateCard(size.width,const AssetImage('assets/images/crops.png'),'Agriculture'),
+            generateCard(size.width,const AssetImage('assets/images/entertainment.png'),'Entertainment'),
             const Expanded(child: SizedBox()),
           ],)
           
@@ -28,21 +28,19 @@ class _TopicState extends State<Topic> {
     );
   }
 
-  Widget generateCard(AssetImage img,String topic){
+  Widget generateCard(double width,AssetImage img,String topic){
     return Card(
       child: Container(
         alignment: Alignment.center,
-        height: 150,
-        width: 180,   
+        height: 120,
+        width: width/2.5,     
         child: Stack(
           children: [
             DecoratedBox(decoration: BoxDecoration(
               image: DecorationImage(image: img,fit: BoxFit.contain),
             )),
-            Text(topic),
+            Text(topic,style: TextStyle())
           ],
         ),
       ),
-    );
-  }
-}
+    )
