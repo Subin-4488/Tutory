@@ -3,6 +3,7 @@ import 'package:tutory/screens/home/admin/addquestions.dart';
 import 'package:tutory/screens/home/admin/leaderboard.dart';
 import 'package:tutory/screens/home/admin/materials.dart';
 import 'package:tutory/screens/home/admin/setttings.dart';
+import 'package:tutory/screens/home/admin/topic.dart';
 
 class AdminHome extends StatefulWidget {
   const AdminHome({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class _AdminHomeState extends State<AdminHome> {
                     : select == 1
                         ?  Materials()
                     :select==2?
-                      AddQuestions()
+                      Topic()
                         : AdminSettings(),
               ),
               Container(
