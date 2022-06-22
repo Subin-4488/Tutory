@@ -70,6 +70,10 @@ flutter:
     - assets/images/logo_b.png
     - assets/images/Badge.png
     - assets/images/Avatar.png
+    - assets/images/crops.png
+    - assets/images/entertainment.png
+    - assets/images/gk.png
+    - assets/images/history.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

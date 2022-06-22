@@ -12,21 +12,28 @@ class _TopicState extends State<Topic> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
+      padding: const EdgeInsets.all(18),
       child: Column(
         children: [
           SizedBox(height: 20,),
-          row(const AssetImage('assets/images/back.png'),'Agriculture'),
+          Row(children: [
+            const Expanded(child: SizedBox()), 
+            generateCard(const AssetImage('assets/images/crops.png'),'Agriculture'),
+            generateCard(const AssetImage('assets/images/entertainment.png'),'Entertainment'),
+            const Expanded(child: SizedBox()),
+          ],)
+          
         ],
       ),
     );
   }
 
-  Widget row(AssetImage img,String topic){
+  Widget generateCard(AssetImage img,String topic){
     return Card(
       child: Container(
         alignment: Alignment.center,
         height: 150,
-        width: 150,
+        width: 180,   
         child: Stack(
           children: [
             DecoratedBox(decoration: BoxDecoration(
