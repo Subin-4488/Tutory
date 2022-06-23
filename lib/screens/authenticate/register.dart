@@ -56,7 +56,7 @@ class _RegisterState extends State<Register> {
                   children: [
                     Expanded(child: Container()),
                     Container(
-                      height: size.height / 2,
+                      height: size.height / 1.8,
                       decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(

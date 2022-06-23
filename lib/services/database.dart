@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tutory/models/leaders.dart';
+import 'package:tutory/models/question.dart';
 
 class Database {
   final String uid;
@@ -65,31 +66,80 @@ class Database {
     _leaderboard.doc(uid).set({'uid': uid, 'score': '0', 'email': email});
   }
 
-  //get leaders
-  Future<List<Leaders>> getLeaderboard() async {
-    List<Leaders> list = [];
-    QuerySnapshot snapshot;
+  //get leaderrs
+  Stream<QuerySnapshot> get getLeaderboard {
+    final Stream<QuerySnapshot> stream =
+        _leaderboard.orderBy('score', descending: true).snapshots();
+    return stream;
 
-    try {
-      snapshot = await _leaderboard.get();
-      for (var i in snapshot.docs.toList()) {
-        list.add(Leaders(
-            email: i.get('email'), score: i.get('score'), uid: i.get('uid')));
-      }
-    } catch (e) {
-      print(e);
-    }
-    // list.sort(
-    //   (a, b) {
-    //     return double.parse(a.score).compareTo(double.parse(b.score));
-    //   },
-    // );
-    // list.reversed;
-    return list;
+    // QuerySnapshot snapshot = await _leaderboard.get();
+    // List<Leaders> list=[];
+
+    // try {
+    //   snapshot = await _leaderboard.orderBy('score', descending: true).get();
+
+    //   for (var i in snapshot.docs.toList()) {
+    //     list.add(Leaders(
+    //         email: i.get('email'), score: i.get('score'), uid: i.get('uid')));
+    //   }
+    // } catch (e) {
+    //   print(e);
+    // }
+    // // list.sort(
+    // //   (a, b) {
+    // //     return double.parse(a.score).compareTo(double.parse(b.score));
+    // //   },
+    // // );
+    // // list.reversed;
+    // return list;
   }
 
   Future deleteUser() async {
     await _leaderboard.doc(uid).delete();
     await _userCollection.doc(uid).delete();
+  }
+
+  //previous year questions from topic
+
+  //fetch questions
+  final CollectionReference _prevQuestions =
+      FirebaseFirestore.instance.collection('previous year questions');
+
+  Future<List<Question>> getPrevQuestions(String topic, int year) async {
+    QuerySnapshot snapshot =
+        await _prevQuestions.doc(topic).collection(year.toString()).get();
+    List<Question> list = [];
+
+    for (var i in snapshot.docs.toList()) {
+      list.add(Question(
+          topic: i.get('topic'),
+          ans: i.get('answer'),
+          question: i.get('question'),
+          option1: i.get('option 1'),
+          option2: i.get('option 2'),
+          option3: i.get('option 3'),
+          option4: i.get('option 4'),
+          year: i.get('year')));
+    }
+    return list;
+  }
+
+  //insert prev year questions questions
+
+  Future insertPrevQuestions(Question question) async {
+    await _prevQuestions
+        .doc(question.topic)
+        .collection(question.year.toString())
+        .doc()
+        .set({
+          'topic' :question.topic,
+          'year': question.year,
+          'question': question.question,
+          'answer' : question.ans,
+          'option 1': question.option1,
+          'option 2': question.option2,
+          'option 3': question.option3,
+          'option 4': question.option4
+        });
   }
 }

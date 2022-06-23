@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tutory/screens/home/admin/addquestions.dart';
-import 'package:tutory/screens/home/admin/leaderboard.dart';
-import 'package:tutory/screens/home/admin/materials.dart';
-import 'package:tutory/screens/home/admin/setttings.dart';
-import 'package:tutory/screens/home/admin/topic.dart';
+import 'package:tutory/screens/home/admin/screens/leaderboard.dart';
+import 'package:tutory/screens/home/admin/screens/materials.dart';
+import 'package:tutory/screens/home/admin/screens/setttings.dart';
+import 'package:tutory/screens/home/admin/screens/topic.dart';
 
 class AdminHome extends StatefulWidget {
   const AdminHome({Key? key}) : super(key: key);
@@ -42,7 +41,7 @@ class _AdminHomeState extends State<AdminHome> {
               Container(
                 alignment: Alignment.topLeft, 
                 child: IconButton(
-                  color: Colors.deepPurple,
+                  color: Color.fromARGB(255, 238, 0, 0),
                   alignment: Alignment.topLeft,
                     padding:  EdgeInsets.only(top: size.height/11),  
                     onPressed: () {
