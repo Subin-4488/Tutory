@@ -27,54 +27,53 @@ class _QuestionsState extends State<Questions> {
       ),
       body: Material(
         child: Column(children: [
-          SizedBox(
-            height: size.height / 40,
-          ),
-          Container(
-              height: size.height / 2,
-              alignment: Alignment.center,
-              child: FutureBuilder(
-                  future: Database(uid: '')
-                      .getPrevQuestions(widget.topic, widget.year),
-                  builder: ((context, AsyncSnapshot<List<Question>> snapshot) {
-                    if (snapshot.connectionState==ConnectionState.done) {
-                      List<Question>? list = snapshot.data;
-                      if (snapshot.hasData && list!.length>0) {
-                        return ListView.separated(
-                            itemBuilder: ((context, index) {
-                              return Card(
-                                child: Material(
-                                  child: ListTile(
-                                    onTap: (() {
-                                      
-                                    }),
-                                    title: Text(list[index].question,style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold
-                                    ),),
-                                    subtitle: Text(list[index].year.toString(),style: const TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold
-                                    ),),
+          Expanded(
+            child: Container(
+                height: size.height/1.5,
+                alignment: Alignment.center,
+                child: FutureBuilder(
+                    future: Database(uid: '')
+                        .getPrevQuestions(widget.topic, widget.year),
+                    builder: ((context, AsyncSnapshot<List<Question>> snapshot) {
+                      if (snapshot.connectionState==ConnectionState.done) {
+                        List<Question>? list = snapshot.data;
+                        if (snapshot.hasData && list!.length>0) {
+                          return ListView.separated(
+                              itemBuilder: ((context, index) {
+                                return Card(
+                                  child: Material(
+                                    child: ListTile(
+                                      contentPadding: const EdgeInsets.all(20),
+                                      onTap: (() {
+                                        
+                                      }),
+                                      title: Text(list[index].question,style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold
+                                      ),),
+                                      subtitle: Text(list[index].year.toString(),style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold
+                                      ),),
+                                    ),
                                   ),
-                                ),
-                              );
-                            }),
-                            separatorBuilder: ((context, index) {
-                              return const Divider();
-                            }),
-                            itemCount: list.length);
-                      } else {
-                        return const Center(
-                          child: Text('No record found'),
-                        );
+                                );
+                              }),
+                              separatorBuilder: ((context, index) {
+                                return const Divider();
+                              }),
+                              itemCount: list.length);
+                        } else {
+                          return const Center(
+                            child: Text('No record found'),
+                          );
+                        }
                       }
-                    }
-                    return const Center(
-                          child: LoadingShared(),
-                        );
-                  }))),
-          Expanded(child: SizedBox()),
+                      return const Center(
+                            child: LoadingShared(),
+                          );
+                    }))),
+          ),
           Container(
               padding: EdgeInsets.all(20),
               alignment: Alignment.bottomRight,
