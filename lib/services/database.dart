@@ -132,14 +132,14 @@ class Database {
         .collection(question.year.toString())
         .doc()
         .set({
-          'topic' :question.topic,
-          'year': question.year,
-          'question': question.question,
-          'answer' : question.ans,
-          'option 1': question.option1,
-          'option 2': question.option2,
-          'option 3': question.option3,
-          'option 4': question.option4
-        });
+      'topic': question.topic,
+      'year': question.year,
+      'question': question.question,
+      'answer': question.ans,
+      'option 1': question.option1,
+      'option 2': question.option2,
+      'option 3': question.option3,
+      'option 4': question.option4
+    });
   }
 }
