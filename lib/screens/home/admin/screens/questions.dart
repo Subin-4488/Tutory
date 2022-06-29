@@ -45,7 +45,7 @@ class _QuestionsState extends State<Questions> {
                                     child: ListTile(
                                       contentPadding: const EdgeInsets.all(20),
                                       onTap: (() {
-                                        
+                                        //modify question (update and delete)
                                       }),
                                       title: Text(list[index].question,style: const TextStyle(
                                         fontSize: 16,
