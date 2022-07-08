@@ -47,6 +47,7 @@ class _RegisterState extends State<Register> {
                   child: const Text(
                     'TUTORY',
                     style: TextStyle(
+                      fontFamily: 'Splash',
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                     ),
@@ -58,7 +59,7 @@ class _RegisterState extends State<Register> {
                     Container(
                       height: size.height / 1.8,
                       decoration: const BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.transparent,
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(25),
                               topRight: Radius.circular(25))),

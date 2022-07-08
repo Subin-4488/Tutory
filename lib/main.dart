@@ -49,7 +49,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepPurple, fontFamily: 'Nunito',
+      theme: ThemeData(primarySwatch: Colors.deepPurple, 
+      fontFamily: 'Nunito',
       brightness: Brightness.light),
       home: splash
           ? Splash()

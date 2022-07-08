@@ -4,12 +4,13 @@ class TextFormFieldDecorator {
   InputDecoration getDecorator(String hint) {
     return InputDecoration(
       enabledBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.purple)
+        borderSide: BorderSide(color: Colors.black)
       ),
       focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.green)
+        borderSide: BorderSide(color: Colors.deepPurple)
       ),
       labelText: hint,
+      labelStyle: TextStyle(color: Colors.black)
     );
   }
 }

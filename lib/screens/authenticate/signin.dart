@@ -38,13 +38,26 @@ class _SignInState extends State<SignIn> {
                         fit: BoxFit.fill),
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: size.height / 10, left: size.height / 20),
+                  alignment: Alignment.topLeft,
+                  child: const Text(
+                    'TUTORY',
+                    style: TextStyle(
+                      fontFamily: 'Splash',
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ), 
                 Column(
                   children: [
                     Expanded(child: Container()),
                     Container(
                       height: size.height / 1.8,
                       decoration: const BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.transparent,
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(25),
                               topRight: Radius.circular(25))),
@@ -110,8 +123,8 @@ class _SignInState extends State<SignIn> {
                               height: size.height / 45,
                             ),
                             FlutterToggleTab(
-                              unSelectedBackgroundColors: [Colors.white],
-                              selectedBackgroundColors: [Colors.blue],
+                              unSelectedBackgroundColors: [Colors.black],
+                              selectedBackgroundColors: [Colors.deepPurple],
                               width: size.width / 8,
                               borderRadius: 15,
                               selectedIndex:SignIn.selected,

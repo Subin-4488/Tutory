@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tutory/services/auth.dart';
 import 'home_container.dart';
 import 'study.dart';
 import 'practice.dart';
@@ -16,24 +17,35 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  
-  int _selecteditem=0;
-  PageController pageController=PageController();
-  
+  int _selecteditem = 0;
+  PageController pageController = PageController();
+
   final _key = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[700],
       appBar: AppBar(
-        title: Text("TUTORY", textAlign: TextAlign.right,style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold,letterSpacing:2,),),
-            centerTitle: true,
+        title: Text(
+          "TUTORY",
+          textAlign: TextAlign.right,
+          style: TextStyle(
+            fontSize: 25,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
+          ),
+        ),
+        centerTitle: true,
         backgroundColor: Colors.deepPurple[700],
         elevation: 0,
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.logout))
+          IconButton(
+              onPressed: () {
+                AuthService().signOut();
+              },
+              icon: Icon(Icons.logout))
         ],
-        
       ),
       drawer: Drawer(
         backgroundColor: Color.fromARGB(255, 40, 38, 38),
@@ -41,70 +53,154 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 40,),
-            SizedBox(height: 100,),
-            TextButton.icon(onPressed: (){changeTab(0);}, icon: Padding(
-              padding: const EdgeInsets.only(left:25.0),
-              child: FaIcon(FontAwesomeIcons.house,color: Colors.white,size: 16,),
-            ), label: Padding(
-              padding: const EdgeInsets.only(left:50),
-              child: Text("Home",style: TextStyle(fontSize: 15,color: Colors.white,),),
-            )),
-            SizedBox(height: 5,),
-            TextButton.icon(onPressed: (){changeTab(1);}, icon: Padding(
-              padding: const EdgeInsets.only(left:25.0),
-              child: FaIcon(FontAwesomeIcons.book,color: Colors.white,size: 16,),
-            ), label: Padding(
-              padding: const EdgeInsets.only(left:50),
-              child: Text("Materials",style: TextStyle(fontSize: 15,color: Colors.white),),
-            )),
-            SizedBox(height: 5,),
-            TextButton.icon(onPressed: (){changeTab(2);}, icon: Padding(
-              padding: const EdgeInsets.only(left:25.0),
-              child: Icon(Icons.track_changes,color: Colors.white,size: 16,),
-            ), label: Padding(
-              padding: const EdgeInsets.only(left:50),
-              child: Text("Practice",style: TextStyle(fontSize: 15,color: Colors.white),),
-            )),
-            SizedBox(height: 5,),
-            TextButton.icon(onPressed: (){changeTab(3);}, icon: Padding(
-              padding: const EdgeInsets.only(left:25.0),
-              child: FaIcon(FontAwesomeIcons.globe,color: Colors.white,size: 16,),
-            ), label: Padding(
-              padding: const EdgeInsets.only(left:50),
-              child: Text("Compete",style: TextStyle(fontSize: 15,color: Colors.white),),
-            )),
-            SizedBox(height: 5,),
-            TextButton.icon(onPressed: (){changeTab(4);}, icon: Padding(
-              padding: const EdgeInsets.only(left:25.0),
-              child: FaIcon(FontAwesomeIcons.person,color: Colors.white,size: 16,),
-            ), label: Padding(
-              padding: const EdgeInsets.only(left:58),
-              child: Text("Profile",style: TextStyle(fontSize: 15,color: Colors.white),),
-            )),
-            SizedBox(height: 200,),
-            Center(
-              child: Text("TUTORY",textAlign: TextAlign.end,style: TextStyle(fontSize: 18,fontWeight:FontWeight.bold,color:Colors.white),),
+            SizedBox(
+              height: 40,
             ),
-            ],
+            SizedBox(
+              height: 100,
+            ),
+            TextButton.icon(
+                onPressed: () {
+                  changeTab(0);
+                },
+                icon: Padding(
+                  padding: const EdgeInsets.only(left: 25.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.house,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
+                label: Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Text(
+                    "Home",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
+                  ),
+                )),
+            SizedBox(
+              height: 5,
+            ),
+            TextButton.icon(
+                onPressed: () {
+                  changeTab(1);
+                },
+                icon: Padding(
+                  padding: const EdgeInsets.only(left: 25.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.book,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
+                label: Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Text(
+                    "Materials",
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                )),
+            SizedBox(
+              height: 5,
+            ),
+            TextButton.icon(
+                onPressed: () {
+                  changeTab(2);
+                },
+                icon: Padding(
+                  padding: const EdgeInsets.only(left: 25.0),
+                  child: Icon(
+                    Icons.track_changes,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
+                label: Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Text(
+                    "Practice",
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                )),
+            SizedBox(
+              height: 5,
+            ),
+            TextButton.icon(
+                onPressed: () {
+                  changeTab(3);
+                },
+                icon: Padding(
+                  padding: const EdgeInsets.only(left: 25.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.globe,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
+                label: Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Text(
+                    "Compete",
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                )),
+            SizedBox(
+              height: 5,
+            ),
+            TextButton.icon(
+                onPressed: () {
+                  changeTab(4);
+                },
+                icon: Padding(
+                  padding: const EdgeInsets.only(left: 25.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.person,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
+                label: Padding(
+                  padding: const EdgeInsets.only(left: 58),
+                  child: Text(
+                    "Profile",
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                )),
+            SizedBox(
+              height: 200,
+            ),
+            Center(
+              child: Text(
+                "TUTORY",
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
+          ],
         ),
       ),
       body: PageView(
-      controller: pageController,
-      children: const [
-        Home_Container(),
-        Study(),
-        Practice(),
-        Competition(),
-        Profile(),
-      ],
-    ),
+        controller: pageController,
+        children: const [
+          Home_Container(),
+          Study(),
+          Practice(),
+          Competition(),
+          Profile(),
+        ],
+      ),
     );
   }
+
   void changeTab(int index) {
     setState(() {
-      _selecteditem=index;
-      
+      _selecteditem = index;
     });
     pageController.jumpToPage(_selecteditem);
   }

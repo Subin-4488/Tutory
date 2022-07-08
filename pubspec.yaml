@@ -103,6 +103,9 @@ flutter:
         - asset: fonts/Nunito-Medium.ttf
         - asset: fonts/Nunito-Bold.ttf
           style: italic
+    - family: Splash
+      fonts:
+        - asset: fonts/Splash-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
