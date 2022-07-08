@@ -68,7 +68,9 @@ class _TopicState extends State<Topic> {
   Widget generateCard(double width, AssetImage img, int select) {
     return Card(
       elevation: 2.5,
-      color: const Color.fromARGB(223, 255, 255, 255),
+      color: Theme.of(context).brightness==Brightness.light?
+       Color.fromARGB(223, 255, 255, 255):
+       Color.fromARGB(255, 137, 137, 137),
       child: InkWell(
         splashColor: const Color.fromARGB(255, 203, 203, 203),
         onTap: () {
@@ -90,11 +92,11 @@ class _TopicState extends State<Topic> {
               builder: (context) {
                 return Container(
                   padding: const EdgeInsets.all(8),
-                  color: Color.fromARGB(255, 255, 255, 255),
                   child: ListView.builder(
                       itemCount: 19,
                       itemBuilder: ((context, index) {
                         return Card(
+                          elevation: 1.5,
                           child: Material(
                             child: ListTile(
                               iconColor: Color.fromARGB(255, 255, 0, 0),

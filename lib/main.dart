@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tutory/screens/misc/splash.dart';
+import 'package:tutory/screens/misc/tutorytheme.dart';
 import 'package:tutory/screens/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:tutory/services/auth.dart';
@@ -30,7 +33,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   void navigate() async {
-    await Future.delayed(Duration(seconds: 0), () {
+    await Future.delayed(Duration(seconds: 5), () {
       setState(() {
         splash = false;
       });
@@ -49,13 +52,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepPurple, 
-      fontFamily: 'Nunito',
-      brightness: Brightness.light),
+      themeMode: ThemeMode.system,
+      theme: TutoryTheme.lightTheme,
+      darkTheme: TutoryTheme.darkTheme,
       home: splash
           ? Splash()
           : StreamProvider.value(
-              child: Wrapper(), value: AuthService().stream, initialData: null),
+              value: AuthService().stream, initialData: null,
+              child: Wrapper()),
       debugShowCheckedModeBanner: false,
     );
   }

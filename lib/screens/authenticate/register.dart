@@ -34,9 +34,11 @@ class _RegisterState extends State<Register> {
             body: Stack(
               children: [
                 Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/back.png'),
+                        image: Theme.of(context).brightness == Brightness.dark
+                            ? AssetImage('assets/images/backdark.jpg')
+                            : AssetImage('assets/images/backlight.png'),
                         fit: BoxFit.fill),
                   ),
                 ),
@@ -58,11 +60,6 @@ class _RegisterState extends State<Register> {
                     Expanded(child: Container()),
                     Container(
                       height: size.height / 1.8,
-                      decoration: const BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25),
-                              topRight: Radius.circular(25))),
                       padding: const EdgeInsets.all(18.0),
                       child: Form(
                         key: _key,
@@ -83,9 +80,7 @@ class _RegisterState extends State<Register> {
                               height: size.height / 45,
                             ),
                             TextFormField(
-                              style: const TextStyle(
-                                fontSize: 16
-                              ),
+                              style: const TextStyle(fontSize: 16),
                               validator: (val) {
                                 if (val!.length >= 6 &&
                                     (val.endsWith("@gmail.com") ||
@@ -158,10 +153,8 @@ class _RegisterState extends State<Register> {
                                       }
                                     }
                                   },
-                                  child:const Text('Register',
-                                      style:  TextStyle(
-                                        color: Colors.white
-                                        ,fontSize: 16))),
+                                  child: const Text('Register',
+                                      style: TextStyle(fontSize: 16))),
                             ),
                             TextButton(
                                 onPressed: () {
@@ -172,9 +165,7 @@ class _RegisterState extends State<Register> {
                                 },
                                 child: const Text(
                                   'Sign in',
-                                  style:  TextStyle(
-                                fontSize: 16
-                              ),
+                                  style: TextStyle(fontSize: 16),
                                 ))
                           ],
                         ),

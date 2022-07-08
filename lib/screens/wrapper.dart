@@ -25,6 +25,9 @@ class _WrapperState extends State<Wrapper> {
         Register.reg;
       });
 
+      print(SignIn.selected);
+      print(Register.reg);
+
       if (Register.reg == 1) {
         return UserHome();
       } else if (SignIn.selected == 0) {

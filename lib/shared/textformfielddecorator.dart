@@ -10,7 +10,6 @@ class TextFormFieldDecorator {
         borderSide: BorderSide(color: Colors.deepPurple)
       ),
       labelText: hint,
-      labelStyle: TextStyle(color: Colors.black)
     );
   }
 }

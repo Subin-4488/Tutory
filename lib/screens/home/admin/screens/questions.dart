@@ -29,7 +29,7 @@ class _QuestionsState extends State<Questions> {
         child: Column(children: [
           Expanded(
             child: Container(
-                height: size.height/1.5,
+                //height: size.height/1.5,
                 alignment: Alignment.center,
                 child: FutureBuilder(
                     future: Database(uid: '')
@@ -38,7 +38,7 @@ class _QuestionsState extends State<Questions> {
                       if (snapshot.connectionState==ConnectionState.done) {
                         List<Question>? list = snapshot.data;
                         if (snapshot.hasData && list!.length>0) {
-                          return ListView.separated(
+                          return ListView.builder(
                               itemBuilder: ((context, index) {
                                 return Card(
                                   child: Material(
@@ -59,9 +59,6 @@ class _QuestionsState extends State<Questions> {
                                   ),
                                 );
                               }),
-                              separatorBuilder: ((context, index) {
-                                return const Divider();
-                              }),
                               itemCount: list.length);
                         } else {
                           return const Center(
@@ -74,19 +71,17 @@ class _QuestionsState extends State<Questions> {
                           );
                     }))),
           ),
-          Container(
-              padding: EdgeInsets.all(20),
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
+        ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+                  backgroundColor: Colors.blue,
                   child: Icon(Icons.add),
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: ((context) {
                       return AddQuestions(topic: widget.topic,year: widget.year,);
                     })));
-                  }))
-        ]),
-      ),
+                  }),
     );
   }
 }

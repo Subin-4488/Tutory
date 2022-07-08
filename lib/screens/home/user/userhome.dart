@@ -9,6 +9,7 @@ import 'package:tutory/screens/home/user/pages/practice_question_category.dart';
 import 'package:tutory/screens/home/user/pages/profile.dart';
 import 'package:tutory/screens/home/user/pages/study.dart';
 import 'package:tutory/screens/home/user/shared/loading.dart';
+import 'package:tutory/screens/misc/tutorytheme.dart';
 
 class UserHome extends StatefulWidget {
   const UserHome({Key? key}) : super(key: key);
@@ -22,10 +23,9 @@ class _UserHomeState extends State<UserHome> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-     fontFamily:'Nunito'
-      ),
-      
+    themeMode: ThemeMode.system,
+    theme: TutoryTheme.lightTheme,
+    darkTheme: TutoryTheme.darkTheme,
     
     initialRoute: '/home',
     routes: {

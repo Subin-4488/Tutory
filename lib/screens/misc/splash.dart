@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -18,13 +19,21 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fitWidth,
-              image: AssetImage('assets/images/logo_b.png'))
-          ),
-        ),
+        color: Color.fromARGB(255, 255, 255, 255),
+        alignment: Alignment.center,
+        child: AnimatedTextKit(
+          repeatForever: true,
+          animatedTexts: [
+          WavyAnimatedText(
+            'Tutory',
+            speed: const Duration(milliseconds: 300),
+            textStyle: 
+          const TextStyle(
+            fontFamily: 'Splash',
+            fontSize: 55
+          )
+          )
+        ]),
       ),
     );
   }

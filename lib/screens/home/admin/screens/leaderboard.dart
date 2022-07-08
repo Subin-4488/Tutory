@@ -19,7 +19,6 @@ class _LeaderboardState extends State<Leaderboard> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-        color: Color.fromARGB(255, 255, 255, 255),
         child: Column(
           children: [
             SizedBox(
@@ -109,9 +108,7 @@ class _LeaderboardState extends State<Leaderboard> {
                                               ),
                                               title: Text(
                                                 list[index].email,
-                                                style: TextStyle(
-                                                  color: HexColor('#2A1E17'),
-                                                ),
+                                                
                                               ),
                                               trailing: Text(
                                                 list[index].score,

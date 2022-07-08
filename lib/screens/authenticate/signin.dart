@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:tutory/screens/authenticate/signin.dart';
+import 'package:tutory/screens/authenticate/register.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
@@ -32,9 +32,11 @@ class _SignInState extends State<SignIn> {
             body: Stack(
               children: [
                 Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/back.png'),
+                        image: Theme.of(context).brightness == Brightness.dark
+                            ? AssetImage('assets/images/backdark.jpg')
+                            : AssetImage('assets/images/backlight.png'),
                         fit: BoxFit.fill),
                   ),
                 ),
@@ -50,18 +52,14 @@ class _SignInState extends State<SignIn> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ), 
+                ),
                 Column(
                   children: [
                     Expanded(child: Container()),
                     Container(
                       height: size.height / 1.8,
-                      decoration: const BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25),
-                              topRight: Radius.circular(25))),
-                      padding: const EdgeInsets.all(18.0),
+                      padding: const EdgeInsets.only(
+                          left: 18.0, right: 18.0, bottom: 18.0),
                       child: Form(
                         key: _key,
                         child: Column(
@@ -127,7 +125,7 @@ class _SignInState extends State<SignIn> {
                               selectedBackgroundColors: [Colors.deepPurple],
                               width: size.width / 8,
                               borderRadius: 15,
-                              selectedIndex:SignIn.selected,
+                              selectedIndex: SignIn.selected,
                               selectedTextStyle: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
@@ -143,7 +141,7 @@ class _SignInState extends State<SignIn> {
                                   SignIn.selected = index;
                                 });
                               },
-                              marginSelected: EdgeInsets.symmetric(
+                              marginSelected: const EdgeInsets.symmetric(
                                   horizontal: 4, vertical: 4),
                             ),
                             SizedBox(
@@ -190,21 +188,18 @@ class _SignInState extends State<SignIn> {
                                       }
                                     }
                                   },
-                                  child:const Text(
+                                  child: const Text(
                                     'SIGN IN',
-                                    style:  TextStyle(fontSize: 16,color: Colors.white),
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
                                   )),
                             ),
                             TextButton(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: const Text(
-                                  'Register',
-                                  style: TextStyle(
-                                    fontSize: 16
-                                  )
-                                ))
+                                child: const Text('Register',
+                                    style: TextStyle(fontSize: 16)))
                           ],
                         ),
                       ),
