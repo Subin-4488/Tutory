@@ -74,7 +74,7 @@ class _TopicState extends State<Topic> {
       child: InkWell(
         splashColor: const Color.fromARGB(255, 203, 203, 203),
         onTap: () {
-          int year = 2000;
+          int year = 2014;
 
           String topic;
           select == 0
@@ -93,7 +93,7 @@ class _TopicState extends State<Topic> {
                 return Container(
                   padding: const EdgeInsets.all(8),
                   child: ListView.builder(
-                      itemCount: 19,
+                      itemCount: 8,
                       itemBuilder: ((context, index) {
                         return Card(
                           elevation: 1.5,
@@ -102,7 +102,7 @@ class _TopicState extends State<Topic> {
                               iconColor: Color.fromARGB(255, 255, 0, 0),
                               leading: const Icon(Icons.book),
                               title: Text(
-                                '${topic} ${index + 2000}',
+                                '${topic} ${index + year}',
                                 style: const TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.bold),
                               ),

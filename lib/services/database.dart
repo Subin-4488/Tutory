@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tutory/models/leaders.dart';
+import 'package:tutory/models/materialmodel.dart';
 import 'package:tutory/models/question.dart';
 
 class Database {
@@ -160,6 +161,21 @@ class Database {
       'option 2': question.option2,
       'option 3': question.option3,
       'option 4': question.option4
+    });
+  }
+
+  //Materials
+
+  final CollectionReference _materials =
+      FirebaseFirestore.instance.collection('Materials');
+
+  //add materials
+  Future addMaterials(MaterialModel material) async {
+    await _materials.doc().set({
+      'topic':material.topic,
+      'subtopic':material.subtopic,
+      'content':material.content,
+      'gdrive':material.grive,
     });
   }
 }
