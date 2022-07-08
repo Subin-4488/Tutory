@@ -26,6 +26,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "circular_countdown_timer",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/circular_countdown_timer-0.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0",
       "packageUri": "lib/",
@@ -56,8 +62,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "countdown_progress_indicator",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/countdown_progress_indicator-0.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "curved_navigation_bar",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/curved_navigation_bar-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -146,10 +164,34 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-10.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "hexcolor",
       "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/hexcolor-2.0.7",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "html_character_entities",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/html_character_entities-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "html_unescape",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/html_unescape-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "http_parser",
@@ -278,7 +320,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-06-23T18:07:04.224384Z",
+  "generated": "2022-07-08T09:52:48.785251Z",
   "generator": "pub",
-  "generatorVersion": "2.17.1"
+  "generatorVersion": "2.17.5"
 }
