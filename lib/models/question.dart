@@ -1,4 +1,5 @@
 class Question {
+  final String id;
   final String topic;
   final String question;
   final String option1;
@@ -9,7 +10,9 @@ class Question {
   final String ans;
 
   Question(
-      {required this.topic,
+      {
+      required this.id,
+      required this.topic,
       required this.ans,
       required this.question,
       required this.option1,

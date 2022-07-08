@@ -13584,7 +13584,6 @@ io.flutter.embedding.android.FlutterActivityAndFragmentDelegate:
     private static final java.lang.String FRAMEWORK_RESTORATION_BUNDLE_KEY
     private static final java.lang.String PLUGINS_RESTORATION_BUNDLE_KEY
     private static final java.lang.String TAG
-    void onLowMemory()
 io.flutter.embedding.android.FlutterActivityLaunchConfigs
 io.flutter.embedding.android.FlutterEngineConfigurator
 io.flutter.embedding.android.FlutterEngineProvider
@@ -13890,6 +13889,7 @@ io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister:
     public void <init>()
 io.flutter.embedding.engine.renderer.FlutterRenderer$SurfaceTextureRegistryEntry:
     public void release()
+    private void removeListener()
 io.flutter.embedding.engine.renderer.FlutterRenderer$ViewportMetrics:
     public static final int unsetValue
 io.flutter.embedding.engine.renderer.FlutterRenderer:
@@ -13897,6 +13897,7 @@ io.flutter.embedding.engine.renderer.FlutterRenderer:
     static synthetic void access$600(io.flutter.embedding.engine.renderer.FlutterRenderer,long)
     public void dispatchSemanticsAction(int,int,java.nio.ByteBuffer,int)
     public android.graphics.Bitmap getBitmap()
+    void removeOnTrimMemoryListener(io.flutter.view.TextureRegistry$OnTrimMemoryListener)
     public void setAccessibilityFeatures(int)
     private void unregisterTexture(long)
 io.flutter.embedding.engine.systemchannels.AccessibilityChannel:
@@ -14177,9 +14178,11 @@ io.flutter.view.FlutterView$SurfaceTextureRegistryEntry
 io.flutter.view.FlutterView$ViewportMetrics
 io.flutter.view.FlutterView$ZeroSides
 io.flutter.view.FlutterView
+io.flutter.view.TextureRegistry$-CC
 io.flutter.view.TextureRegistry$SurfaceTextureEntry:
     public abstract void release()
 io.flutter.view.TextureRegistry:
+    public void onTrimMemory(int)
     public abstract io.flutter.view.TextureRegistry$SurfaceTextureEntry registerSurfaceTexture(android.graphics.SurfaceTexture)
 io.flutter.view.VsyncWaiter:
     public static void reset()

@@ -1,7 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:tutory/screens/authenticate/register.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
@@ -9,7 +10,7 @@ import 'package:tutory/shared/textformfielddecorator.dart';
 class SignIn extends StatefulWidget {
   static int selected = 0;
 
-  SignIn({Key? key}) : super(key: key);
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();

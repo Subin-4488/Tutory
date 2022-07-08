@@ -70,7 +70,7 @@ class _TopicState extends State<Topic> {
       elevation: 2.5,
       color: Theme.of(context).brightness==Brightness.light?
        Color.fromARGB(223, 255, 255, 255):
-       Color.fromARGB(255, 137, 137, 137),
+       Color.fromARGB(255, 57, 231, 216),
       child: InkWell(
         splashColor: const Color.fromARGB(255, 203, 203, 203),
         onTap: () {

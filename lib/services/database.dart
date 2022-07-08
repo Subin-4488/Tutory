@@ -112,6 +112,7 @@ class Database {
 
     for (var i in snapshot.docs.toList()) {
       list.add(Question(
+          id: i.id,
           topic: i.get('topic'),
           ans: i.get('answer'),
           question: i.get('question'),
@@ -131,6 +132,25 @@ class Database {
         .doc(question.topic)
         .collection(question.year.toString())
         .doc()
+        .set({
+      'topic': question.topic,
+      'year': question.year,
+      'question': question.question,
+      'answer': question.ans,
+      'option 1': question.option1,
+      'option 2': question.option2,
+      'option 3': question.option3,
+      'option 4': question.option4
+    });
+  }
+
+  //update previous year question
+
+  Future updatePrevQuestions(Question question) async {
+    await _prevQuestions
+        .doc(question.topic)
+        .collection(question.year.toString())
+        .doc(question.id)
         .set({
       'topic': question.topic,
       'year': question.year,

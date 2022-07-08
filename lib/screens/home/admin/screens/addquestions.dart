@@ -7,9 +7,9 @@ import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/optiontextformfielddecorator.dart';
 
 class AddQuestions extends StatefulWidget {
-  final String topic;
-  final int year;
-  const AddQuestions({Key? key, required this.topic, required this.year})
+  final bool flag;
+  final Question question;
+  AddQuestions({Key? key, required this.question, required this.flag})
       : super(key: key);
 
   @override
@@ -22,12 +22,15 @@ class _AddQuestionsState extends State<AddQuestions> {
   String _op2 = '';
   String _op3 = '';
   String _op4 = '';
+  String _topic = '';
+  int _yr = -1;
 
   final List<int> _year = [];
 
   final List<String> _correctAnswer = ['A', 'B', 'C', 'D'];
   String _correctOption = 'A';
   bool loading = false;
+  bool entered=false;
 
   final _key = GlobalKey<FormState>();
 
@@ -36,16 +39,36 @@ class _AddQuestionsState extends State<AddQuestions> {
   Color cc = Colors.deepPurple;
   Color cd = Colors.deepPurple;
 
-  void _addyear() {
+  @override
+  void initState() {
+    //super.initState();
     _year.clear();
     for (int i = 2000; i <= 2022; i++) {
       _year.add(i);
     }
-  }
+    if (widget.flag && !entered) {
+      _ques = widget.question.question;
+      _op1 = widget.question.option1;
+      _op2 = widget.question.option2;
+      _op3 = widget.question.option3;
+      _op4 = widget.question.option4;
+      _correctOption = widget.question.ans;
+      _topic = widget.question.topic;
+      _yr = widget.question.year;
+        if (_correctOption == 'A')
+          ca = Colors.green;
+        else if (_correctOption == 'B')
+          cb = Colors.green;
+        else if (_correctOption == 'C')
+          cc = Colors.green;
+        else if (_correctOption == 'D') cd = Colors.green;
+        entered=true;
+      }
+    }
 
   @override
   Widget build(BuildContext context) {
-    _addyear();
+    initState();
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -71,6 +94,7 @@ class _AddQuestionsState extends State<AddQuestions> {
                           child: Column(
                             children: [
                               TextFormField(
+                                  initialValue: widget.flag ? _ques : '',
                                   maxLines: null,
                                   validator: (txt) {
                                     if (txt!.isEmpty) return "Enter field";
@@ -92,6 +116,7 @@ class _AddQuestionsState extends State<AddQuestions> {
                                 children: [
                                   Expanded(
                                     child: TextFormField(
+                                        initialValue: widget.flag ? _op1 : '',
                                         maxLines: null,
                                         validator: (txt) {
                                           if (txt!.isEmpty)
@@ -110,6 +135,7 @@ class _AddQuestionsState extends State<AddQuestions> {
                                   ),
                                   Expanded(
                                     child: TextFormField(
+                                        initialValue: widget.flag ? _op2 : '',
                                         maxLines: null,
                                         validator: (txt) {
                                           if (txt!.isEmpty)
@@ -132,6 +158,7 @@ class _AddQuestionsState extends State<AddQuestions> {
                                 children: [
                                   Expanded(
                                     child: TextFormField(
+                                        initialValue: widget.flag ? _op3 : '',
                                         maxLines: null,
                                         validator: (txt) {
                                           if (txt!.isEmpty)
@@ -150,6 +177,7 @@ class _AddQuestionsState extends State<AddQuestions> {
                                   ),
                                   Expanded(
                                     child: TextFormField(
+                                        initialValue: widget.flag ? _op4 : '',
                                         maxLines: null,
                                         validator: (txt) {
                                           if (txt!.isEmpty)
@@ -254,46 +282,86 @@ class _AddQuestionsState extends State<AddQuestions> {
                                                                         .green),
                                                             onPressed:
                                                                 () async {
-                                                              print('ANS: ' +
-                                                                  _correctOption);
-                                                              setState(() {
-                                                                loading = true;
-                                                              });
-                                                              Navigator.of(
-                                                                      context)
-                                                                  .pop();
-                                                              await Database(
-                                                                      uid: '')
-                                                                  .insertPrevQuestions(Question(
-                                                                      topic:
-                                                                          widget
-                                                                              .topic,
-                                                                      question:
-                                                                          _ques,
-                                                                      ans:
-                                                                          _correctOption,
-                                                                      option1:
-                                                                          _op1,
-                                                                      option2:
-                                                                          _op2,
-                                                                      option3:
-                                                                          _op3,
-                                                                      option4:
-                                                                          _op4,
-                                                                      year: widget
-                                                                          .year));
-                                                              setState(() {
-                                                                loading = false;
-                                                              });
-                                                              Fluttertoast
-                                                                  .showToast(
-                                                                      msg:
-                                                                          'Question submitted successfully');
+                                                              if (widget.flag) {
+                                                                setState(() {
+                                                                  loading =
+                                                                      true;
+                                                                });
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop();
+                                                                await Database(
+                                                                        uid: '')
+                                                                    .updatePrevQuestions(Question(
+                                                                      id:
+                                                                      widget.question.id ,
+                                                                        topic:
+                                                                            _topic,
+                                                                        ans:
+                                                                            _correctOption,
+                                                                        question:
+                                                                            _ques,
+                                                                        option1:
+                                                                            _op1,
+                                                                        option2:
+                                                                            _op2,
+                                                                        option3:
+                                                                            _op3,
+                                                                        option4:
+                                                                            _op4,
+                                                                        year:
+                                                                            _yr));
+                                                                setState(() {
+                                                                  loading =
+                                                                      false;
+                                                                });
+                                                                Fluttertoast
+                                                                    .showToast(
+                                                                        msg:
+                                                                            'Question updated successfully');
+                                                              } else {
+                                                                setState(() {
+                                                                  loading =
+                                                                      true;
+                                                                });
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop();
+                                                                await Database(uid: '')
+                                                                .insertPrevQuestions(Question(
+                                                                  id: '',
+                                                                    topic: widget
+                                                                        .question
+                                                                        .topic,
+                                                                    question:
+                                                                        _ques,
+                                                                    ans:
+                                                                        _correctOption,
+                                                                    option1:
+                                                                        _op1,
+                                                                    option2:
+                                                                        _op2,
+                                                                    option3:
+                                                                        _op3,
+                                                                    option4:
+                                                                        _op4,
+                                                                    year: widget
+                                                                        .question
+                                                                        .year));
+                                                                setState(() {
+                                                                  loading =
+                                                                      false;
+                                                                });
+                                                                Fluttertoast
+                                                                    .showToast(
+                                                                        msg:
+                                                                            'Question submitted successfully');
+                                                              }
                                                             },
                                                             child: const Text(
                                                                 'Confirm')),
                                                       ),
-                                                      Expanded(
+                                                      const Expanded(
                                                           child: SizedBox()),
                                                       Expanded(
                                                         child: ElevatedButton(
@@ -316,9 +384,9 @@ class _AddQuestionsState extends State<AddQuestions> {
                                             });
                                       }
                                     },
-                                    child: const Text(
-                                      'SUBMIT',
-                                      style: TextStyle(
+                                    child: Text(
+                                      widget.flag ? 'UPDATE' : 'SUBMIT',
+                                      style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold),
                                     )),

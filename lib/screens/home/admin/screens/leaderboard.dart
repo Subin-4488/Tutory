@@ -76,7 +76,7 @@ class _LeaderboardState extends State<Leaderboard> {
                       margin: EdgeInsets.only(
                           left: size.width / 12, right: size.width / 18),
                       child: StreamBuilder(
-                          stream: Database(uid: '0').getLeaderboard,
+                          stream: Database(uid: '').getLeaderboard,
                           builder: ((context,
                               AsyncSnapshot<QuerySnapshot> snapshot) {
                             if (snapshot.hasData) {

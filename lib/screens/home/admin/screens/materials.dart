@@ -11,6 +11,14 @@ class _MaterialsState extends State<Materials> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text('MATERILAS');
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: (() {
+          
+        }),
+        child: const Icon(Icons.add,),
+      ),
+    );
   }
 }
