@@ -68,7 +68,6 @@ class _AddQuestionsState extends State<AddQuestions> {
 
   @override
   Widget build(BuildContext context) {
-    initState();
     final size = MediaQuery.of(context).size;
 
     return Scaffold(

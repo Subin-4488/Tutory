@@ -8,7 +8,7 @@ import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
 
 class SignIn extends StatefulWidget {
-  static int selected = 0;
+  static int selected=0;
 
   const SignIn({Key? key}) : super(key: key);
 
@@ -32,15 +32,6 @@ class _SignInState extends State<SignIn> {
         : Scaffold(
             body: Stack(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: Theme.of(context).brightness == Brightness.dark
-                            ? AssetImage('assets/images/backdark.jpg')
-                            : AssetImage('assets/images/backlight.png'),
-                        fit: BoxFit.fill),
-                  ),
-                ),
                 Container(
                   margin: EdgeInsets.only(
                       top: size.height / 10, left: size.height / 20),

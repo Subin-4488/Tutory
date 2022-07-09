@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //restorationScopeId: "root",
       themeMode: ThemeMode.system,
       theme: TutoryTheme.lightTheme,
       darkTheme: TutoryTheme.darkTheme,

@@ -34,15 +34,6 @@ class _RegisterState extends State<Register> {
             body: Stack(
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: Theme.of(context).brightness == Brightness.dark
-                            ? AssetImage('assets/images/backdark.jpg')
-                            : AssetImage('assets/images/backlight.png'),
-                        fit: BoxFit.fill),
-                  ),
-                ),
-                Container(
                   margin: EdgeInsets.only(
                       top: size.height / 10, left: size.height / 20),
                   alignment: Alignment.topLeft,

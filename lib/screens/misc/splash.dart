@@ -19,7 +19,6 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(255, 255, 255, 255),
         alignment: Alignment.center,
         child: AnimatedTextKit(
           repeatForever: true,

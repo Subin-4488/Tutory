@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutory/screens/authenticate/signin.dart';
 import 'package:tutory/screens/home/user/pages/Quiz.dart';
 import 'package:tutory/screens/home/user/pages/competition.dart';
 import 'package:tutory/screens/home/user/pages/evaluate.dart';
@@ -23,23 +24,22 @@ class _UserHomeState extends State<UserHome> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    themeMode: ThemeMode.system,
-    theme: TutoryTheme.lightTheme,
-    darkTheme: TutoryTheme.darkTheme,
-    
-    initialRoute: '/home',
-    routes: {
-      '/home':(context)=>const Home(),
-      '/study':(context)=>const Study(),
-      '/practice':(context)=>const Practice(),
-      '/competition':(context) => const Competition(),
-      '/profile':(context)=>const Profile(),
-      '/level':(context) => const Level_scrn(),
-      '/category':(context) => const Practice_Question_Category(),
-      '/loading':(context) => const LoadingShared(),
-      '/quiz':(context) => const Quiz(),
-      '/validate':(context) => const Validate()
-    },
+      themeMode: ThemeMode.system,
+      theme: TutoryTheme.lightTheme,
+      darkTheme: TutoryTheme.darkTheme,
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => const Home(),
+        '/study': (context) => const Study(),
+        '/practice': (context) => const Practice(),
+        '/competition': (context) => const Competition(),
+        '/profile': (context) => const Profile(),
+        '/level': (context) => const Level_scrn(),
+        '/category': (context) => const Practice_Question_Category(),
+        '/loading': (context) => const LoadingShared(),
+        '/quiz': (context) => const Quiz(),
+        '/validate': (context) => const Validate()
+      },
     );
   }
 }

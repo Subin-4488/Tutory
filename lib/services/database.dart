@@ -171,11 +171,24 @@ class Database {
 
   //add materials
   Future addMaterials(MaterialModel material) async {
-    await _materials.doc().set({
-      'topic':material.topic,
-      'subtopic':material.subtopic,
-      'content':material.content,
-      'gdrive':material.grive,
-    });
+    if (material.subtopic.length > 0) {
+      await _materials
+          .doc(material.topic)
+          .collection(material.subtopic)
+          .doc()
+          .set({
+        'subtopic': material.subtopic,
+        'content': material.content,
+        'gdrive': material.grive,
+      });
+    } else {
+      await _materials
+          .doc(material.topic)
+          .set({
+        'subtopic': material.subtopic,
+        'content': material.content,
+        'gdrive': material.grive,
+      });
+    }
   }
 }

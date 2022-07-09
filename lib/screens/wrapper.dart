@@ -15,6 +15,7 @@ class Wrapper extends StatefulWidget {
 }
 
 class _WrapperState extends State<Wrapper> {
+  
   @override
   Widget build(BuildContext context) {
     final _user = Provider.of<UserModel?>(context);
@@ -27,13 +28,13 @@ class _WrapperState extends State<Wrapper> {
 
       print(SignIn.selected);
       print(Register.reg);
-
+      
       if (Register.reg == 1) {
         return UserHome();
-      } else if (SignIn.selected == 0) {
-        return AdminHome();
-      } else {
+      } else if (SignIn.selected == 1) {
         return UserHome();
+      } else {
+        return AdminHome();
       }
     } else
       return Authenticate();

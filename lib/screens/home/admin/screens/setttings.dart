@@ -26,7 +26,6 @@ class _AdminSettingsState extends State<AdminSettings> {
                 const Icon(
                   Icons.person,
                   size: 140,
-                  color: Colors.black,
                 ),
                 ElevatedButton(
                     onPressed: () async {

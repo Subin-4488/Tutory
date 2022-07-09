@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tutory/models/materialmodel.dart';
 import 'package:tutory/services/database.dart';
+import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
 
 class Materials extends StatefulWidget {
@@ -11,61 +14,68 @@ class Materials extends StatefulWidget {
 }
 
 class _MaterialsState extends State<Materials> {
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     // TODO: implement build
-    return Container(
-      padding: const EdgeInsets.all(18),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height / 8.5,
-          ),
-          Container(
-            margin: EdgeInsets.only(left: size.width / 25),
-            alignment: Alignment.centerLeft,
-            child: const Text(
-              'CHOOSE TOPIC',
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+    return loading
+        ? LoadingShared()
+        : Container(
+            alignment: Alignment.topCenter,
+            padding: const EdgeInsets.all(18),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: size.height / 8.5,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: size.width / 25),
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'CHOOSE TOPIC',
+                      style:
+                          TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: size.height / 40,
+                  ),
+                  Row(
+                    children: [
+                      const Expanded(child: SizedBox()),
+                      generateCard(size.width,
+                          const AssetImage('assets/images/gate.png'), 0),
+                      generateCard(size.width,
+                          const AssetImage('assets/images/jee.png'), 1),
+                      const Expanded(child: SizedBox()),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Expanded(child: SizedBox()),
+                      generateCard(size.width,
+                          const AssetImage('assets/images/neet.png'), 2),
+                      generateCard(size.width,
+                          const AssetImage('assets/images/ssb.png'), 3),
+                      const Expanded(child: SizedBox()),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Expanded(child: SizedBox()),
+                      generateCard(size.width,
+                          const AssetImage('assets/images/upsc.png'), 4),
+                      generateCard(size.width,
+                          const AssetImage('assets/images/upsc.png'), 5),
+                      const Expanded(child: SizedBox()),
+                    ],
+                  )
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: size.height / 40,
-          ),
-          Row(
-            children: [
-              const Expanded(child: SizedBox()),
-              generateCard(
-                  size.width, const AssetImage('assets/images/gate.png'), 0),
-              generateCard(
-                  size.width, const AssetImage('assets/images/jee.png'), 1),
-              const Expanded(child: SizedBox()),
-            ],
-          ),
-          Row(
-            children: [
-              const Expanded(child: SizedBox()),
-              generateCard(
-                  size.width, const AssetImage('assets/images/neet.png'), 2),
-              generateCard(
-                  size.width, const AssetImage('assets/images/ssb.png'), 3),
-              const Expanded(child: SizedBox()),
-            ],
-          ),
-          Row(
-            children: [
-              const Expanded(child: SizedBox()),
-              generateCard(
-                  size.width, const AssetImage('assets/images/upsc.png'), 4),
-              generateCard(
-                  size.width, const AssetImage('assets/images/upsc.png'), 5),
-              const Expanded(child: SizedBox()),
-            ],
-          )
-        ],
-      ),
-    );
+          );
   }
 
   Widget generateCard(double width, AssetImage img, int select) {
@@ -99,10 +109,10 @@ class _MaterialsState extends State<Materials> {
           showDialog(
               context: context,
               builder: (context) {
-                return SingleChildScrollView(
+                return Material(
                   child: Container(
-                    height: MediaQuery.of(context).size.height,
-                    child: Material(
+                    alignment: Alignment.bottomCenter,
+                    child: SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.all(15),
                         child: Form(
@@ -111,8 +121,7 @@ class _MaterialsState extends State<Materials> {
                             children: [
                               TextFormField(
                                 validator: ((value) {
-                                  if (value!.length <= 0) ;
-                                  return 'Enter Field';
+                                  if (value!.length <= 0) return 'Enter Field';
                                 }),
                                 onChanged: (txt) {
                                   _topic = txt;
@@ -120,8 +129,11 @@ class _MaterialsState extends State<Materials> {
                                 decoration: TextFormFieldDecorator()
                                     .getDecorator('Topic name'),
                               ),
-                              const SizedBox(
-                                height: 10,
+                              const Expanded(
+                                flex: 0,
+                                child: SizedBox(
+                                  height: 20,
+                                ),
                               ),
                               TextFormField(
                                 onChanged: (txt) {
@@ -130,24 +142,36 @@ class _MaterialsState extends State<Materials> {
                                 decoration: TextFormFieldDecorator()
                                     .getDecorator('Sub topic name (optional)'),
                               ),
-                              const SizedBox(
-                                height: 10,
+                              const Expanded(
+                                flex: 0,
+                                child: SizedBox(
+                                  height: 20,
+                                ),
                               ),
-                              TextFormField(
-                                validator: ((value) {
-                                  if (value!.length <= 0) ;
-                                  return 'Enter Field';
-                                }),
-                                onChanged: (txt) {
-                                  _content = txt;
-                                },
-                                decoration: TextFormFieldDecorator()
-                                    .getDecorator('Content'),
-                                minLines: 10,
-                                maxLines: 35,
+                              Container(
+                                height: 280,
+                                child: SingleChildScrollView(
+                                  child: TextFormField(
+                                    keyboardType: TextInputType.multiline,
+                                    validator: ((value) {
+                                      if (value!.length <= 0)
+                                        return 'Enter Field';
+                                    }),
+                                    onChanged: (txt) {
+                                      _content = txt;
+                                    },
+                                    decoration: TextFormFieldDecorator()
+                                        .getDecorator('Content'),
+                                    minLines: 10,
+                                    maxLines: 35,
+                                  ),
+                                ),
                               ),
-                              const SizedBox(
-                                height: 10,
+                              const Expanded(
+                                flex: 0,
+                                child: SizedBox(
+                                  height: 20,
+                                ),
                               ),
                               TextFormField(
                                 onChanged: (txt) {
@@ -156,19 +180,30 @@ class _MaterialsState extends State<Materials> {
                                 decoration: TextFormFieldDecorator()
                                     .getDecorator('Gdrive (optional)'),
                               ),
-                              const SizedBox(
-                                height: 10,
+                              const Expanded(
+                                flex: 0,
+                                child: SizedBox(
+                                  height: 20,
+                                ),
                               ),
                               ElevatedButton(
-                                  onPressed: () {
+                                  onPressed: () async {
                                     if (_key.currentState!.validate()) {
-                                      Database(uid: '').addMaterials(
+                                      Navigator.pop(context);
+                                      setState(() {
+                                        loading = !loading;
+                                      });
+                                      await Database(uid: '').addMaterials(
                                           MaterialModel(
                                               id: '',
                                               topic: _topic,
                                               subtopic: _subtopic,
                                               content: _content,
                                               grive: _grive));
+                                      setState(() {
+                                        loading = !loading;
+                                      });
+                                      Fluttertoast.showToast(msg: 'Material added successfully');
                                     }
                                   },
                                   child: const Text('Submit'))
