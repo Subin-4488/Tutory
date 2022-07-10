@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return MaterialApp(
       //restorationScopeId: "root",
       themeMode: ThemeMode.system,
-      theme: TutoryTheme.lightTheme,
+      theme: TutoryTheme.darkTheme,
       darkTheme: TutoryTheme.darkTheme,
       home: splash
           ? Splash()
