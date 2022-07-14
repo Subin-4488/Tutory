@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tutory/models/question.dart';
-import 'package:tutory/screens/home/user/pages/Quiz.dart';
 import 'package:tutory/services/database.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textstyle.dart';
@@ -20,6 +19,8 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
   List<Question> questions = [];
   String selected = 'None';
   int i = 0;
+  String _buttonNext = 'Next';
+  int _score = 0;
 
   void prepare() async {
     // TODO: implement initState
@@ -40,120 +41,179 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return loading
-        ? LoadingShared()
+        ? const LoadingShared()
         : Scaffold(
             body: Container(
-            padding: EdgeInsets.all(18),
+            padding: const EdgeInsets.all(18),
             child: Column(
               children: [
-                SizedBox(
-                  height: size.height / 10,
-                ),
-                Text(
-                  'Question ${i + 1}',
-                  style: TextStyleShared.questionstyle,
-                ),
-                SizedBox(
-                  height: size.height / 50,
-                ),
-                Text(
-                  questions[i].question,
-                  style: TextStyleShared.questionstyle,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    children: [
-                      TextButton(
-                          onPressed: () {
-                            setState(() {
-                              selected = questions[i].option1;
-                            });
-                          },
-                          child: Text(
-                            'A) ${questions[i].option1}',
-                            style: TextStyleShared.optionStyle,
-                          )),
-                      Expanded(child: SizedBox()),
-                      TextButton(
-                          onPressed: () {
-                            setState(() {
-                              selected = questions[i].option2;
-                            });
-                          },
-                          child: Text(
-                            'B) ${questions[i].option2}',
-                            style: TextStyleShared.optionStyle,
-                          )),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    children: [
-                      TextButton(
-                          onPressed: () {
-                            setState(() {
-                              selected = questions[i].option3;
-                            });
-                          },
-                          child: Text(
-                            'C) ${questions[i].option3}',
-                            style: TextStyleShared.optionStyle,
-                          )),
-                      Expanded(child: SizedBox()),
-                      TextButton(
-                          onPressed: () {
-                            setState(() {
-                              selected = questions[i].option4;
-                            });
-                          },
-                          child: Text(
-                            'D) ${questions[i].option4}',
-                            style: TextStyleShared.optionStyle,
-                          )),
-                    ],
-                  ),
-                ),
-                Text(
-                  'Answer choosed: $selected',
-                  style: TextStyleShared.choosedStyle,
-                ),
-                SizedBox(
-                  height: size.height / 20,
-                ),
-                Row(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        if (i > 0) {
-                          setState(() {
-                            i--;
-                          });
-                        }
-                      },
-                      child: Text('Previous'),
-                      style: ElevatedButton.styleFrom(primary: Colors.black),
+                Container(
+                  height: size.height / 1.7,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: size.height / 10,
+                        ),
+                        Text(
+                          'Question ${i + 1}',
+                          style: TextStyleShared.questionstyle,
+                        ),
+                        SizedBox(
+                          height: size.height / 50,
+                        ),
+                        Text(
+                          questions[i].question,
+                          style: TextStyleShared.questionstyle,
+                        ),
+                        Container(
+                            alignment: Alignment.centerRight,
+                            width: double.infinity,
+                            child: const Text(
+                              '\nMarks: 1',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 15,
+                              ),
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          selected =
+                                              questions[i].option1.trim();
+                                        });
+                                      },
+                                      child: Text(
+                                        'A) ${questions[i].option1}',
+                                        style: TextStyleShared.optionStyle,
+                                      )),
+                                ),
+                              ),
+                              const Expanded(child: SizedBox()),
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          selected =
+                                              questions[i].option2.trim();
+                                        });
+                                      },
+                                      child: Text(
+                                        'B) ${questions[i].option2}',
+                                        style: TextStyleShared.optionStyle,
+                                      )),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          selected =
+                                              questions[i].option3.trim();
+                                        });
+                                      },
+                                      child: Text(
+                                        'C) ${questions[i].option3}',
+                                        style: TextStyleShared.optionStyle,
+                                      )),
+                                ),
+                              ),
+                              const Expanded(child: SizedBox()),
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          selected =
+                                              questions[i].option4.trim();
+                                        });
+                                      },
+                                      child: Text(
+                                        'D) ${questions[i].option4}',
+                                        style: TextStyleShared.optionStyle,
+                                      )),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          'Answer choosed: $selected',
+                          style: TextStyleShared.choosedStyle,
+                        ),
+                        SizedBox(
+                          height: size.height / 20,
+                        ),
+                      ],
                     ),
-                    Expanded(child: SizedBox()),
-                    ElevatedButton(
-                      onPressed: () {
-                        if (i < questions.length) {
-                          print(questions.length);
-                          print(i);
-                          setState(() {
-                            i++;
-                          });
-                        }
-                      },
-                      child: Text('Next'),
-                      style: ElevatedButton.styleFrom(primary: Colors.green),
-                    )
-                  ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          if (i > 0) {
+                            setState(() {
+                              i--;
+                            });
+                            if (_buttonNext.compareTo('Next') != 0)
+                              setState(() => _buttonNext = 'Next');
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(primary: Colors.black),
+                        child: const Text('Previous'),
+                      ),
+                      const Expanded(child: SizedBox()),
+                      ElevatedButton(
+                        onPressed: () {
+                          if (i < questions.length - 1) {
+                            setState(() {
+                              i++;
+                              if (i == questions.length - 1) {
+                                setState(() => _buttonNext = 'Submit');
+                              }
+                            });
+                            updateScore('++');
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(primary: Colors.green),
+                        child: Text(_buttonNext),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
           ));
+  }
+
+  void updateScore(String operation) {
+    if (operation.compareTo('++')==0){
+      
+    }
+    else{
+
+    }
   }
 }

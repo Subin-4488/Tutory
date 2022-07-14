@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:tutory/screens/wrapper.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
 
 class SignIn extends StatefulWidget {
-  static int selected=0;
 
-  const SignIn({Key? key}) : super(key: key);
+  SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -117,7 +117,7 @@ class _SignInState extends State<SignIn> {
                               selectedBackgroundColors: [Colors.deepPurple],
                               width: size.width / 8,
                               borderRadius: 15,
-                              selectedIndex: SignIn.selected,
+                              selectedIndex: Wrapper.selected,
                               selectedTextStyle: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
@@ -130,7 +130,7 @@ class _SignInState extends State<SignIn> {
                               //icons: const [Icons.arrow_left, Icons.arrow_right],
                               selectedLabelIndex: (index) {
                                 setState(() {
-                                  SignIn.selected = index;
+                                  Wrapper.selected = index;
                                 });
                               },
                               marginSelected: const EdgeInsets.symmetric(
@@ -151,7 +151,7 @@ class _SignInState extends State<SignIn> {
                                         load = true;
                                       });
                                       final user;
-                                      if (SignIn.selected == 0) {
+                                      if (Wrapper.selected == 0) {
                                         //admin
                                         user = await AuthService()
                                             .signInAdmin(email, password);

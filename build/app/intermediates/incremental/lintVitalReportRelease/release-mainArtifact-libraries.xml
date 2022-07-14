@@ -4,6 +4,19 @@
       jars="D:\flutter_projects\tutory\build\app\intermediates\flutter\release\libs.jar"
       resolved="__local_aars__:D:\flutter_projects\tutory\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
+      name="D:\flutter_projects\tutory\android@@:shared_preferences_android::release"
+      jars="D:\flutter_projects\tutory\build\shared_preferences_android\.transforms\7819f879790356a4d21e0fa586c2e7fd\transformed\out\jars\classes.jar"
+      resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
+      folder="D:\flutter_projects\tutory\build\shared_preferences_android\.transforms\7819f879790356a4d21e0fa586c2e7fd\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="D:\flutter_projects\tutory\android@@:firebase_auth::release"
       jars="D:\flutter_projects\tutory\build\firebase_auth\.transforms\a55300dbd126177d0e45f0283f11bc4b\transformed\out\jars\classes.jar"
       resolved="io.flutter.plugins.firebase.auth:firebase_auth:unspecified"
@@ -127,6 +140,10 @@
       jars="C:\Users\subin\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_release\1.0.0-6ba2af10bb05c88a2731482cedf2cfd11cf5af0b\6f56d10ee71f1077538ba901177a67caf0137db1\x86_64_release-1.0.0-6ba2af10bb05c88a2731482cedf2cfd11cf5af0b.jar"
       resolved="io.flutter:x86_64_release:1.0.0-6ba2af10bb05c88a2731482cedf2cfd11cf5af0b"/>
   <library
+      name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
+      jars="C:\Users\subin\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common-java8\2.2.0\cd3478503da69b1a7e0319bd2d1389943db9b364\lifecycle-common-java8-2.2.0.jar"
+      resolved="androidx.lifecycle:lifecycle-common-java8:2.2.0"/>
+  <library
       name="androidx.fragment:fragment:1.1.0@aar"
       jars="C:\Users\subin\.gradle\caches\transforms-3\8329068b8e3150ede2ad1332911f4ba4\transformed\fragment-1.1.0\jars\classes.jar"
       resolved="androidx.fragment:fragment:1.1.0"
@@ -204,10 +221,6 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
-  <library
-      name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
-      jars="C:\Users\subin\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common-java8\2.2.0\cd3478503da69b1a7e0319bd2d1389943db9b364\lifecycle-common-java8-2.2.0.jar"
-      resolved="androidx.lifecycle:lifecycle-common-java8:2.2.0"/>
   <library
       name="androidx.lifecycle:lifecycle-runtime:2.2.0@aar"
       jars="C:\Users\subin\.gradle\caches\transforms-3\0234a923b6aff34512dbb9b85e01573d\transformed\lifecycle-runtime-2.2.0\jars\classes.jar"

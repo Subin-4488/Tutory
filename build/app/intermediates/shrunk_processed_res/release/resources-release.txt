@@ -46,8 +46,8 @@ flutter/platform_views
 X
 android.people
 expires_in
-_
 policy
+_
 b
 address
 d
@@ -130,8 +130,8 @@ resizeUp
 creditCardNumber
 EMAIL_NOT_FOUND
 grantType
-compressor
 TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SH...
+compressor
 deferred
 FlutterActivityAndFragmentDelegate
 com.google.firebase.auth.api.gms.conf...
@@ -163,9 +163,9 @@ hedgingDelay
 FirebearCryptoHelper
 LESS_THAN_OR_EQUAL
 HapticFeedback.vibrate
+decompressor
 repeatCount
 longitude
-decompressor
 flutter/restoration
 INVALID_APP_CREDENTIAL
 stopwatchSupplier
@@ -185,8 +185,8 @@ PHONE
 systemNavigationBarColor
 PlatformPlugin
 displayCutout
-lastListenSequenceNumber_
 TLS_ECDH_anon_WITH_AES_256_CBC_SHA
+lastListenSequenceNumber_
 SSLv3
 SFIXED64_LIST_PACKED
 DEAD_CLIENT
@@ -289,8 +289,8 @@ TLSv1.1
 CREDENTIAL_TOO_OLD_LOGIN_AGAIN
 updatePassword
 center
-pair
 getPosture
+pair
 Connected.
 PASTE
 gravity
@@ -302,8 +302,8 @@ DefaultAuthUserInfo
 IS_FOCUSABLE
 messagingSenderId
 textCapitalization
-android.widget.RadioButton
 TLS_DHE_RSA_WITH_AES_128_CBC_SHA256
+android.widget.RadioButton
 verifyPasswordResetCode
 required
 unaryFilter
@@ -347,8 +347,8 @@ com.google.firebase.auth
 MISSING_CONTINUE_URI
 .immediate
 TextInputAction.unspecified
-resultCase_
 /index.html
+resultCase_
 resetPassword
 TAP
 namedQuery
@@ -370,8 +370,8 @@ Clipboard.setData
 TextInput.sendAppPrivateCommand
 APPEND_MISSING_ELEMENTS
 timestampNanos
-HMAC
 SPDY_HEADERS
+HMAC
 INT32_LIST_PACKED
 ERROR_ADMIN_RESTRICTED_OPERATION
 newIndex
@@ -379,8 +379,8 @@ _removedRef
 forceRecaptchaFlow
 NULL_VALUE
 SINT64_LIST_PACKED
-android.net.ssl.SSLSockets
 documentChanges
+android.net.ssl.SSLSockets
 com.google.android.gms.auth.api.phone...
 linkPhoneAuthCredential
 DHKEM_X25519_HKDF_SHA256_HKDF_SHA256_...
@@ -391,13 +391,13 @@ CLIP_PATH
 google.firestore.v1.Firestore
 $splitRule
 AES/GCM/NoPadding
-user_consent
 TLS_FALLBACK_SCSV
+user_consent
 TLS_DH_anon_WITH_AES_256_CBC_SHA
 java.specification.version
 UNSUPPORTED_PASSTHROUGH_OPERATION
-disableStandaloneDynamiteLoader
 TLS_RSA_WITH_AES_256_CBC_SHA
+disableStandaloneDynamiteLoader
 compressorRegistry
 path
 UNKNOWN_DOCUMENT
@@ -416,8 +416,8 @@ updateEmail
 ON_PAUSE
 signInWithRedirect
 QUERY
-setNpnProtocols
 domain
+setNpnProtocols
 viewType
 invokeSuspend
 com.google.firebase.auth.internal.CLI...
@@ -460,8 +460,8 @@ info
 DORMANT
 getRealSize
 WEB_CONTEXT_CANCELED
-MAX_CONCURRENT_STREAMS
 previousAttempts
+MAX_CONCURRENT_STREAMS
 $Provider
 CURRENT
 TextInputType.name
@@ -476,6 +476,7 @@ title
 primaryActivity
 secondaryActivity
 SPDY_3
+setStringList
 kotlin.collections.Map
 /mfaEnrollment:start
 TLS
@@ -507,8 +508,8 @@ READY
 TextInput.finishAutofillContext
 AES128_GCM_SIV
 cookie
-dns
 TLS_AES_256_GCM_SHA384
+dns
 signed
 PlatformChannel
 FlutterView
@@ -530,8 +531,8 @@ targets
 CONDITIONTYPE_NOT_SET
 message_
 stream
-CancellableContinuation
 android.summaryText
+CancellableContinuation
 SSL_RSA_WITH_NULL_SHA
 serviceResponseIntentKey
 EmbeddingCompat
@@ -593,6 +594,7 @@ RESUME_TOKEN
 common_google_play_services_restricte...
 ERROR_WEB_CONTEXT_ALREADY_PRESENTED
 20.1.1
+commit
 /cmdline
 android.support.actionExtras
 rawUserInfo
@@ -607,9 +609,9 @@ android:support:next_request_index
 com.google.android.gms.dynamite.IDyna...
 PROTOCOL_ERROR
 height
-com.google.firebase.auth.internal.EVE...
 TLS_KRB5_WITH_3DES_EDE_CBC_SHA
 TLS_RSA_WITH_AES_256_CBC_SHA256
+com.google.firebase.auth.internal.EVE...
 CUT
 _decision
 ?
@@ -684,8 +686,8 @@ INVALID_ACCOUNT
 INVALID_IDENTIFIER
 ERROR_MISSING_OR_INVALID_NONCE
 TLS_RSA_WITH_AES_128_CBC_SHA
-keepAlivePinger
 TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA
+keepAlivePinger
 TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA
 pokeByte
 registry
@@ -759,8 +761,8 @@ io.grpc.internal.GrpcAttributes.secur...
 sequence
 target_count
 BIDI_STREAMING
-DATA
 DHKEM_X25519_HKDF_SHA256_HKDF_SHA256_...
+DATA
 UTF8
 flutter/localization
 putObject
@@ -795,6 +797,7 @@ actionIntent
 via
 TLS_DH_anon_WITH_DES_CBC_SHA
 verticalText
+FlutterSharedPreferences
 android.util.LongArray
 delegateBuilder
 ?
@@ -832,6 +835,7 @@ this$0
 android:theme
 RST_STREAM
 plugins.flutter.io/firebase_firestore...
+flutter.
 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY130...
 LIMIT_TO_FIRST
 SFIXED32_LIST_PACKED
@@ -881,8 +885,8 @@ targetIds_
 IN
 ECIES_P256_COMPRESSED_HKDF_HMAC_SHA25...
 GoogleSignatureVerifier
-REFUSED_STREAM
 getNextMatch
+REFUSED_STREAM
 TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA
 400
 VALUETYPE_NOT_SET
@@ -897,8 +901,8 @@ IS_LINK
 cell
 login
 protocolSelected
-safeCast
 URI
+safeCast
 URL
 kotlin.Long
 Completing
@@ -925,8 +929,8 @@ RESET_PASSWORD_EXCEED_LIMIT
 targetChangeCase_
 TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA
 Reset
-HTTP_1_0
 noDrop
+HTTP_1_0
 memoryPressure
 HTTP_1_1
 arrayValue
@@ -985,10 +989,10 @@ restricted_profile
 TLS_ECDH_RSA_WITH_AES_256_CBC_SHA
 delimiters
 ClientTelemetry.API
-objectFieldOffset
 SSL_RSA_WITH_RC4_128_SHA
-AsyncSink.flush
+objectFieldOffset
 TLS_ECDH_RSA_WITH_RC4_128_SHA
+AsyncSink.flush
 timestamp
 newLayoutInfo
 AsyncSink.write
@@ -1080,16 +1084,16 @@ com.google.firebase.auth.internal.EVE...
 android:showsDialog
 autoRetrievedSmsCodeForTesting
 com.google
-OkHttpClientTransport$ClientFrameHand...
 kotlinx.coroutines.scheduler.core.poo...
 kotlinx.coroutines.scheduler.max.pool...
+OkHttpClientTransport$ClientFrameHand...
 double
 TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5
 GET_PARSER
 INSTANCE
 org.conscrypt.Conscrypt
-WriteRunnable.runWrite
 TLS_RSA_EXPORT_WITH_RC4_40_MD5
+WriteRunnable.runWrite
 showsUserInterface
 com.google.android.gms.auth.api.phone...
 PUBLIC
@@ -1102,8 +1106,8 @@ enabled
 ORDER
 ADDED
 android.hardware.type.watch
-LAZY
 TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_...
+LAZY
 PlatformViewWrapper
 phoneResponseInfo
 SendQueued
@@ -1208,6 +1212,7 @@ cn
 firebase
 FRAMEWORK_CLIENT
 java.vendor
+VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIGxpc3Qu
 channelRef
 config
 stopwatch
@@ -1237,8 +1242,8 @@ h2
 org.apache.harmony.xnet.provider.jsse...
 extendedAddress
 content
-bytesLoaded
 ENQUEUE_FAILED
+bytesLoaded
 com.google.firebase.auth.internal.KEY...
 TLS_ECDH_ECDSA_WITH_RC4_128_SHA
 showToast
@@ -1377,8 +1382,8 @@ com.google.protobuf.ExtensionSchemaFull
 WEB_NETWORK_REQUEST_FAILED
 com.google.firebase.components:
 po
-LISTEN_STREAM_IDLE
 callCredentials
+LISTEN_STREAM_IDLE
 HAS_TOGGLED_STATE
 r6
 ECIES_P256_HKDF_HMAC_SHA256_AES128_CT...
@@ -1431,8 +1436,8 @@ ONLINE_STATE_TIMEOUT
 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
 te
 authCredential
-closed
 resizeRight
+closed
 tv
 ERROR_CREDENTIAL_ALREADY_IN_USE
 secondaryActivity.intent
@@ -1452,10 +1457,11 @@ putBoolean
 ruleComponent
 op_
 Dispatchers.Default
+plugins.flutter.io/shared_preferences...
 fullServiceName
-this
 REJECTED_CREDENTIAL
 componentName.packageName
+this
 additionalUserInfo
 handleOnlineStateChange
 DocumentChangeType.modified
@@ -1525,8 +1531,8 @@ ACTION_ARGUMENT_SELECTION_START_INT
 ECIES_P256_HKDF_HMAC_SHA256_AES128_GC...
 push
 LruGarbageCollector
-ERROR_SECOND_FACTOR_ALREADY_ENROLLED
 TLS_KRB5_WITH_3DES_EDE_CBC_MD5
+ERROR_SECOND_FACTOR_ALREADY_ENROLLED
 StorageHelpers
 _state
 consistencySelectorCase_
@@ -1635,8 +1641,8 @@ SignInClientImpl
 NoPadding
 AccountAccessor
 TextCapitalization.words
-AES_256_GCM
 isTransparentRetry
+AES_256_GCM
 KDF_UNKNOWN
 committed
 SUCCESS
@@ -1707,8 +1713,8 @@ EmptyQueue
 embeddingExtension
 SCOPES_ROUTE
 SERVICE_MISSING
-io.grpc.netty.NettyChannelProvider
 HTTP/1.0
+io.grpc.netty.NettyChannelProvider
 HTTP/1.1
 sun.misc.SharedSecrets
 spdy/3.1
@@ -1804,14 +1810,15 @@ ModuleDescriptor
 WEB_STORAGE_UNSUPPORTED
 ATTACH
 HMAC_SHA512_512BITTAG
-WindowServer
 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+WindowServer
 ActivityFilter
 common_google_play_services_sign_in_f...
 getByte
 accessibility
 password
 kotlinx.coroutines.scheduler.keep.ali...
+VGhpcyBpcyB0aGUgcHJlZml4IGZvciBEb3VibGUu
 TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
 CompanionObject
 secondaryActivityStack.activities
@@ -1898,8 +1905,8 @@ DATETIME
 BOOL
 com.google.android.gms.signin.interna...
 MAX_FRAME_SIZE
-time
 TLS_DHE_DSS_WITH_AES_128_CBC_SHA
+time
 IS_HEADER
 COMPLETING_RETRY
 VISIBLE_PASSWORD
@@ -1981,11 +1988,11 @@ android.support.action.showsUserInter...
 setLocale
 java.util.concurrent.atomic.LongAdder
 TextInputType.phone
-TLS_1_1
 customOptions
 android:support:request_fragment_who
-TLS_1_0
+TLS_1_1
 ERROR_INVALID_MESSAGE_PAYLOAD
+TLS_1_0
 values
 consumerIndex
 point
@@ -1994,8 +2001,9 @@ alias
 common_google_play_services_resolutio...
 Healthy
 kotlin.String.Companion
-bundleId
 TLS_DHE_RSA_WITH_AES_256_CBC_SHA256
+bundleId
+clear
 methodName
 TextInput.show
 jClass
@@ -2022,8 +2030,9 @@ policyName
 SFIXED32_LIST
 array_contains
 Method
-SINT32
 SPDY_REPLY
+SINT32
+setString
 route
 cancellation
 ?s
@@ -2069,8 +2078,8 @@ java.lang.annotation.Annotation
 FlutterImageView
 USER_CANCELLED
 5ac635d8aa3a93e7b3ebbd55769886bc651d0...
-TERMINATED
 TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA
+TERMINATED
 flutter/navigation
 RESPONSETYPE_NOT_SET
 revertSecondFactorAddition
@@ -2158,6 +2167,7 @@ rawNonce
 code_
 Subchannel
 EXCLUDE
+StorageError
 true
 header
 TLS_RSA_WITH_NULL_SHA256
@@ -2205,9 +2215,9 @@ oldText
 Clipboard.hasStrings
 Starting
 SESSION_EXPIRED
+SSL_DH_anon_WITH_3DES_EDE_CBC_SHA
 com.google.android.gms.auth.api.phone...
 type.googleapis.com/google.crypto.tin...
-SSL_DH_anon_WITH_3DES_EDE_CBC_SHA
 readTime_
 sign_in_second_factor
 TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384
@@ -2238,10 +2248,10 @@ commands
 kotlinx.coroutines.io.parallelism
 eae_prk
 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
-PADDED
 LIST_EMPTY
-STATE_INFO
+PADDED
 collection
+STATE_INFO
 PING_DELAYED
 WARNING
 BOOLEAN
@@ -2251,8 +2261,8 @@ ERROR_INVALID_CUSTOM_TOKEN
 HEALTH_CHECK_TIMEOUT
 TLS_RSA_WITH_AES_128_CBC_SHA256
 expires
-untagSocket
 TLS_
+untagSocket
 rule
 FieldValue.arrayUnion
 scheduler
@@ -2322,8 +2332,8 @@ SINT64
 enableIMEPersonalizedLearning
 familyName
 consistencySelector_
-ERROR_MISSING_EMAIL
 from
+ERROR_MISSING_EMAIL
 UNSUPPORTED_VERSION
 serviceConfigParser
 resolver
@@ -2507,8 +2517,8 @@ LIGHT_IMPACT
 DESTROYED
 androidx.core.app.extra.COMPAT_TEMPLATE
 pick_first
-SystemChrome.setEnabledSystemUIOverlays
 referer
+SystemChrome.setEnabledSystemUIOverlays
 selectionExtent
 MouseCursorChannel
 ATOMIC
@@ -2585,6 +2595,7 @@ EMAIL_SIGNIN
 deltaText
 BUILD_MESSAGE_INFO
 TLS_DH_anon_WITH_3DES_EDE_CBC_SHA
+setInt
 ERROR_UNSUPPORTED_PASSTHROUGH_OPERATION
 expirationTime
 Fallback
@@ -2644,8 +2655,8 @@ name
 Class
 ERROR_MISSING_PHONE_NUMBER
 DartExecutor
-parameters
 TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+parameters
 XCHACHA20_POLY1305_RAW
 android
 description
@@ -2698,8 +2709,8 @@ bounds
 3.3.19
 getDisplayFeatures
 rawPassword
-MODIFIED
 BLOCKING
+MODIFIED
 BOOL_LIST_PACKED
 Dispatchers.Unconfined
 WindowInfoTrackerCallbackAdapter.kt
@@ -2708,8 +2719,8 @@ subchannelRef
 setDirection
 ENUM_LIST
 ClientStreamListener.messagesAvailable
-com.google.crypto.tink.config.interna...
 SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA
+com.google.crypto.tink.config.interna...
 FRAME_SIZE_ERROR
 java.util.Map$Entry
 display
@@ -2724,6 +2735,7 @@ refreshToken
 SFIXED32
 com.google.android.gms.signin.interna...
 kotlin.Any
+setDouble
 selectionBase
 INVALID_RECIPIENT_EMAIL
 plainCodePoint
@@ -2772,12 +2784,13 @@ HMAC_SHA512_256BITTAG
 TLS_DHE_DSS_WITH_AES_256_GCM_SHA384
 projects
 SETTINGS_TIMEOUT
-STREAM_ALREADY_CLOSED
 kotlinx.coroutines.scheduler.blocking...
+STREAM_ALREADY_CLOSED
 textcolor
 conditionType_
 getSuppressed
 DartMessenger
+setBool
 BundleCompatBaseImpl
 kotlin.Unit
 XCHACHA20_POLY1305
@@ -2805,8 +2818,8 @@ ERROR_USER_NOT_FOUND
 ACK
 HMAC_SHA512_512BITTAG_RAW
 DETACH
-SERVER_STREAMING
 BaseEncoding.
+SERVER_STREAMING
 RED
 ClientCall.halfClose
 activityComponent.packageName
@@ -2839,6 +2852,7 @@ HMACSHA512
 statusBarColor
 MergeSet
 io.grpc.EquivalentAddressGroup.author...
+VGhpcyBpcyB0aGUgcHJlZml4IGZvciBCaWdJb...
 tokenRatio
 NO_CHANGE
 remote_addr
@@ -2862,8 +2876,8 @@ clipboard
 output
 CT_ERROR
 HINGE
-io.perfmark.impl.SecretPerfMarkImpl$P...
 java.lang.Character
+io.perfmark.impl.SecretPerfMarkImpl$P...
 OPERATION_NOT_ALLOWED
 com.google.protobuf.DescriptorMessage...
 birthdayYear
@@ -3007,9 +3021,9 @@ requestUri
 kotlin.Float
 limitType
 android.support.remoteInputs
+SSL_RSA_WITH_NULL_MD5
 count_
 buf
-SSL_RSA_WITH_NULL_MD5
 handled
 SystemNavigator.pop
 deleteProvider
@@ -3079,8 +3093,8 @@ android.support.action.semanticAction
 java.lang.Double
 INTEGER_VALUE
 AppLifecycleState.detached
-range
 binding.binaryMessenger
+range
 type.googleapis.com/google.crypto.tin...
 mapValue
 feature
@@ -3133,6 +3147,7 @@ ProviderInstaller
 DocumentSnapshot
 IS_NULL
 com.google.protobuf.CodedOutputStream
+getAll
 TextInputClient.performAction
 emailLink
 jar:file:
@@ -3249,6 +3264,7 @@ Marking id:accessibility_custom_action_8:2131034143 used because it matches stri
 Marking id:accessibility_custom_action_9:2131034144 used because it matches string pool constant accessibility
 Marking id:time:2131034213 used because it matches string pool constant time
 Marking id:light:2131034182 used because it matches string pool constant light
+Marking attr:clearTop:2130771974 used because it matches string pool constant clear
 Marking id:action_container:2131034145 used because it matches string pool constant action
 Marking id:action_divider:2131034146 used because it matches string pool constant action
 Marking id:action_image:2131034147 used because it matches string pool constant action
@@ -3305,7 +3321,7 @@ Marking attr:queryPatterns:2130772002 used because it matches string pool consta
 @attr/alwaysExpand : reachable=false
 @attr/buttonSize : reachable=false
 @attr/circleCrop : reachable=false
-@attr/clearTop : reachable=false
+@attr/clearTop : reachable=true
 @attr/colorScheme : reachable=false
 @attr/coordinatorLayoutStyle : reachable=false
 @attr/finishPrimaryWithSecondary : reachable=false
@@ -3659,6 +3675,7 @@ Marking attr:queryPatterns:2130772002 used because it matches string pool consta
 The root reachable resources are:
  attr:activityAction:2130771968
  attr:activityName:2130771969
+ attr:clearTop:2130771974
  attr:imageAspectRatio:2130771990
  attr:imageAspectRatioAdjust:2130771991
  attr:keylines:2130771992

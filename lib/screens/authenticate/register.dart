@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tutory/screens/authenticate/signin.dart';
+import 'package:tutory/screens/wrapper.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:tutory/shared/loading.dart';
 import 'package:tutory/shared/textformfielddecorator.dart';
 
 class Register extends StatefulWidget {
-  static int reg = 0;
   const Register({Key? key}) : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class _RegisterState extends State<Register> {
     final size = MediaQuery.of(context).size;
 
     setState(() {
-      Register.reg = 0;
+      Wrapper.reg = 0;
     });
 
     return load
@@ -126,7 +126,7 @@ class _RegisterState extends State<Register> {
                                       final user = await AuthService()
                                           .registerEmailPass(email, password);
                                       if (user != null) {
-                                        Register.reg = 1;
+                                        Wrapper.reg = 1;
                                         setState(() {
                                           load = false;
                                         });
