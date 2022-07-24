@@ -15,10 +15,11 @@ class _Level_scrnState extends State<Level_scrn> {
   @override
   Widget build(BuildContext context) {
     final Map data = ModalRoute.of(context)?.settings.arguments as Map;
+    print(data['id']);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Select the level",textAlign: TextAlign.left,style: TextStyle(letterSpacing: 5,
+        title: const Text("Select the level",textAlign: TextAlign.left,style: TextStyle(
             fontSize: 18,color: Colors.white),),
             centerTitle: true,
         backgroundColor: Colors.deepPurple[700],

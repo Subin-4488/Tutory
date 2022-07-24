@@ -230,6 +230,12 @@
       "languageVersion": "2.16"
     },
     {
+      "name": "linear_progress_bar",
+      "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/linear_progress_bar-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///D:/Softwares/Android/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.0",
       "packageUri": "lib/",
@@ -428,7 +434,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-07-14T14:50:10.772638Z",
+  "generated": "2022-07-24T12:02:32.747032Z",
   "generator": "pub",
   "generatorVersion": "2.17.5"
 }
