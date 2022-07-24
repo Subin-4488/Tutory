@@ -1,14 +1,25 @@
 android.annotation.SuppressLint
 android.annotation.TargetApi
+android.support.customtabs.ICustomTabsCallback$Default
 android.support.customtabs.ICustomTabsCallback$Stub$Proxy
 android.support.customtabs.ICustomTabsCallback$Stub
 android.support.customtabs.ICustomTabsCallback
+android.support.customtabs.ICustomTabsService$Default
 android.support.customtabs.ICustomTabsService$Stub$Proxy
 android.support.customtabs.ICustomTabsService$Stub
 android.support.customtabs.ICustomTabsService
+android.support.customtabs.IPostMessageService$Default
 android.support.customtabs.IPostMessageService$Stub$Proxy
 android.support.customtabs.IPostMessageService$Stub
 android.support.customtabs.IPostMessageService
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Default
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub$Proxy
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub
+android.support.customtabs.trusted.ITrustedWebActivityCallback
+android.support.customtabs.trusted.ITrustedWebActivityService$Default
+android.support.customtabs.trusted.ITrustedWebActivityService$Stub$Proxy
+android.support.customtabs.trusted.ITrustedWebActivityService$Stub
+android.support.customtabs.trusted.ITrustedWebActivityService
 android.support.v4.app.INotificationSideChannel$Default
 android.support.v4.app.INotificationSideChannel$Stub$Proxy
 android.support.v4.app.INotificationSideChannel$Stub
@@ -120,64 +131,24 @@ androidx.arch.core.executor.DefaultTaskExecutor$1:
 androidx.arch.core.executor.TaskExecutor:
     public void executeOnMainThread(java.lang.Runnable)
 androidx.arch.core.util.Function
-androidx.asynclayoutinflater.R$attr
-androidx.asynclayoutinflater.R$color
-androidx.asynclayoutinflater.R$dimen
-androidx.asynclayoutinflater.R$drawable
-androidx.asynclayoutinflater.R$id
-androidx.asynclayoutinflater.R$integer
-androidx.asynclayoutinflater.R$layout
-androidx.asynclayoutinflater.R$string
-androidx.asynclayoutinflater.R$style
-androidx.asynclayoutinflater.R$styleable
-androidx.asynclayoutinflater.R
-androidx.asynclayoutinflater.view.AsyncLayoutInflater$1
-androidx.asynclayoutinflater.view.AsyncLayoutInflater$BasicInflater
-androidx.asynclayoutinflater.view.AsyncLayoutInflater$InflateRequest
-androidx.asynclayoutinflater.view.AsyncLayoutInflater$InflateThread
-androidx.asynclayoutinflater.view.AsyncLayoutInflater$OnInflateFinishedListener
-androidx.asynclayoutinflater.view.AsyncLayoutInflater
-androidx.browser.R$attr
 androidx.browser.R$color
 androidx.browser.R$dimen:
-    public static final int compat_button_inset_horizontal_material
-    public static final int compat_button_inset_vertical_material
-    public static final int compat_button_padding_horizontal_material
-    public static final int compat_button_padding_vertical_material
-    public static final int compat_control_corner_material
-    public static final int compat_notification_large_icon_max_height
-    public static final int compat_notification_large_icon_max_width
-    public static final int notification_action_icon_size
-    public static final int notification_action_text_size
-    public static final int notification_big_circle_margin
-    public static final int notification_content_margin_start
-    public static final int notification_large_icon_height
-    public static final int notification_large_icon_width
-    public static final int notification_main_column_padding_top
-    public static final int notification_media_narrow_margin
-    public static final int notification_right_icon_size
-    public static final int notification_right_side_padding_top
-    public static final int notification_small_icon_background_padding
-    public static final int notification_small_icon_size_as_large
-    public static final int notification_subtext_size
-    public static final int notification_top_pad
-    public static final int notification_top_pad_large_text
     private void <init>()
-androidx.browser.R$drawable
 androidx.browser.R$id
-androidx.browser.R$integer
 androidx.browser.R$layout
 androidx.browser.R$string
-androidx.browser.R$style
-androidx.browser.R$styleable
+androidx.browser.R$xml
 androidx.browser.R
 androidx.browser.browseractions.BrowserActionItem
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$2
 androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$ViewHolderItem
 androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter
 androidx.browser.browseractions.BrowserActionsFallbackMenuDialog$1
 androidx.browser.browseractions.BrowserActionsFallbackMenuDialog
 androidx.browser.browseractions.BrowserActionsFallbackMenuUi$1
 androidx.browser.browseractions.BrowserActionsFallbackMenuUi$2
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$3
 androidx.browser.browseractions.BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener
 androidx.browser.browseractions.BrowserActionsFallbackMenuUi
 androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsFallDialogListener
@@ -185,6 +156,18 @@ androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsItemId
 androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsUrlType
 androidx.browser.browseractions.BrowserActionsIntent$Builder
 androidx.browser.browseractions.BrowserActionsIntent
+androidx.browser.browseractions.BrowserServiceFileProvider$1
+androidx.browser.browseractions.BrowserServiceFileProvider$FileCleanupTask
+androidx.browser.browseractions.BrowserServiceFileProvider$FileSaveTask
+androidx.browser.browseractions.BrowserServiceFileProvider
+androidx.browser.customtabs.CustomTabColorSchemeParams$Builder:
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setNavigationBarColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setNavigationBarDividerColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setSecondaryToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setToolbarColor(int)
+androidx.browser.customtabs.CustomTabColorSchemeParams:
+    static androidx.browser.customtabs.CustomTabColorSchemeParams fromBundle(android.os.Bundle)
+    androidx.browser.customtabs.CustomTabColorSchemeParams withDefaults(androidx.browser.customtabs.CustomTabColorSchemeParams)
 androidx.browser.customtabs.CustomTabsCallback
 androidx.browser.customtabs.CustomTabsClient$1
 androidx.browser.customtabs.CustomTabsClient$2$1
@@ -195,6 +178,7 @@ androidx.browser.customtabs.CustomTabsClient$2$5
 androidx.browser.customtabs.CustomTabsClient$2
 androidx.browser.customtabs.CustomTabsClient
 androidx.browser.customtabs.CustomTabsIntent$Builder:
+    public void <init>(androidx.browser.customtabs.CustomTabsSession)
     public androidx.browser.customtabs.CustomTabsIntent$Builder addDefaultShareMenuItem()
     public androidx.browser.customtabs.CustomTabsIntent$Builder addMenuItem(java.lang.String,android.app.PendingIntent)
     public androidx.browser.customtabs.CustomTabsIntent$Builder addToolbarItem(int,android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
@@ -202,27 +186,49 @@ androidx.browser.customtabs.CustomTabsIntent$Builder:
     public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent,boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonIcon(android.graphics.Bitmap)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setColorScheme(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setColorSchemeParams(int,androidx.browser.customtabs.CustomTabColorSchemeParams)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultColorSchemeParams(androidx.browser.customtabs.CustomTabColorSchemeParams)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultShareMenuItemEnabled(boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setExitAnimations(android.content.Context,int,int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setInstantAppsEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarDividerColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setPendingSession(androidx.browser.customtabs.CustomTabsSession$PendingSession)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarColor(int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarViews(android.widget.RemoteViews,int[],android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSession(androidx.browser.customtabs.CustomTabsSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setShareState(int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setShowTitle(boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setStartAnimations(android.content.Context,int,int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setUrlBarHidingEnabled(boolean)
+androidx.browser.customtabs.CustomTabsIntent$ColorScheme
+androidx.browser.customtabs.CustomTabsIntent$ShareState
 androidx.browser.customtabs.CustomTabsIntent:
+    public static final int COLOR_SCHEME_DARK
+    public static final int COLOR_SCHEME_LIGHT
+    private static final int COLOR_SCHEME_MAX
+    public static final int COLOR_SCHEME_SYSTEM
     public static final java.lang.String EXTRA_ACTION_BUTTON_BUNDLE
     public static final java.lang.String EXTRA_CLOSE_BUTTON_ICON
+    public static final java.lang.String EXTRA_COLOR_SCHEME
+    public static final java.lang.String EXTRA_COLOR_SCHEME_PARAMS
     public static final java.lang.String EXTRA_DEFAULT_SHARE_MENU_ITEM
     public static final java.lang.String EXTRA_ENABLE_INSTANT_APPS
     public static final java.lang.String EXTRA_ENABLE_URLBAR_HIDING
     public static final java.lang.String EXTRA_EXIT_ANIMATION_BUNDLE
     public static final java.lang.String EXTRA_MENU_ITEMS
+    public static final java.lang.String EXTRA_NAVIGATION_BAR_COLOR
+    public static final java.lang.String EXTRA_NAVIGATION_BAR_DIVIDER_COLOR
     public static final java.lang.String EXTRA_REMOTEVIEWS
     public static final java.lang.String EXTRA_REMOTEVIEWS_CLICKED_ID
     public static final java.lang.String EXTRA_REMOTEVIEWS_PENDINGINTENT
     public static final java.lang.String EXTRA_REMOTEVIEWS_VIEW_IDS
     public static final java.lang.String EXTRA_SECONDARY_TOOLBAR_COLOR
     public static final java.lang.String EXTRA_SESSION
+    public static final java.lang.String EXTRA_SESSION_ID
+    public static final java.lang.String EXTRA_SHARE_STATE
     public static final java.lang.String EXTRA_TINT_ACTION_BUTTON
     public static final java.lang.String EXTRA_TITLE_VISIBILITY_STATE
     public static final java.lang.String EXTRA_TOOLBAR_COLOR
@@ -235,40 +241,75 @@ androidx.browser.customtabs.CustomTabsIntent:
     public static final java.lang.String KEY_PENDING_INTENT
     private static final int MAX_TOOLBAR_ITEMS
     public static final int NO_TITLE
+    public static final int SHARE_STATE_DEFAULT
+    private static final int SHARE_STATE_MAX
+    public static final int SHARE_STATE_OFF
+    public static final int SHARE_STATE_ON
     public static final int SHOW_PAGE_TITLE
     public static final int TOOLBAR_ACTION_BUTTON_ID
+    public static androidx.browser.customtabs.CustomTabColorSchemeParams getColorSchemeParams(android.content.Intent,int)
     public static int getMaxToolbarItems()
     public static android.content.Intent setAlwaysUseBrowserUI(android.content.Intent)
     public static boolean shouldAlwaysUseBrowserUI(android.content.Intent)
-androidx.browser.customtabs.CustomTabsService$1$1
 androidx.browser.customtabs.CustomTabsService$1
+androidx.browser.customtabs.CustomTabsService$FilePurpose
 androidx.browser.customtabs.CustomTabsService$Relation
 androidx.browser.customtabs.CustomTabsService$Result
 androidx.browser.customtabs.CustomTabsService
 androidx.browser.customtabs.CustomTabsServiceConnection$1
 androidx.browser.customtabs.CustomTabsServiceConnection
-androidx.browser.customtabs.CustomTabsSession:
-    private static final java.lang.String TAG
-    private final android.support.customtabs.ICustomTabsCallback mCallback
-    private final android.content.ComponentName mComponentName
-    private final java.lang.Object mLock
-    private final android.support.customtabs.ICustomTabsService mService
-    void <init>(android.support.customtabs.ICustomTabsService,android.support.customtabs.ICustomTabsCallback,android.content.ComponentName)
-    public static androidx.browser.customtabs.CustomTabsSession createMockSessionForTesting(android.content.ComponentName)
-    public boolean mayLaunchUrl(android.net.Uri,android.os.Bundle,java.util.List)
-    public int postMessage(java.lang.String,android.os.Bundle)
-    public boolean requestPostMessageChannel(android.net.Uri)
-    public boolean setActionButton(android.graphics.Bitmap,java.lang.String)
-    public boolean setSecondaryToolbarViews(android.widget.RemoteViews,int[],android.app.PendingIntent)
-    public boolean setToolbarItem(int,android.graphics.Bitmap,java.lang.String)
-    public boolean validateRelationship(int,android.net.Uri,android.os.Bundle)
+androidx.browser.customtabs.CustomTabsSession$MockSession
+androidx.browser.customtabs.CustomTabsSession$PendingSession
+androidx.browser.customtabs.CustomTabsSession
 androidx.browser.customtabs.CustomTabsSessionToken$1
 androidx.browser.customtabs.CustomTabsSessionToken$MockCallback
 androidx.browser.customtabs.CustomTabsSessionToken
+androidx.browser.customtabs.PostMessageBackend
 androidx.browser.customtabs.PostMessageService$1
 androidx.browser.customtabs.PostMessageService
 androidx.browser.customtabs.PostMessageServiceConnection
 androidx.browser.customtabs.TrustedWebUtils
+androidx.browser.trusted.ConnectionHolder$WrapperFactory
+androidx.browser.trusted.ConnectionHolder
+androidx.browser.trusted.FutureUtils
+androidx.browser.trusted.NotificationApiHelperForM
+androidx.browser.trusted.NotificationApiHelperForO
+androidx.browser.trusted.PackageIdentityUtils$Api28Implementation
+androidx.browser.trusted.PackageIdentityUtils$Pre28Implementation
+androidx.browser.trusted.PackageIdentityUtils$SignaturesCompat
+androidx.browser.trusted.PackageIdentityUtils
+androidx.browser.trusted.ScreenOrientation$LockType
+androidx.browser.trusted.ScreenOrientation
+androidx.browser.trusted.Token
+androidx.browser.trusted.TokenContents
+androidx.browser.trusted.TokenStore
+androidx.browser.trusted.TrustedWebActivityCallback
+androidx.browser.trusted.TrustedWebActivityCallbackRemote
+androidx.browser.trusted.TrustedWebActivityDisplayMode$-CC
+androidx.browser.trusted.TrustedWebActivityDisplayMode$DefaultMode
+androidx.browser.trusted.TrustedWebActivityDisplayMode$ImmersiveMode
+androidx.browser.trusted.TrustedWebActivityDisplayMode
+androidx.browser.trusted.TrustedWebActivityIntent
+androidx.browser.trusted.TrustedWebActivityIntentBuilder
+androidx.browser.trusted.TrustedWebActivityService$1
+androidx.browser.trusted.TrustedWebActivityService
+androidx.browser.trusted.TrustedWebActivityServiceConnection$1
+androidx.browser.trusted.TrustedWebActivityServiceConnection$ActiveNotificationsArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$CancelNotificationArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$NotificationsEnabledArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$NotifyNotificationArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$ResultArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection
+androidx.browser.trusted.TrustedWebActivityServiceConnectionPool$BindToServiceAsyncTask
+androidx.browser.trusted.TrustedWebActivityServiceConnectionPool
+androidx.browser.trusted.sharing.ShareData
+androidx.browser.trusted.sharing.ShareTarget$EncodingType
+androidx.browser.trusted.sharing.ShareTarget$FileFormField
+androidx.browser.trusted.sharing.ShareTarget$Params
+androidx.browser.trusted.sharing.ShareTarget$RequestMethod
+androidx.browser.trusted.sharing.ShareTarget
+androidx.browser.trusted.splashscreens.SplashScreenParamKey
+androidx.browser.trusted.splashscreens.SplashScreenVersion
 androidx.collection.ArrayMap:
     public void <init>(androidx.collection.SimpleArrayMap)
     public boolean containsAll(java.util.Collection)
@@ -313,31 +354,25 @@ androidx.collection.SparseArrayCompat:
     public java.lang.Object replace(int,java.lang.Object)
     public boolean replace(int,java.lang.Object,java.lang.Object)
     public void setValueAt(int,java.lang.Object)
-androidx.coordinatorlayout.R$attr
-androidx.coordinatorlayout.R$color
-androidx.coordinatorlayout.R$dimen
-androidx.coordinatorlayout.R$drawable
-androidx.coordinatorlayout.R$id
-androidx.coordinatorlayout.R$integer
-androidx.coordinatorlayout.R$layout
-androidx.coordinatorlayout.R$string
-androidx.coordinatorlayout.R$style
-androidx.coordinatorlayout.R$styleable
-androidx.coordinatorlayout.R
-androidx.coordinatorlayout.widget.CoordinatorLayout$1
-androidx.coordinatorlayout.widget.CoordinatorLayout$AttachedBehavior
-androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior
-androidx.coordinatorlayout.widget.CoordinatorLayout$DefaultBehavior
-androidx.coordinatorlayout.widget.CoordinatorLayout$DispatchChangeEvent
-androidx.coordinatorlayout.widget.CoordinatorLayout$HierarchyChangeListener
-androidx.coordinatorlayout.widget.CoordinatorLayout$LayoutParams
-androidx.coordinatorlayout.widget.CoordinatorLayout$OnPreDrawListener
-androidx.coordinatorlayout.widget.CoordinatorLayout$SavedState$1
-androidx.coordinatorlayout.widget.CoordinatorLayout$SavedState
-androidx.coordinatorlayout.widget.CoordinatorLayout$ViewElevationComparator
-androidx.coordinatorlayout.widget.CoordinatorLayout
-androidx.coordinatorlayout.widget.DirectedAcyclicGraph
-androidx.coordinatorlayout.widget.ViewGroupUtils
+androidx.concurrent.futures.AbstractResolvableFuture$1
+androidx.concurrent.futures.AbstractResolvableFuture$AtomicHelper
+androidx.concurrent.futures.AbstractResolvableFuture$Cancellation
+androidx.concurrent.futures.AbstractResolvableFuture$Failure$1
+androidx.concurrent.futures.AbstractResolvableFuture$Failure
+androidx.concurrent.futures.AbstractResolvableFuture$Listener
+androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper
+androidx.concurrent.futures.AbstractResolvableFuture$SetFuture
+androidx.concurrent.futures.AbstractResolvableFuture$SynchronizedHelper
+androidx.concurrent.futures.AbstractResolvableFuture$Waiter
+androidx.concurrent.futures.AbstractResolvableFuture
+androidx.concurrent.futures.CallbackToFutureAdapter$Completer
+androidx.concurrent.futures.CallbackToFutureAdapter$FutureGarbageCollectedException
+androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
+androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture$1
+androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture
+androidx.concurrent.futures.CallbackToFutureAdapter
+androidx.concurrent.futures.DirectExecutor
+androidx.concurrent.futures.ResolvableFuture
 androidx.core.R$attr
 androidx.core.R$color
 androidx.core.R$dimen
@@ -1768,16 +1803,6 @@ androidx.core.widget.TintableCheckedTextView
 androidx.core.widget.TintableCompoundButton
 androidx.core.widget.TintableCompoundDrawablesView
 androidx.core.widget.TintableImageSourceView
-androidx.cursoradapter.R
-androidx.cursoradapter.widget.CursorAdapter$ChangeObserver
-androidx.cursoradapter.widget.CursorAdapter$MyDataSetObserver
-androidx.cursoradapter.widget.CursorAdapter
-androidx.cursoradapter.widget.CursorFilter$CursorFilterClient
-androidx.cursoradapter.widget.CursorFilter
-androidx.cursoradapter.widget.ResourceCursorAdapter
-androidx.cursoradapter.widget.SimpleCursorAdapter$CursorToStringConverter
-androidx.cursoradapter.widget.SimpleCursorAdapter$ViewBinder
-androidx.cursoradapter.widget.SimpleCursorAdapter
 androidx.customview.R$attr
 androidx.customview.R$color
 androidx.customview.R$dimen
@@ -1804,34 +1829,6 @@ androidx.customview.widget.ViewDragHelper$1
 androidx.customview.widget.ViewDragHelper$2
 androidx.customview.widget.ViewDragHelper$Callback
 androidx.customview.widget.ViewDragHelper
-androidx.documentfile.R
-androidx.documentfile.provider.DocumentFile
-androidx.documentfile.provider.DocumentsContractApi19
-androidx.documentfile.provider.RawDocumentFile
-androidx.documentfile.provider.SingleDocumentFile
-androidx.documentfile.provider.TreeDocumentFile
-androidx.drawerlayout.R$attr
-androidx.drawerlayout.R$color
-androidx.drawerlayout.R$dimen
-androidx.drawerlayout.R$drawable
-androidx.drawerlayout.R$id
-androidx.drawerlayout.R$integer
-androidx.drawerlayout.R$layout
-androidx.drawerlayout.R$string
-androidx.drawerlayout.R$style
-androidx.drawerlayout.R$styleable
-androidx.drawerlayout.R
-androidx.drawerlayout.widget.DrawerLayout$1
-androidx.drawerlayout.widget.DrawerLayout$AccessibilityDelegate
-androidx.drawerlayout.widget.DrawerLayout$ChildAccessibilityDelegate
-androidx.drawerlayout.widget.DrawerLayout$DrawerListener
-androidx.drawerlayout.widget.DrawerLayout$LayoutParams
-androidx.drawerlayout.widget.DrawerLayout$SavedState$1
-androidx.drawerlayout.widget.DrawerLayout$SavedState
-androidx.drawerlayout.widget.DrawerLayout$SimpleDrawerListener
-androidx.drawerlayout.widget.DrawerLayout$ViewDragCallback$1
-androidx.drawerlayout.widget.DrawerLayout$ViewDragCallback
-androidx.drawerlayout.widget.DrawerLayout
 androidx.fragment.R$attr
 androidx.fragment.R$color
 androidx.fragment.R$dimen
@@ -2117,35 +2114,6 @@ androidx.interpolator.view.animation.FastOutLinearInInterpolator
 androidx.interpolator.view.animation.FastOutSlowInInterpolator
 androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 androidx.interpolator.view.animation.LookupTableInterpolator
-androidx.legacy.app.ActionBarDrawerToggle$Delegate
-androidx.legacy.app.ActionBarDrawerToggle$DelegateProvider
-androidx.legacy.app.ActionBarDrawerToggle$SetIndicatorInfo
-androidx.legacy.app.ActionBarDrawerToggle$SlideDrawable
-androidx.legacy.app.ActionBarDrawerToggle
-androidx.legacy.content.WakefulBroadcastReceiver
-androidx.legacy.coreui.R$attr
-androidx.legacy.coreui.R$color
-androidx.legacy.coreui.R$dimen
-androidx.legacy.coreui.R$drawable
-androidx.legacy.coreui.R$id
-androidx.legacy.coreui.R$integer
-androidx.legacy.coreui.R$layout
-androidx.legacy.coreui.R$string
-androidx.legacy.coreui.R$style
-androidx.legacy.coreui.R$styleable
-androidx.legacy.coreui.R
-androidx.legacy.coreutils.R$attr
-androidx.legacy.coreutils.R$color
-androidx.legacy.coreutils.R$dimen
-androidx.legacy.coreutils.R$drawable
-androidx.legacy.coreutils.R$id
-androidx.legacy.coreutils.R$integer
-androidx.legacy.coreutils.R$layout
-androidx.legacy.coreutils.R$string
-androidx.legacy.coreutils.R$style
-androidx.legacy.coreutils.R$styleable
-androidx.legacy.coreutils.R
-androidx.legacy.widget.Space
 androidx.lifecycle.AndroidViewModel
 androidx.lifecycle.ClassesInfoCache:
     private static final int CALL_TYPE_NO_ARG
@@ -2305,14 +2273,6 @@ androidx.localbroadcastmanager.content.LocalBroadcastManager:
     static final int MSG_EXEC_PENDING_BROADCASTS
     private static final java.lang.String TAG
     public void sendBroadcastSync(android.content.Intent)
-androidx.print.PrintHelper$1
-androidx.print.PrintHelper$OnPrintFinishCallback
-androidx.print.PrintHelper$PrintBitmapAdapter
-androidx.print.PrintHelper$PrintUriAdapter$1$1
-androidx.print.PrintHelper$PrintUriAdapter$1
-androidx.print.PrintHelper$PrintUriAdapter
-androidx.print.PrintHelper
-androidx.print.R
 androidx.savedstate.R
 androidx.savedstate.Recreator$SavedStateProvider
 androidx.savedstate.Recreator:
@@ -2325,55 +2285,6 @@ androidx.savedstate.SavedStateRegistry:
     public void registerSavedStateProvider(java.lang.String,androidx.savedstate.SavedStateRegistry$SavedStateProvider)
     public void runOnNextRecreation(java.lang.Class)
     public void unregisterSavedStateProvider(java.lang.String)
-androidx.slidingpanelayout.R$attr
-androidx.slidingpanelayout.R$color
-androidx.slidingpanelayout.R$dimen
-androidx.slidingpanelayout.R$drawable
-androidx.slidingpanelayout.R$id
-androidx.slidingpanelayout.R$integer
-androidx.slidingpanelayout.R$layout
-androidx.slidingpanelayout.R$string
-androidx.slidingpanelayout.R$style
-androidx.slidingpanelayout.R$styleable
-androidx.slidingpanelayout.R
-androidx.slidingpanelayout.widget.SlidingPaneLayout$AccessibilityDelegate
-androidx.slidingpanelayout.widget.SlidingPaneLayout$DisableLayerRunnable
-androidx.slidingpanelayout.widget.SlidingPaneLayout$DragHelperCallback
-androidx.slidingpanelayout.widget.SlidingPaneLayout$LayoutParams
-androidx.slidingpanelayout.widget.SlidingPaneLayout$PanelSlideListener
-androidx.slidingpanelayout.widget.SlidingPaneLayout$SavedState$1
-androidx.slidingpanelayout.widget.SlidingPaneLayout$SavedState
-androidx.slidingpanelayout.widget.SlidingPaneLayout$SimplePanelSlideListener
-androidx.slidingpanelayout.widget.SlidingPaneLayout
-androidx.swiperefreshlayout.R$attr
-androidx.swiperefreshlayout.R$color
-androidx.swiperefreshlayout.R$dimen
-androidx.swiperefreshlayout.R$drawable
-androidx.swiperefreshlayout.R$id
-androidx.swiperefreshlayout.R$integer
-androidx.swiperefreshlayout.R$layout
-androidx.swiperefreshlayout.R$string
-androidx.swiperefreshlayout.R$style
-androidx.swiperefreshlayout.R$styleable
-androidx.swiperefreshlayout.R
-androidx.swiperefreshlayout.widget.CircleImageView$OvalShadow
-androidx.swiperefreshlayout.widget.CircleImageView
-androidx.swiperefreshlayout.widget.CircularProgressDrawable$1
-androidx.swiperefreshlayout.widget.CircularProgressDrawable$2
-androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
-androidx.swiperefreshlayout.widget.CircularProgressDrawable$Ring
-androidx.swiperefreshlayout.widget.CircularProgressDrawable
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$1
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$2
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$3
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$4
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$5
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$6
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$7
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$8
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnChildScrollUpCallback
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnRefreshListener
-androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 androidx.tracing.R
 androidx.tracing.Trace:
     static final java.lang.String TAG
@@ -2569,6 +2480,7 @@ com.example.tutory.R$raw
 com.example.tutory.R$string
 com.example.tutory.R$style
 com.example.tutory.R$styleable
+com.example.tutory.R$xml
 com.example.tutory.R
 com.ggichure.github.hexcolor.BuildConfig
 com.ggichure.github.hexcolor.R$attr
@@ -3779,11 +3691,11 @@ com.google.android.gms.internal.common.zzw
 com.google.android.gms.internal.common.zzx
 com.google.android.gms.internal.common.zzy
 com.google.android.gms.internal.common.zzz
-com.google.android.gms.internal.firebase-auth-api.zzaaa:
+com.google.android.gms.internal.firebase-auth-api.zzaab:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzaac:
+com.google.android.gms.internal.firebase-auth-api.zzaad:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzaaz:
+com.google.android.gms.internal.firebase-auth-api.zzaba:
     void <init>()
 com.google.android.gms.internal.firebase-auth-api.zzag:
     public synthetic bridge java.util.Iterator iterator()
@@ -3794,181 +3706,181 @@ com.google.android.gms.internal.firebase-auth-api.zzc:
     private void <init>()
 com.google.android.gms.internal.firebase-auth-api.zze:
     public void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzfu:
+com.google.android.gms.internal.firebase-auth-api.zzfv:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzfx:
+com.google.android.gms.internal.firebase-auth-api.zzfy:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzga:
+com.google.android.gms.internal.firebase-auth-api.zzgb:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgd:
+com.google.android.gms.internal.firebase-auth-api.zzge:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgg:
+com.google.android.gms.internal.firebase-auth-api.zzgh:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgj:
+com.google.android.gms.internal.firebase-auth-api.zzgk:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgm:
+com.google.android.gms.internal.firebase-auth-api.zzgn:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgp:
+com.google.android.gms.internal.firebase-auth-api.zzgq:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgs:
+com.google.android.gms.internal.firebase-auth-api.zzgt:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgv:
+com.google.android.gms.internal.firebase-auth-api.zzgw:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzgy:
+com.google.android.gms.internal.firebase-auth-api.zzgz:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhb:
+com.google.android.gms.internal.firebase-auth-api.zzhc:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhe:
+com.google.android.gms.internal.firebase-auth-api.zzhf:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhh:
+com.google.android.gms.internal.firebase-auth-api.zzhi:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhk:
+com.google.android.gms.internal.firebase-auth-api.zzhl:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhn:
+com.google.android.gms.internal.firebase-auth-api.zzho:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhq:
+com.google.android.gms.internal.firebase-auth-api.zzhr:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzht:
-    static final synthetic int[] zza
-    static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzhw:
+com.google.android.gms.internal.firebase-auth-api.zzhu:
     static final synthetic int[] zza
     static void <clinit>()
 com.google.android.gms.internal.firebase-auth-api.zzhx:
+    static final synthetic int[] zza
+    static void <clinit>()
+com.google.android.gms.internal.firebase-auth-api.zzhy:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzib:
+com.google.android.gms.internal.firebase-auth-api.zzic:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzie:
+com.google.android.gms.internal.firebase-auth-api.zzif:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzih:
+com.google.android.gms.internal.firebase-auth-api.zzii:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzik:
+com.google.android.gms.internal.firebase-auth-api.zzil:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzin:
+com.google.android.gms.internal.firebase-auth-api.zzio:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zziq:
+com.google.android.gms.internal.firebase-auth-api.zzir:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zziv:
+com.google.android.gms.internal.firebase-auth-api.zziw:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzja:
+com.google.android.gms.internal.firebase-auth-api.zzjb:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzjd:
+com.google.android.gms.internal.firebase-auth-api.zzje:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzjg:
+com.google.android.gms.internal.firebase-auth-api.zzjh:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzjl:
+com.google.android.gms.internal.firebase-auth-api.zzjm:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzjo:
+com.google.android.gms.internal.firebase-auth-api.zzjp:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzjr:
+com.google.android.gms.internal.firebase-auth-api.zzjs:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzju:
+com.google.android.gms.internal.firebase-auth-api.zzjv:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzjx:
+com.google.android.gms.internal.firebase-auth-api.zzjy:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzkc:
-    static final synthetic int[] zza
-    static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzkf:
+com.google.android.gms.internal.firebase-auth-api.zzkd:
     static final synthetic int[] zza
     static void <clinit>()
 com.google.android.gms.internal.firebase-auth-api.zzkg:
+    static final synthetic int[] zza
+    static void <clinit>()
+com.google.android.gms.internal.firebase-auth-api.zzkh:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzki:
+com.google.android.gms.internal.firebase-auth-api.zzkj:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzkn:
+com.google.android.gms.internal.firebase-auth-api.zzko:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzks:
-    static final synthetic int[] zza
-    static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzkv:
+com.google.android.gms.internal.firebase-auth-api.zzkt:
     static final synthetic int[] zza
     static void <clinit>()
 com.google.android.gms.internal.firebase-auth-api.zzkw:
-    private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzky:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzlb:
+com.google.android.gms.internal.firebase-auth-api.zzkx:
+    private void <init>()
+com.google.android.gms.internal.firebase-auth-api.zzkz:
     static final synthetic int[] zza
     static void <clinit>()
 com.google.android.gms.internal.firebase-auth-api.zzlc:
-    private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzlg:
     static final synthetic int[] zza
     static void <clinit>()
+com.google.android.gms.internal.firebase-auth-api.zzld:
+    private void <init>()
 com.google.android.gms.internal.firebase-auth-api.zzlh:
-    private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzlj:
     static final synthetic int[] zza
     static void <clinit>()
-com.google.android.gms.internal.firebase-auth-api.zzlm:
+com.google.android.gms.internal.firebase-auth-api.zzli:
+    private void <init>()
+com.google.android.gms.internal.firebase-auth-api.zzlk:
     static final synthetic int[] zza
     static void <clinit>()
 com.google.android.gms.internal.firebase-auth-api.zzln:
+    static final synthetic int[] zza
+    static void <clinit>()
+com.google.android.gms.internal.firebase-auth-api.zzlo:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzns
 com.google.android.gms.internal.firebase-auth-api.zznt
 com.google.android.gms.internal.firebase-auth-api.zznu
 com.google.android.gms.internal.firebase-auth-api.zznv
-com.google.android.gms.internal.firebase-auth-api.zzoo
+com.google.android.gms.internal.firebase-auth-api.zznw
 com.google.android.gms.internal.firebase-auth-api.zzop
-com.google.android.gms.internal.firebase-auth-api.zzpg
+com.google.android.gms.internal.firebase-auth-api.zzoq
 com.google.android.gms.internal.firebase-auth-api.zzph
-com.google.android.gms.internal.firebase-auth-api.zzqq
+com.google.android.gms.internal.firebase-auth-api.zzpi
 com.google.android.gms.internal.firebase-auth-api.zzqr
-com.google.android.gms.internal.firebase-auth-api.zzqu
+com.google.android.gms.internal.firebase-auth-api.zzqs
 com.google.android.gms.internal.firebase-auth-api.zzqv
 com.google.android.gms.internal.firebase-auth-api.zzqw
-com.google.android.gms.internal.firebase-auth-api.zzrc
-com.google.android.gms.internal.firebase-auth-api.zzrl:
-    public final void zzH(java.lang.String,java.lang.String,com.google.android.gms.internal.firebase-auth-api.zztg)
-    public final void zzn(com.google.android.gms.internal.firebase-auth-api.zzvo,java.lang.String,com.google.android.gms.internal.firebase-auth-api.zztg)
-    public final void zzo(com.google.android.gms.internal.firebase-auth-api.zzvq,com.google.android.gms.internal.firebase-auth-api.zztg)
-    public final void zzy(java.lang.String,com.google.android.gms.internal.firebase-auth-api.zztg)
-com.google.android.gms.internal.firebase-auth-api.zzrt
+com.google.android.gms.internal.firebase-auth-api.zzqx
+com.google.android.gms.internal.firebase-auth-api.zzrd
+com.google.android.gms.internal.firebase-auth-api.zzrm:
+    public final void zzH(java.lang.String,java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzth)
+    public final void zzn(com.google.android.gms.internal.firebase-auth-api.zzvp,java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzth)
+    public final void zzo(com.google.android.gms.internal.firebase-auth-api.zzvr,com.google.android.gms.internal.firebase-auth-api.zzth)
+    public final void zzy(java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzth)
 com.google.android.gms.internal.firebase-auth-api.zzru
-com.google.android.gms.internal.firebase-auth-api.zzsa
-com.google.android.gms.internal.firebase-auth-api.zzsc
-com.google.android.gms.internal.firebase-auth-api.zzse
-com.google.android.gms.internal.firebase-auth-api.zzsg
-com.google.android.gms.internal.firebase-auth-api.zzsl
-com.google.android.gms.internal.firebase-auth-api.zzsu
-com.google.android.gms.internal.firebase-auth-api.zzte:
+com.google.android.gms.internal.firebase-auth-api.zzrv
+com.google.android.gms.internal.firebase-auth-api.zzsb
+com.google.android.gms.internal.firebase-auth-api.zzsd
+com.google.android.gms.internal.firebase-auth-api.zzsf
+com.google.android.gms.internal.firebase-auth-api.zzsh
+com.google.android.gms.internal.firebase-auth-api.zzsm
+com.google.android.gms.internal.firebase-auth-api.zzsv
+com.google.android.gms.internal.firebase-auth-api.zztf:
     public final com.google.android.gms.tasks.Task zzF(com.google.firebase.FirebaseApp,com.google.firebase.auth.FirebaseUser,java.lang.String,com.google.firebase.auth.internal.zzbk)
     public final com.google.android.gms.tasks.Task zzg(com.google.firebase.FirebaseApp,com.google.firebase.auth.PhoneMultiFactorAssertion,com.google.firebase.auth.FirebaseUser,java.lang.String,com.google.firebase.auth.internal.zzg)
     public final com.google.android.gms.tasks.Task zzh(com.google.firebase.FirebaseApp,com.google.firebase.auth.FirebaseUser,com.google.firebase.auth.PhoneMultiFactorAssertion,java.lang.String,com.google.firebase.auth.internal.zzg)
@@ -3977,60 +3889,58 @@ com.google.android.gms.internal.firebase-auth-api.zzte:
     public final com.google.android.gms.tasks.Task zzo(com.google.firebase.FirebaseApp,com.google.firebase.auth.FirebaseUser,java.lang.String,java.lang.String,java.lang.String,com.google.firebase.auth.internal.zzbk)
     public final com.google.android.gms.tasks.Task zzq(com.google.firebase.FirebaseApp,com.google.firebase.auth.FirebaseUser,com.google.firebase.auth.PhoneAuthCredential,java.lang.String,com.google.firebase.auth.internal.zzbk)
     public final com.google.android.gms.tasks.Task zzw(java.lang.String)
-com.google.android.gms.internal.firebase-auth-api.zztf:
-    public abstract void zzm()
 com.google.android.gms.internal.firebase-auth-api.zztg:
-    public final void zzm()
+    public abstract void zzm()
 com.google.android.gms.internal.firebase-auth-api.zzth:
-    public final void zzB(com.google.android.gms.internal.firebase-auth-api.zzpg,com.google.android.gms.internal.firebase-auth-api.zztf)
-    public final void zzh(com.google.android.gms.internal.firebase-auth-api.zzns,com.google.android.gms.internal.firebase-auth-api.zztf)
-    public final void zzi(com.google.android.gms.internal.firebase-auth-api.zznu,com.google.android.gms.internal.firebase-auth-api.zztf)
-    public final void zzs(com.google.android.gms.internal.firebase-auth-api.zzoo,com.google.android.gms.internal.firebase-auth-api.zztf)
-com.google.android.gms.internal.firebase-auth-api.zztv:
-    public final void zzd(com.google.android.gms.internal.firebase-auth-api.zzvo,com.google.android.gms.internal.firebase-auth-api.zzum)
-    public final void zze(com.google.android.gms.internal.firebase-auth-api.zzvq,com.google.android.gms.internal.firebase-auth-api.zzum)
-    public final void zzm(java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzum)
-    public final void zzu(com.google.android.gms.internal.firebase-auth-api.zzxo,com.google.android.gms.internal.firebase-auth-api.zzum)
+    public final void zzm()
+com.google.android.gms.internal.firebase-auth-api.zzti:
+    public final void zzB(com.google.android.gms.internal.firebase-auth-api.zzph,com.google.android.gms.internal.firebase-auth-api.zztg)
+    public final void zzh(com.google.android.gms.internal.firebase-auth-api.zznt,com.google.android.gms.internal.firebase-auth-api.zztg)
+    public final void zzi(com.google.android.gms.internal.firebase-auth-api.zznv,com.google.android.gms.internal.firebase-auth-api.zztg)
+    public final void zzs(com.google.android.gms.internal.firebase-auth-api.zzop,com.google.android.gms.internal.firebase-auth-api.zztg)
 com.google.android.gms.internal.firebase-auth-api.zztw:
+    public final void zzd(com.google.android.gms.internal.firebase-auth-api.zzvp,com.google.android.gms.internal.firebase-auth-api.zzun)
+    public final void zze(com.google.android.gms.internal.firebase-auth-api.zzvr,com.google.android.gms.internal.firebase-auth-api.zzun)
+    public final void zzm(java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzun)
+    public final void zzu(com.google.android.gms.internal.firebase-auth-api.zzxp,com.google.android.gms.internal.firebase-auth-api.zzun)
+com.google.android.gms.internal.firebase-auth-api.zztx:
     public final void zzb(java.lang.String)
 com.google.android.gms.internal.firebase-auth-api.zzu:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzue:
+com.google.android.gms.internal.firebase-auth-api.zzuf:
     public final void zzm()
-com.google.android.gms.internal.firebase-auth-api.zzun:
-    public abstract void zzd(com.google.android.gms.internal.firebase-auth-api.zzvo,com.google.android.gms.internal.firebase-auth-api.zzum)
-    public abstract void zze(com.google.android.gms.internal.firebase-auth-api.zzvq,com.google.android.gms.internal.firebase-auth-api.zzum)
-    public abstract void zzm(java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzum)
-    public abstract void zzu(com.google.android.gms.internal.firebase-auth-api.zzxo,com.google.android.gms.internal.firebase-auth-api.zzum)
-com.google.android.gms.internal.firebase-auth-api.zzvo
+com.google.android.gms.internal.firebase-auth-api.zzuo:
+    public abstract void zzd(com.google.android.gms.internal.firebase-auth-api.zzvp,com.google.android.gms.internal.firebase-auth-api.zzun)
+    public abstract void zze(com.google.android.gms.internal.firebase-auth-api.zzvr,com.google.android.gms.internal.firebase-auth-api.zzun)
+    public abstract void zzm(java.lang.String,com.google.android.gms.internal.firebase-auth-api.zzun)
+    public abstract void zzu(com.google.android.gms.internal.firebase-auth-api.zzxp,com.google.android.gms.internal.firebase-auth-api.zzun)
 com.google.android.gms.internal.firebase-auth-api.zzvp
 com.google.android.gms.internal.firebase-auth-api.zzvq
 com.google.android.gms.internal.firebase-auth-api.zzvr
-com.google.android.gms.internal.firebase-auth-api.zzwg:
-    public static long zza(java.lang.String)
+com.google.android.gms.internal.firebase-auth-api.zzvs
 com.google.android.gms.internal.firebase-auth-api.zzwh:
+    public static long zza(java.lang.String)
+com.google.android.gms.internal.firebase-auth-api.zzwi:
     public final java.lang.Long zzb()
     public final java.lang.Long zzc()
-com.google.android.gms.internal.firebase-auth-api.zzxe:
-    public final com.google.android.gms.internal.firebase-auth-api.zzxe zze(boolean)
-com.google.android.gms.internal.firebase-auth-api.zzxo
 com.google.android.gms.internal.firebase-auth-api.zzxp
-com.google.android.gms.internal.firebase-auth-api.zzxr:
+com.google.android.gms.internal.firebase-auth-api.zzxq
+com.google.android.gms.internal.firebase-auth-api.zzxs:
     public synthetic bridge java.lang.Object clone()
-    public abstract com.google.android.gms.internal.firebase-auth-api.zzxr zzf()
-com.google.android.gms.internal.firebase-auth-api.zzxt:
+    public abstract com.google.android.gms.internal.firebase-auth-api.zzxs zzf()
+com.google.android.gms.internal.firebase-auth-api.zzxu:
     public void add(int,java.lang.Object)
     public java.lang.Object set(int,java.lang.Object)
-com.google.android.gms.internal.firebase-auth-api.zzxv:
+com.google.android.gms.internal.firebase-auth-api.zzxw:
     void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzyh:
+com.google.android.gms.internal.firebase-auth-api.zzyi:
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzyq:
+com.google.android.gms.internal.firebase-auth-api.zzyr:
     void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzzh:
-    public final synthetic bridge com.google.android.gms.internal.firebase-auth-api.zzxr zzf()
-com.google.android.gms.internal.firebase-auth-api.zzzk
-com.google.android.gms.internal.firebase-auth-api.zzzv:
+com.google.android.gms.internal.firebase-auth-api.zzzi:
+    public final synthetic bridge com.google.android.gms.internal.firebase-auth-api.zzxs zzf()
+com.google.android.gms.internal.firebase-auth-api.zzzl
+com.google.android.gms.internal.firebase-auth-api.zzzw:
     public final boolean equals(java.lang.Object)
     public final int hashCode()
     public final java.lang.String toString()
@@ -7534,15 +7444,12 @@ com.google.firebase.auth.FacebookAuthProvider:
     public static final java.lang.String PROVIDER_ID
     private void <init>()
 com.google.firebase.auth.FederatedAuthProvider:
-    public void <init>()
     public abstract void zza(android.app.Activity)
     public abstract void zzb(android.app.Activity)
-    public abstract void zzc(android.app.Activity)
 com.google.firebase.auth.FirebaseAuth:
     public com.google.android.gms.tasks.Task getPendingAuthResult()
     public boolean isSignInWithEmailLink(java.lang.String)
     public com.google.android.gms.tasks.Task setFirebaseUIVersion(java.lang.String)
-    public com.google.android.gms.tasks.Task startActivityForSignInWithProvider(android.app.Activity,com.google.firebase.auth.FederatedAuthProvider)
     public com.google.android.gms.tasks.Task updateCurrentUser(com.google.firebase.auth.FirebaseUser)
     public final com.google.android.gms.tasks.Task zzb(com.google.firebase.auth.FirebaseUser,com.google.firebase.auth.MultiFactorAssertion,java.lang.String)
     public final com.google.android.gms.tasks.Task zze(com.google.firebase.auth.FirebaseUser,com.google.firebase.auth.AuthCredential)
@@ -7587,20 +7494,19 @@ com.google.firebase.auth.OAuthCredential:
     public abstract java.lang.String getAccessToken()
     public abstract java.lang.String getIdToken()
     public abstract java.lang.String getSecret()
-com.google.firebase.auth.OAuthProvider$Builder
+com.google.firebase.auth.OAuthProvider$Builder:
+    public com.google.firebase.auth.OAuthProvider$Builder addCustomParameter(java.lang.String,java.lang.String)
+    public com.google.firebase.auth.OAuthProvider$Builder addCustomParameters(java.util.Map)
+    public java.util.List getScopes()
+    public com.google.firebase.auth.OAuthProvider$Builder setScopes(java.util.List)
 com.google.firebase.auth.OAuthProvider$CredentialBuilder:
     public java.lang.String getAccessToken()
     public java.lang.String getIdToken()
 com.google.firebase.auth.OAuthProvider:
-    private final android.os.Bundle zza
-    synthetic void <init>(android.os.Bundle,com.google.firebase.auth.zzad)
     public static com.google.firebase.auth.AuthCredential getCredential(java.lang.String,java.lang.String,java.lang.String)
     public java.lang.String getProviderId()
-    public static com.google.firebase.auth.OAuthProvider$Builder newBuilder(java.lang.String)
-    public static com.google.firebase.auth.OAuthProvider$Builder newBuilder(java.lang.String,com.google.firebase.auth.FirebaseAuth)
     public final void zza(android.app.Activity)
     public final void zzb(android.app.Activity)
-    public final void zzc(android.app.Activity)
 com.google.firebase.auth.PhoneAuthOptions$Builder:
     public com.google.firebase.auth.PhoneAuthOptions$Builder requireSmsValidation(boolean)
     public com.google.firebase.auth.PhoneAuthOptions$Builder setMultiFactorHint(com.google.firebase.auth.PhoneMultiFactorInfo)
@@ -7646,25 +7552,11 @@ com.google.firebase.auth.internal.zzae:
     static synthetic bridge com.google.firebase.auth.zze zza(com.google.firebase.auth.internal.zzae)
 com.google.firebase.auth.internal.zzag:
     public static com.google.firebase.auth.internal.zzag zza(java.lang.String)
-com.google.firebase.auth.internal.zzap
-com.google.firebase.auth.internal.zzaq
-com.google.firebase.auth.internal.zzar
-com.google.firebase.auth.internal.zzas
-com.google.firebase.auth.internal.zzat
-com.google.firebase.auth.internal.zzau
-com.google.firebase.auth.internal.zzav
-com.google.firebase.auth.internal.zzax:
-    static synthetic bridge void zzb(com.google.firebase.auth.internal.zzax,android.content.Intent,com.google.android.gms.tasks.TaskCompletionSource,com.google.firebase.auth.FirebaseUser,android.content.Context)
-    static synthetic bridge void zzc(com.google.firebase.auth.internal.zzax,android.content.Intent,com.google.android.gms.tasks.TaskCompletionSource,com.google.firebase.auth.FirebaseUser,android.content.Context)
-    static synthetic bridge void zzd(com.google.firebase.auth.internal.zzax,android.content.Intent,com.google.android.gms.tasks.TaskCompletionSource,com.google.firebase.auth.FirebaseAuth,android.content.Context)
-    public final boolean zzf(android.app.Activity,com.google.android.gms.tasks.TaskCompletionSource,com.google.firebase.auth.FirebaseAuth,com.google.firebase.auth.FirebaseUser)
-    private static final com.google.firebase.auth.AuthCredential zzi(android.content.Intent)
 com.google.firebase.auth.internal.zzbd:
     public final com.google.android.gms.tasks.Task zza()
 com.google.firebase.auth.internal.zzbm:
     public final com.google.android.gms.tasks.Task zza()
     public final void zzh(android.content.Context,com.google.firebase.auth.FirebaseAuth,com.google.firebase.auth.FirebaseUser)
-    public final boolean zzi(android.app.Activity,com.google.android.gms.tasks.TaskCompletionSource,com.google.firebase.auth.FirebaseAuth)
     public final boolean zzj(android.app.Activity,com.google.android.gms.tasks.TaskCompletionSource,com.google.firebase.auth.FirebaseAuth,com.google.firebase.auth.FirebaseUser)
 com.google.firebase.auth.internal.zzn:
     public final com.google.firebase.auth.MultiFactorInfo getMultiFactorInfo()
@@ -7672,8 +7564,6 @@ com.google.firebase.auth.internal.zzo:
     public final java.lang.String getData(int)
 com.google.firebase.auth.internal.zzx:
     public static com.google.firebase.auth.FirebaseUser zzk(com.google.firebase.FirebaseApp,com.google.firebase.auth.FirebaseUser)
-com.google.firebase.auth.zzab
-com.google.firebase.auth.zzad
 com.google.firebase.auth.zze:
     public final java.lang.String getAccessToken()
     public final java.lang.String getIdToken()
@@ -14055,24 +13945,32 @@ io.flutter.plugins.firebase.auth.R$raw
 io.flutter.plugins.firebase.auth.R$string
 io.flutter.plugins.firebase.auth.R$style
 io.flutter.plugins.firebase.auth.R$styleable
+io.flutter.plugins.firebase.auth.R$xml
 io.flutter.plugins.firebase.auth.R
 io.flutter.plugins.firebase.core.BuildConfig
-io.flutter.plugins.firebase.core.FlutterFirebaseCorePlugin:
-    private static final java.lang.String CHANNEL_NAME
-    private static final java.lang.String KEY_API_KEY
-    private static final java.lang.String KEY_APP_ID
-    private static final java.lang.String KEY_APP_NAME
-    private static final java.lang.String KEY_DATABASE_URL
-    private static final java.lang.String KEY_ENABLED
-    private static final java.lang.String KEY_IS_AUTOMATIC_DATA_COLLECTION_ENABLED
-    private static final java.lang.String KEY_MESSAGING_SENDER_ID
-    private static final java.lang.String KEY_NAME
-    private static final java.lang.String KEY_OPTIONS
-    private static final java.lang.String KEY_PLUGIN_CONSTANTS
-    private static final java.lang.String KEY_PROJECT_ID
-    private static final java.lang.String KEY_STORAGE_BUCKET
-    private static final java.lang.String KEY_TRACKING_ID
-    private void <init>(android.content.Context)
+io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder:
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setAndroidClientId(java.lang.String)
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setAppGroupId(java.lang.String)
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setAuthDomain(java.lang.String)
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setDeepLinkURLScheme(java.lang.String)
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setIosBundleId(java.lang.String)
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setIosClientId(java.lang.String)
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions$Builder setMeasurementId(java.lang.String)
+io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions:
+    public java.lang.String getAndroidClientId()
+    public java.lang.String getAppGroupId()
+    public java.lang.String getAuthDomain()
+    public java.lang.String getDeepLinkURLScheme()
+    public java.lang.String getIosBundleId()
+    public java.lang.String getIosClientId()
+    public java.lang.String getMeasurementId()
+io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonInitializeResponse:
+    public java.lang.Boolean getIsAutomaticDataCollectionEnabled()
+    public java.lang.String getName()
+    public io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore$PigeonFirebaseOptions getOptions()
+    public java.util.Map getPluginConstants()
+io.flutter.plugins.firebase.core.GeneratedAndroidFirebaseCore:
+    public void <init>()
 io.flutter.plugins.firebase.core.R$attr
 io.flutter.plugins.firebase.core.R$color
 io.flutter.plugins.firebase.core.R$dimen
@@ -22358,9 +22256,6 @@ org.jetbrains.annotations.PropertyKey
 org.jetbrains.annotations.TestOnly
 androidx.arch.core.internal.SafeIterableMap:
     public java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)
-androidx.browser.customtabs.CustomTabsSession:
-    android.os.IBinder getBinder()
-    android.content.ComponentName getComponentName()
 androidx.core.app.NotificationCompat$BubbleMetadata$Api29Impl
 androidx.core.app.NotificationCompat$BubbleMetadata$Api30Impl
 androidx.core.app.NotificationCompat$BubbleMetadata:
@@ -22454,17 +22349,17 @@ com.google.android.gms.common.util.AndroidUtilsLight:
 com.google.android.gms.internal.auth-api-phone.zza:
     private static com.google.android.gms.internal.auth-api-phone.zzc zza
 com.google.android.gms.internal.auth-api-phone.zzc
-com.google.android.gms.internal.firebase-auth-api.zztr:
+com.google.android.gms.internal.firebase-auth-api.zzts:
     private static final java.lang.String zza
     private void <init>()
-com.google.android.gms.internal.firebase-auth-api.zzvm:
+com.google.android.gms.internal.firebase-auth-api.zzvn:
     private static final java.lang.String zza
-com.google.android.gms.internal.firebase-auth-api.zzwc:
+com.google.android.gms.internal.firebase-auth-api.zzwd:
     private static final java.lang.String zza
-com.google.android.gms.internal.firebase-auth-api.zzyy:
+com.google.android.gms.internal.firebase-auth-api.zzyz:
     private static volatile boolean zzb
-com.google.android.gms.internal.firebase-auth-api.zzzn
-com.google.android.gms.internal.firebase-auth-api.zzzv
+com.google.android.gms.internal.firebase-auth-api.zzzo
+com.google.android.gms.internal.firebase-auth-api.zzzw
 com.google.android.gms.internal.safetynet.zzb:
     private static com.google.android.gms.internal.safetynet.zzd zzc
 com.google.android.gms.internal.safetynet.zzd

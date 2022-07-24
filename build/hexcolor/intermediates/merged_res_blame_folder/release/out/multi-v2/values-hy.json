@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\flutter_projects\\tutory\\build\\hexcolor\\intermediates\\merged_res\\release\\values-hy\\values-hy.xml",
+            "outputFile": "C:\\Users\\Dell\\Desktop\\Tutory\\build\\hexcolor\\intermediates\\merged_res\\release\\values-hy\\values-hy.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-hy\\values-hy.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-hy\\values-hy.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "D:\\flutter_projects\\tutory\\build\\hexcolor\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-hy\\values-hy.xml",
+            "outputFile": "C:\\Users\\Dell\\Desktop\\Tutory\\build\\hexcolor\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-hy\\values-hy.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-hy\\values-hy.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-hy\\values-hy.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

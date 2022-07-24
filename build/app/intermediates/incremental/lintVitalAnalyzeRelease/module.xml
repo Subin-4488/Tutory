@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="D:\flutter_projects\tutory\android\app"
+    dir="C:\Users\Dell\Desktop\Tutory\android\app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.1.2"
-    buildFolder="D:\flutter_projects\tutory\build\app"
-    bootClassPath="D:\Softwares\Android\sdk\platforms\android-31\android.jar;D:\Softwares\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
+    buildFolder="C:\Users\Dell\Desktop\Tutory\build\app"
+    bootClassPath="C:\Users\Dell\AppData\Local\Android\sdk\platforms\android-31\android.jar;C:\Users\Dell\AppData\Local\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-31">
   <lintOptions

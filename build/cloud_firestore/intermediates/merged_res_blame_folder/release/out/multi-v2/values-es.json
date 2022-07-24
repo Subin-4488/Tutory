@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\flutter_projects\\tutory\\build\\cloud_firestore\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es\\values-es.xml",
+            "outputFile": "C:\\Users\\Dell\\Desktop\\Tutory\\build\\cloud_firestore\\intermediates\\merged_res\\release\\values-es\\values-es.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-es\\values-es.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\fc0b42180d6cfa4088f876f2de646fba\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\fc0b42180d6cfa4088f876f2de646fba\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -57,10 +57,10 @@
             ]
         },
         {
-            "outputFile": "D:\\flutter_projects\\tutory\\build\\cloud_firestore\\intermediates\\merged_res\\release\\values-es\\values-es.xml",
+            "outputFile": "C:\\Users\\Dell\\Desktop\\Tutory\\build\\cloud_firestore\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es\\values-es.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -77,7 +77,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-es\\values-es.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-es\\values-es.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -94,7 +94,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\fc0b42180d6cfa4088f876f2de646fba\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-es\\values.xml",
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\fc0b42180d6cfa4088f876f2de646fba\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-es\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
