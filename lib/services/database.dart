@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:http/http.dart';
 import 'package:tutory/models/leaders.dart';
 import 'package:tutory/models/materialmodel.dart';
 import 'package:tutory/models/question.dart';
+import 'package:tutory/screens/home/user/Models/question.dart' as apiQuestion;
 
 class Database {
   final String uid;
@@ -182,13 +186,94 @@ class Database {
         'gdrive': material.grive,
       });
     } else {
-      await _materials
-          .doc(material.topic)
-          .set({
+      await _materials.doc(material.topic).set({
         'subtopic': material.subtopic,
         'content': material.content,
         'gdrive': material.grive,
       });
     }
+  }
+
+  //ONLINE CONNECTION
+
+  final _queueTable = FirebaseFirestore.instance.collection('Queue');
+
+  Future addUserToQueue(String uid) async {
+    await _queueTable.doc(uid).set({'uid': uid});
+  }
+
+  Future<int> checkQueue() async {
+    QuerySnapshot<Map<String, dynamic>> size = await _queueTable.get();
+    return size.docs.length;
+  }
+
+  Future popFromQueue(String uid) async {
+    _queueTable.doc(uid).delete();
+  }
+
+  Future<String> getDeleteIdFromQueue() async {
+    Future<String> uid =
+        _queueTable.orderBy("uid").limit(1).get().then((snapshot) {
+      return snapshot.docs.first.id;
+    });
+    return uid;
+  }
+
+  final _gameTable = FirebaseFirestore.instance.collection("Game");
+
+  Stream<QuerySnapshot>? checkGameExistence(String uid) {
+    return _gameTable.snapshots();
+  }
+
+  Future createGame(
+      String uid1, String uid2, List<apiQuestion.Question> question) async {
+    await _gameTable.doc(uid1).set({
+      'uid1': uid1,
+      'uid2': uid2,
+    });
+    for (int i = 0; i < question.length; i++) {
+      await _gameTable.doc(uid1).collection('questions').doc(i.toString()).set({
+        'question': question[i].question,
+        'option1': question[i].incorrectAnswers[0],
+        'option2': question[i].incorrectAnswers[1],
+        'option3': question[i].incorrectAnswers[2],
+        'option4': question[i].incorrectAnswers[3],
+        'answer': question[i].correctAnswer
+      });
+      await _gameTable
+          .doc(uid1)
+          .collection('result1')
+          .doc(i.toString())
+          .set({'respose': '', 'answer': question[i].correctAnswer});
+      await _gameTable
+          .doc(uid1)
+          .collection('result2')
+          .doc(i.toString())
+          .set({'respose': '', 'answer': question[i].correctAnswer});
+    }
+  }
+
+  Future<List<apiQuestion.Question>> getOnlineQuizQuestion(String uid) async {
+    List<apiQuestion.Question> questions = [];
+    QuerySnapshot snapshot =
+        await _gameTable.doc(uid).collection('questions').get();
+    List<dynamic> options = List.filled(4, 0);
+    for (var i in snapshot.docs.toList()) {
+      List<dynamic> options = List.filled(4, 0);
+      options[0] = i.get('option1');
+      options[1] = i.get('option2');
+      options[2] = i.get('option3');
+      options[3] = i.get('option4');
+      questions.add(
+        apiQuestion.Question(
+            categoryName: '',
+            correctAnswer: i.get('answer'),
+            difficulty: apiQuestion.Difficulty.easy,
+            incorrectAnswers: options,
+            type: apiQuestion.Type.multiple,
+            question: i.get('question')),
+      );
+    }
+    return questions;
   }
 }

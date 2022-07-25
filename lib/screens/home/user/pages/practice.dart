@@ -1,8 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tutory/models/usermodel.dart';
 import 'package:tutory/screens/home/user/pages/prevpractise/topic.dart';
+import 'package:tutory/services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:tutory/services/database.dart';
+import 'package:tutory/shared/loading.dart';
 
 class Practice extends StatefulWidget {
   const Practice({Key? key}) : super(key: key);
@@ -13,6 +19,7 @@ class Practice extends StatefulWidget {
 
 class _PracticeState extends State<Practice> {
   int i = 0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

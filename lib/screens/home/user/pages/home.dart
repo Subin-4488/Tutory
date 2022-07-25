@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Color.fromARGB(255, 40, 38, 38),
         child: Padding(
           padding: const EdgeInsets.only(top:150),
-          child: Column(
+          child: Column( 
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -50,8 +50,8 @@ class _HomeState extends State<Home> {
                     child:ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 40, 38, 38),),
                       elevation: MaterialStateProperty.all(0)),
-                      onPressed: () {changeTab(0);},
-                      child: TextButton.icon(onPressed: (){changeTab(0);}, icon: FaIcon(FontAwesomeIcons.house,color: Colors.white,size: 16,), label: Padding(
+                      onPressed: () {Navigator.of(context).pop();changeTab(0);},
+                      child: TextButton.icon(onPressed: (){Navigator.of(context).pop();changeTab(0);}, icon: FaIcon(FontAwesomeIcons.house,color: Colors.white,size: 16,), label: Padding(
                         padding: const EdgeInsets.only(left:20),
                         child: Text("Home",style: TextStyle(fontSize: 15,color: Colors.white,),),
                       )),
@@ -66,8 +66,8 @@ class _HomeState extends State<Home> {
                     child:ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 40, 38, 38),),
                       elevation: MaterialStateProperty.all(0)),
-                      onPressed: () {changeTab(1);},
-                      child: TextButton.icon(onPressed: (){changeTab(1);}, icon: FaIcon(FontAwesomeIcons.book,color: Colors.white,size: 16,), label: Padding(
+                      onPressed: () {Navigator.of(context).pop();changeTab(1);},
+                      child: TextButton.icon(onPressed: (){Navigator.of(context).pop();changeTab(1);}, icon: FaIcon(FontAwesomeIcons.book,color: Colors.white,size: 16,), label: Padding(
                         padding: const EdgeInsets.only(left:20),
                         child: Text("Materials",style: TextStyle(fontSize: 15,color: Colors.white,),),
                       )),
@@ -82,8 +82,8 @@ class _HomeState extends State<Home> {
                     child:ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 40, 38, 38),),
                       elevation: MaterialStateProperty.all(0)),
-                      onPressed: () {changeTab(2);},
-                      child: TextButton.icon(onPressed: (){changeTab(2);}, icon: Icon(Icons.track_changes,color: Colors.white,size: 16,), label: Padding(
+                      onPressed: () {Navigator.of(context).pop();changeTab(2);},
+                      child: TextButton.icon(onPressed: (){Navigator.of(context).pop();changeTab(2);}, icon: Icon(Icons.track_changes,color: Colors.white,size: 16,), label: Padding(
                         padding: const EdgeInsets.only(left:20),
                         child: Text("Practice",style: TextStyle(fontSize: 15,color: Colors.white,),),
                       )),
@@ -98,8 +98,8 @@ class _HomeState extends State<Home> {
                     child:ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 40, 38, 38),),
                       elevation: MaterialStateProperty.all(0)),
-                      onPressed: () {changeTab(3);},
-                      child: TextButton.icon(onPressed: (){changeTab(3);}, icon: FaIcon(FontAwesomeIcons.globe,color: Colors.white,size: 16,), label: Padding(
+                      onPressed: () {Navigator.of(context).pop();changeTab(3);},
+                      child: TextButton.icon(onPressed: (){Navigator.of(context).pop();changeTab(3);}, icon: FaIcon(FontAwesomeIcons.globe,color: Colors.white,size: 16,), label: Padding(
                         padding: const EdgeInsets.only(left:20),
                         child: Text("Compete",style: TextStyle(fontSize: 15,color: Colors.white,),),
                       )),
@@ -114,8 +114,8 @@ class _HomeState extends State<Home> {
                     child:ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 40, 38, 38),),
                       elevation: MaterialStateProperty.all(0)),
-                      onPressed: () {changeTab(4);},
-                      child: TextButton.icon(onPressed: (){changeTab(4);}, icon: FaIcon(FontAwesomeIcons.person,color: Colors.white,size: 16,), label: Padding(
+                      onPressed: () {Navigator.of(context).pop();changeTab(4);},
+                      child: TextButton.icon(onPressed: (){Navigator.of(context).pop();changeTab(4);}, icon: FaIcon(FontAwesomeIcons.person,color: Colors.white,size: 16,), label: Padding(
                         padding: const EdgeInsets.only(left:20),
                         child: Text("Profile",style: TextStyle(fontSize: 15,color: Colors.white,),),
                       )),

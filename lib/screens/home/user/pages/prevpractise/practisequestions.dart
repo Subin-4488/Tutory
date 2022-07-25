@@ -20,11 +20,18 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
   List<Question> questions = [];
   String selected = 'None';
   int i = 0;
+  int score = 0;
+  String btnTxt = 'Next';
+  String choosen = '';
+  List<String> ansChoosed = List.filled(1, '');
+  int netScore = 0;
 
   void prepare() async {
     // TODO: implement initState
     questions =
         await Database(uid: '').getPrevQuestions(widget.topic, widget.year);
+    netScore = questions.length*5;
+    ansChoosed = List.filled(questions.length, '');
     setState(() {
       loading = !loading;
     });
@@ -40,10 +47,15 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return loading
-        ? LoadingShared()
+        ? const LoadingShared()
+        :questions.isEmpty? 
+        Scaffold(body: Container(alignment: Alignment.center,
+        child: const Text('No data found!!',style: TextStyle(
+          fontSize: 18
+        ),)),)
         : Scaffold(
             body: Container(
-            padding: EdgeInsets.all(18),
+            padding: const EdgeInsets.all(18),
             child: Column(
               children: [
                 SizedBox(
@@ -61,11 +73,12 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
                   style: TextStyleShared.questionstyle,
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Row(
                     children: [
                       TextButton(
                           onPressed: () {
+                            choosen = 'A';
                             setState(() {
                               selected = questions[i].option1;
                             });
@@ -74,9 +87,10 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
                             'A) ${questions[i].option1}',
                             style: TextStyleShared.optionStyle,
                           )),
-                      Expanded(child: SizedBox()),
+                      const Expanded(child: SizedBox()),
                       TextButton(
                           onPressed: () {
+                            choosen = 'B';
                             setState(() {
                               selected = questions[i].option2;
                             });
@@ -89,11 +103,12 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Row(
                     children: [
                       TextButton(
                           onPressed: () {
+                            choosen = 'C';
                             setState(() {
                               selected = questions[i].option3;
                             });
@@ -102,9 +117,10 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
                             'C) ${questions[i].option3}',
                             style: TextStyleShared.optionStyle,
                           )),
-                      Expanded(child: SizedBox()),
+                      const Expanded(child: const SizedBox()),
                       TextButton(
                           onPressed: () {
+                            choosen = 'D';
                             setState(() {
                               selected = questions[i].option4;
                             });
@@ -127,28 +143,136 @@ class _PractiseQuestionsState extends State<PractiseQuestions> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
+                        if (score > 0) {
+                          score -= 5;
+                        }
+
                         if (i > 0) {
                           setState(() {
                             i--;
+                            selected = '';
+                            btnTxt = 'Next';
                           });
                         }
+                        print(score);
+                        choosen = '';
                       },
-                      child: Text('Previous'),
                       style: ElevatedButton.styleFrom(primary: Colors.black),
+                      child: const Text('Previous'),
                     ),
-                    Expanded(child: SizedBox()),
+                    const Expanded(child: SizedBox()),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: Colors.green),
                       onPressed: () {
-                        if (i < questions.length) {
-                          print(questions.length);
-                          print(i);
+                        //ansChoosed.add(choosen.toString());
+                        ansChoosed[i] = choosen;
+                        if (i < questions.length - 1) {
+                          if (choosen == questions[i].ans) {
+                            score += 5;
+                          }
                           setState(() {
                             i++;
+                            selected = '';
+                          });
+                          //print(score);
+
+                        }
+                        if (i == questions.length - 1) {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return Dialog(
+                                    child: Container(
+                                  width: double.infinity,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'TOTAL SCORE: $score/${netScore.toString()}',
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16,
+                                                  color: Colors.green),
+                                            ),
+                                          ],
+                                        ),
+                                        Expanded(
+                                          child: ListView.separated(
+                                            itemCount: questions.length,
+                                            itemBuilder: (context, index) {
+                                              return ListTile(
+                                                title: Text(
+                                                    questions[index].question),
+                                                subtitle: Column(
+                                                  children: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text('A)${questions[index]
+                                                            .option1}'),
+                                                        Text('B)${questions[index]
+                                                            .option2}')
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text('C)${questions[index]
+                                                            .option3}'),
+                                                        Text('D)${questions[index]
+                                                            .option4}')
+                                                      ],
+                                                    ),
+                                                    Center(
+                                                        child: Text(
+                                                            'Correct Answer: ${questions[index].ans}')),
+                                                    Center(
+                                                        child: Text(
+                                                            'Marked Answer: ${ansChoosed[index]}',
+                                                            style: TextStyle(
+                                                              color:questions[index].ans==ansChoosed[index]?
+                                                              Colors.green:Colors.red
+                                                            ),)),
+                                                    
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                            separatorBuilder:
+                                                (BuildContext context,
+                                                    int index) {
+                                              return const Divider(
+                                                color: Colors.black,
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ));
+                              });
+                          Navigator.pop(context);
+                          setState(() {
+                            btnTxt = 'Submit';
+                          });
+                        } else {
+                          setState(() {
+                            btnTxt = 'Next';
                           });
                         }
+                        print(score);
                       },
-                      child: Text('Next'),
-                      style: ElevatedButton.styleFrom(primary: Colors.green),
+                      child: Text(btnTxt),
                     )
                   ],
                 )
