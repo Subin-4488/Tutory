@@ -18,10 +18,11 @@ class _OnlineQuizState extends State<OnlineQuiz> {
   bool loading = false;
   var count = 0;
   String uid = '';
+  String udelete = '';
   bool exist = false;
   bool userTwo = false;
   List<Question> finalQues = [];
-  List<String> ansChoosed = List.filled(1, '');
+  List<String> ansChoosed = List.filled(11, '');
   String selected = 'None';
   int i = 0;
   int score = 0;
@@ -30,7 +31,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
   int netScore = 0;
 
   Future makeAction() async {
-    String udelete = await Database(uid: '').getDeleteIdFromQueue();
+    udelete = await Database(uid: '').getDeleteIdFromQueue();
     await Database(uid: '').popFromQueue(udelete);
     var ques = [];
     List<Question> questions = await Api().startQuiz();
@@ -87,7 +88,6 @@ class _OnlineQuizState extends State<OnlineQuiz> {
               }
               if (exist) {
                 getQues(uid);
-                print(finalQues.length);
                 if (finalQues != null && finalQues.length == 11) {
                   return buildCompetitionGui(context, 1);
                 } else
@@ -109,8 +109,9 @@ class _OnlineQuizState extends State<OnlineQuiz> {
     }
   }
 
+  String uidTemp = '';
   Widget buildCompetitionGui(BuildContext context, int flag) {
-    print('USER 1 ${flag}');
+    flag == 1 ? uidTemp = uid : uidTemp = udelete;
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -200,6 +201,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
               children: [
                 ElevatedButton(
                   onPressed: () {
+                    print('CHOOSED ANS: ${choosen}');
                     if (score > 0) {
                       score -= 5;
                     }
@@ -219,7 +221,8 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                 const Expanded(child: SizedBox()),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.green),
-                  onPressed: () {
+                  onPressed: () async {
+                    print('CHOOSED ANS: ${choosen}');
                     ansChoosed[i] = choosen;
                     if (i < finalQues.length - 1) {
                       if (choosen == finalQues[i].correctAnswer) {
@@ -230,7 +233,11 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                         selected = '';
                       });
                     }
-                    if (i == finalQues.length - 1) {
+                    if (i == finalQues.length) {
+                      for (int i = 0; i < 11; i++) {
+                        await Database(uid: '')
+                            .updateResponses(uidTemp, i, flag, ansChoosed[i]);
+                      }
                       showDialog(
                           context: context,
                           builder: (context) {

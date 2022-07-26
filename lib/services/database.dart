@@ -249,7 +249,7 @@ class Database {
           .doc(uid1)
           .collection('result2')
           .doc(i.toString())
-          .set({'respose': '', 'answer': question[i].correctAnswer});
+          .set({'response': '', 'answer': question[i].correctAnswer});
     }
   }
 
@@ -258,24 +258,38 @@ class Database {
     QuerySnapshot? snapshot =
         await _gameTable.doc(uid).collection('questions').get();
     List<dynamic> options = List.filled(4, 0);
-    if (snapshot!=null){
+    if (snapshot != null) {
       for (var i in snapshot.docs.toList()) {
-      List<dynamic> options = List.filled(4, 0);
-      options[0] = i.get('option1');
-      options[1] = i.get('option2');
-      options[2] = i.get('option3');
-      options[3] = i.get('option4');
-      questions.add(
-        apiQuestion.Question(
-            categoryName: '',
-            correctAnswer: i.get('answer'),
-            difficulty: apiQuestion.Difficulty.easy,
-            incorrectAnswers: options,
-            type: apiQuestion.Type.multiple,
-            question: i.get('question')),
-      );
-    }
+        List<dynamic> options = List.filled(4, 0);
+        options[0] = i.get('option1');
+        options[1] = i.get('option2');
+        options[2] = i.get('option3');
+        options[3] = i.get('option4');
+        questions.add(
+          apiQuestion.Question(
+              categoryName: '',
+              correctAnswer: i.get('answer'),
+              difficulty: apiQuestion.Difficulty.easy,
+              incorrectAnswers: options,
+              type: apiQuestion.Type.multiple,
+              question: i.get('question')),
+        );
+      }
     }
     return questions;
+  }
+
+  Future updateResponses(String uid, int idx, int user, String response) async {
+    if (user == 1) {
+      _gameTable.doc(uid).collection("result1").doc(idx.toString()).set({
+        'response': response
+      });
+    } else {
+      if (user == 2) {
+        _gameTable.doc(uid).collection("result2").doc(idx.toString()).set({
+        'response': response
+      });
+      }
+    }
   }
 }
