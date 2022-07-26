@@ -64,8 +64,8 @@ class _OnlineQuizState extends State<OnlineQuiz> {
   @override
   void initState() {
     // TODO: implement initState
-    
     initialize();
+    
     super.initState();
   }
 
