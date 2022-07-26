@@ -36,37 +36,35 @@ class _OnlineQuizState extends State<OnlineQuiz> {
     List<Question> questions = await Api().startQuiz();
     await Database(uid: '')
         .createGame(udelete, FirebaseAuth.instance.currentUser!.uid, questions);
-    finalQues = questions;
+    finalQues = List.from(questions);
   }
 
   void initialize() async {
-    setState(() {
-      loading = true;
-    });
-    uid = FirebaseAuth.instance.currentUser!.uid;
-    count = await Database(uid: '').checkQueue();
-    if (count == 0) {
-      Database(uid: '').addUserToQueue(uid);
-    } else {
-      userTwo = true;
-    }
-
-    if (userTwo) {
-      await makeAction();
       setState(() {
-        userTwo = true;
+        loading = true;
       });
-    }
-    setState(() {
-      loading = false;
-    });
+      uid = FirebaseAuth.instance.currentUser!.uid;
+      count = await Database(uid: '').checkQueue();
+      if (count == 0) {
+        Database(uid: '').addUserToQueue(uid);
+      } else {
+        userTwo = true;
+      }
+
+      if (userTwo) {
+        await makeAction();
+        setState(() {
+          userTwo = true;
+          loading = false;
+        });
+      }
   }
 
   @override
   void initState() {
     // TODO: implement initState
-    initialize();
     super.initState();
+       initialize();
   }
 
   @override

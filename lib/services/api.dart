@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:math';
-
 import 'package:html_character_entities/html_character_entities.dart';
 import 'package:http/http.dart';
 import 'package:tutory/screens/home/user/Models/question.dart';
@@ -9,7 +8,7 @@ class Api {
   List<Question> questions = [];
   Api() {}
   Future<List<Question>> getQuestions() async {
-    String url = "https://opentdb.com/api.php?amount=11&type=multiple";
+    String url = "https://opentdb.com/api.php?amount=10&category=18&type=multiple";
 
     Response response = await (get(Uri.parse(url)));
     List<Map<String, dynamic>> question =
