@@ -73,38 +73,33 @@ class _OnlineQuizState extends State<OnlineQuiz> {
 
   @override
   Widget build(BuildContext context) {
-    if (!loading && !userTwo) {
-      return StreamBuilder<QuerySnapshot>(
-          stream: Database(uid: '').checkGameExistence(uid),
-          builder: ((context, snapshot) {
-            if (snapshot.data != null) {
-              snapshot.data!.docs.forEach((element) {
-                if (element.id == uid) {
-                  exist = true;
-                } else {
-                  exist = false;
-                }
-              });
-            }
-            if (exist) {
-              getQues(uid);
-              if (finalQues != null && finalQues.length == 10) {
-                return buildCompetitionGui(context, 1);
-              } else
+
+  return !loading && !userTwo
+        ? StreamBuilder<QuerySnapshot>(
+            stream: Database(uid: '').checkGameExistence(uid),
+            builder: ((context, snapshot) {
+              if (snapshot.data != null) {
+                snapshot.data!.docs.forEach((element) {
+                  if (element.id == uid) {
+                    exist = true;
+                  } else {
+                    exist = false;
+                  }
+                });
+              }
+              if (exist) {
+                getQues(uid);
+                if (finalQues != null && finalQues.length ==10) {
+                  return buildCompetitionGui(context, 1);
+                } else
+                  return LoadingShared();
+              } else {
                 return LoadingShared();
-            } else {
-              return LoadingShared();
-            }
-          }));
-    } else if (userTwo) {
-      if (finalQues != null && finalQues.length == 10) {
-        return buildCompetitionGui(context, 2);
-      } else {
-        return LoadingShared();
-      }
-    } else {
-      return LoadingShared();
-    }
+              }
+            }))
+        : userTwo
+            ? buildCompetitionGui(context, 2)
+            : LoadingShared();
   }
 
   Future getQues(String uid) async {
