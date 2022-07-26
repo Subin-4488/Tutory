@@ -8,7 +8,7 @@ class Api {
   List<Question> questions = [];
   Api() {}
   Future<List<Question>> getQuestions() async {
-    String url = "https://opentdb.com/api.php?amount=10&category=18&type=multiple";
+    String url = "https://opentdb.com/api.php?amount=11&category=18&type=multiple";
 
     Response response = await (get(Uri.parse(url)));
     List<Map<String, dynamic>> question =

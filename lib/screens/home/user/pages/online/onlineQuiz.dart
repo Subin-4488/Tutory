@@ -40,25 +40,27 @@ class _OnlineQuizState extends State<OnlineQuiz> {
   }
 
   void initialize() async {
+    setState(() {
+      loading = true;
+    });
+    uid = FirebaseAuth.instance.currentUser!.uid;
+    count = await Database(uid: '').checkQueue();
+    if (count == 0) {
+      Database(uid: '').addUserToQueue(uid);
+    } else {
+      userTwo = true;
+    }
+
+    if (userTwo) {
+      await makeAction();
+      print("USER 2 REACHEDDDDDDDDD");
       setState(() {
-        loading = true;
-      });
-      uid = FirebaseAuth.instance.currentUser!.uid;
-      count = await Database(uid: '').checkQueue();
-      if (count == 0) {
-        Database(uid: '').addUserToQueue(uid);
-      } else {
         userTwo = true;
-      }
-
-      if (userTwo) {
-        await makeAction();
-        setState(() {
-          userTwo = true;
-          loading = false;
-        });
-
-      }
+      });
+    }
+    setState(() {
+      loading = false;
+    });
   }
 
   @override
@@ -71,32 +73,38 @@ class _OnlineQuizState extends State<OnlineQuiz> {
 
   @override
   Widget build(BuildContext context) {
-    return !loading && !userTwo
-        ? StreamBuilder<QuerySnapshot>(
-            stream: Database(uid: '').checkGameExistence(uid),
-            builder: ((context, snapshot) {
-              if (snapshot.data != null) {
-                snapshot.data!.docs.forEach((element) {
-                  if (element.id == uid) {
-                    exist = true;
-                  } else {
-                    exist = false;
-                  }
-                });
-              }
-              if (exist) {
-                getQues(uid);
-                if (finalQues != null && finalQues.length > 0)
-                  return buildCompetitionGui(context);
-                else
-                  return LoadingShared();
-              } else {
+    if (!loading && !userTwo) {
+      return StreamBuilder<QuerySnapshot>(
+          stream: Database(uid: '').checkGameExistence(uid),
+          builder: ((context, snapshot) {
+            if (snapshot.data != null) {
+              snapshot.data!.docs.forEach((element) {
+                if (element.id == uid) {
+                  exist = true;
+                } else {
+                  exist = false;
+                }
+              });
+            }
+            if (exist) {
+              getQues(uid);
+              if (finalQues != null && finalQues.length == 10) {
+                return buildCompetitionGui(context, 1);
+              } else
                 return LoadingShared();
-              }
-            }))
-        : userTwo
-            ? buildCompetitionGui(context)
-            : LoadingShared();
+            } else {
+              return LoadingShared();
+            }
+          }));
+    } else if (userTwo) {
+      if (finalQues != null && finalQues.length == 10) {
+        return buildCompetitionGui(context, 2);
+      } else {
+        return LoadingShared();
+      }
+    } else {
+      return LoadingShared();
+    }
   }
 
   Future getQues(String uid) async {
@@ -107,7 +115,8 @@ class _OnlineQuizState extends State<OnlineQuiz> {
     }
   }
 
-  Widget buildCompetitionGui(BuildContext context) {
+  Widget buildCompetitionGui(BuildContext context, int flag) {
+    print('USER 2 ${flag}');
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
