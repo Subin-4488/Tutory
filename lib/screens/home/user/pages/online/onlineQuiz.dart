@@ -36,7 +36,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
     List<Question> questions = await Api().startQuiz();
     await Database(uid: '')
         .createGame(udelete, FirebaseAuth.instance.currentUser!.uid, questions);
-    await getQues(udelete);
+    finalQues = questions;
   }
 
   void initialize() async {
@@ -86,7 +86,10 @@ class _OnlineQuizState extends State<OnlineQuiz> {
               }
               if (exist) {
                 getQues(uid);
-                return buildCompetitionGui(context);
+                if (finalQues != null && finalQues.length > 0)
+                  return buildCompetitionGui(context);
+                else
+                  return LoadingShared();
               } else {
                 return LoadingShared();
               }
@@ -97,9 +100,11 @@ class _OnlineQuizState extends State<OnlineQuiz> {
   }
 
   Future getQues(String uid) async {
-    print('USER 1');
     finalQues = await Database(uid: '').getOnlineQuizQuestion(uid);
-    ansChoosed = List.filled(finalQues.length, '');
+    if (finalQues != null) {
+      ansChoosed = List.filled(finalQues.length, '');
+      setState(() {});
+    }
   }
 
   Widget buildCompetitionGui(BuildContext context) {
@@ -212,10 +217,6 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.green),
                   onPressed: () {
-                    print(finalQues.length);
-                    print(i);
-                    print(choosen);
-                    print(ansChoosed);
                     ansChoosed[i] = choosen;
                     if (i < finalQues.length - 1) {
                       if (choosen == finalQues[i].correctAnswer) {

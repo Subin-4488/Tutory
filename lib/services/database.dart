@@ -254,11 +254,12 @@ class Database {
   }
 
   Future<List<apiQuestion.Question>> getOnlineQuizQuestion(String uid) async {
-    List<apiQuestion.Question> questions = [];
-    QuerySnapshot snapshot =
+    List<apiQuestion.Question>? questions = [];
+    QuerySnapshot? snapshot =
         await _gameTable.doc(uid).collection('questions').get();
     List<dynamic> options = List.filled(4, 0);
-    for (var i in snapshot.docs.toList()) {
+    if (snapshot!=null){
+      for (var i in snapshot.docs.toList()) {
       List<dynamic> options = List.filled(4, 0);
       options[0] = i.get('option1');
       options[1] = i.get('option2');
@@ -273,6 +274,7 @@ class Database {
             type: apiQuestion.Type.multiple,
             question: i.get('question')),
       );
+    }
     }
     return questions;
   }
