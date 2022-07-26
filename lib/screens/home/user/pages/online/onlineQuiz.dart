@@ -201,7 +201,6 @@ class _OnlineQuizState extends State<OnlineQuiz> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    print('CHOOSED ANS: ${choosen}');
                     if (score > 0) {
                       score -= 5;
                     }
@@ -233,7 +232,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                         selected = '';
                       });
                     }
-                    if (i == finalQues.length) {
+                    if (i == finalQues.length-1) {
                       for (int i = 0; i < 11; i++) {
                         await Database(uid: '')
                             .updateResponses(uidTemp, i, flag, ansChoosed[i]);
@@ -270,10 +269,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                                                 Text(finalQues[index].question),
                                             subtitle: Column(
                                               children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                Column(
                                                   children: [
                                                     Text(
                                                         'A)${finalQues[index].incorrectAnswers[0]}'),
@@ -281,10 +277,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                                                         'B)${finalQues[index].incorrectAnswers[1]}')
                                                   ],
                                                 ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                Column(
                                                   children: [
                                                     Text(
                                                         'C)${finalQues[index].incorrectAnswers[2]}'),
