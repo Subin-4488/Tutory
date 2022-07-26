@@ -53,7 +53,6 @@ class _OnlineQuizState extends State<OnlineQuiz> {
 
     if (userTwo) {
       await makeAction();
-      print("USER 2 REACHEDDDDDDDDD");
       setState(() {
         userTwo = true;
       });
@@ -73,8 +72,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
 
   @override
   Widget build(BuildContext context) {
-
-  return !loading && !userTwo
+    return !loading && !userTwo
         ? StreamBuilder<QuerySnapshot>(
             stream: Database(uid: '').checkGameExistence(uid),
             builder: ((context, snapshot) {
@@ -89,7 +87,8 @@ class _OnlineQuizState extends State<OnlineQuiz> {
               }
               if (exist) {
                 getQues(uid);
-                if (finalQues != null && finalQues.length ==10) {
+                print(finalQues.length);
+                if (finalQues != null && finalQues.length == 11) {
                   return buildCompetitionGui(context, 1);
                 } else
                   return LoadingShared();
@@ -111,7 +110,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
   }
 
   Widget buildCompetitionGui(BuildContext context, int flag) {
-    print('USER 2 ${flag}');
+    print('USER 1 ${flag}');
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
