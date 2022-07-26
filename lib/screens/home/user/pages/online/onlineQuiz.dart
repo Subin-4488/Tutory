@@ -221,10 +221,9 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.green),
                   onPressed: () async {
-                    print('CHOOSED ANS: ${choosen}');
-                    ansChoosed[i] = choosen;
+                    ansChoosed[i] = selected;
                     if (i < finalQues.length - 1) {
-                      if (choosen == finalQues[i].correctAnswer) {
+                      if (selected == finalQues[i].correctAnswer) {
                         score += 5;
                       }
                       setState(() {
@@ -232,7 +231,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                         selected = '';
                       });
                     }
-                    if (i == finalQues.length-1) {
+                    if (i == finalQues.length - 1) {
                       for (int i = 0; i < 11; i++) {
                         await Database(uid: '')
                             .updateResponses(uidTemp, i, flag, ansChoosed[i]);
@@ -315,15 +314,12 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                               ),
                             ));
                           });
+                      //wait for user 2
+                      // if (flag == 2) {
+                      //   Database(uid: '').deleteGame(uidTemp);
+                      }
                       Navigator.pop(context);
-                      setState(() {
-                        btnTxt = 'Submit';
-                      });
-                    } else {
-                      setState(() {
-                        btnTxt = 'Next';
-                      });
-                    }
+                     
                   },
                   child: Text(btnTxt),
                 )

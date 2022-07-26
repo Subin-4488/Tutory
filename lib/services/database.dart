@@ -280,16 +280,25 @@ class Database {
   }
 
   Future updateResponses(String uid, int idx, int user, String response) async {
+    print('USER: ${user} : ${uid}');
     if (user == 1) {
-      _gameTable.doc(uid).collection("result1").doc(idx.toString()).set({
-        'response': response
-      });
+      _gameTable
+          .doc(uid)
+          .collection("result1")
+          .doc(idx.toString())
+          .set({'response': response});
     } else {
       if (user == 2) {
-        _gameTable.doc(uid).collection("result2").doc(idx.toString()).set({
-        'response': response
-      });
+        _gameTable
+            .doc(uid)
+            .collection("result2")
+            .doc(idx.toString())
+            .set({'response': response});
       }
     }
+  }
+
+  Future deleteGame(String uid) async {
+    _gameTable.doc(uid).delete();
   }
 }
