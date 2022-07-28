@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:http/http.dart';
 import 'package:tutory/models/leaders.dart';
 import 'package:tutory/models/materialmodel.dart';
@@ -175,6 +176,7 @@ class Database {
 
   //add materials
   Future addMaterials(MaterialModel material) async {
+    print(Timestamp.now());
     if (material.subtopic.length > 0) {
       await _materials
           .doc(material.topic)
@@ -184,6 +186,7 @@ class Database {
         'subtopic': material.subtopic,
         'content': material.content,
         'gdrive': material.grive,
+        'timestamp':Timestamp.now()
       });
     } else {
       await _materials.doc(material.topic).set({
@@ -192,6 +195,49 @@ class Database {
         'gdrive': material.grive,
       });
     }
+  }
+
+  //fetch materials
+  Future<List<MaterialModel>> getMaterials(MaterialModel model) async {
+    List<MaterialModel> list = [];
+
+    var snapshot = await _materials
+        .doc(model.topic)
+        .collection(model.subtopic)
+        .orderBy('timestamp')
+        .get();
+
+    list = snapshot.docs.map((e) {
+      return MaterialModel(
+          id: '',
+          topic: model.topic,
+          subtopic: model.subtopic,
+          content: e.get('content'),
+          grive: e.get('gdrive'));
+    }).toList();
+    return list;
+    // for (var e in data.docs.toList()) {    EITHER USE LOOP OR SIMPLY DO MAP
+    //   try {
+    //     list.add(MaterialModel(
+    //         id: '',
+    //         topic: model.topic,
+    //         subtopic: model.subtopic,
+    //         content: e.get('content'),
+    //         grive: e.get('gdrive')));
+    //   } catch (e) {
+    //     print(e);
+    //   }
+    // }
+    // return list;
+
+    // return data.docs.map((e) {
+    //   return MaterialModel(
+    //       id: '',
+    //       topic: model.topic,
+    //       subtopic: model.subtopic,
+    //       content: e.get('content'),
+    //       grive: e.get('gdrive'));
+    // }).toList();
   }
 
   //ONLINE CONNECTION

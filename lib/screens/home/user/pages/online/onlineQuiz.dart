@@ -38,6 +38,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
     await Database(uid: '')
         .createGame(udelete, FirebaseAuth.instance.currentUser!.uid, questions);
     finalQues = List.from(questions);
+    netScore = finalQues.length * 5;
   }
 
   void initialize() async {
@@ -222,6 +223,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                   style: ElevatedButton.styleFrom(primary: Colors.green),
                   onPressed: () async {
                     ansChoosed[i] = selected;
+                    print(ansChoosed);
                     if (i < finalQues.length - 1) {
                       if (selected == finalQues[i].correctAnswer) {
                         score += 5;
@@ -317,9 +319,9 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                       //wait for user 2
                       // if (flag == 2) {
                       //   Database(uid: '').deleteGame(uidTemp);
-                      
+
                       Navigator.pop(context);
-                      }
+                    }
                   },
                   child: Text(btnTxt),
                 )

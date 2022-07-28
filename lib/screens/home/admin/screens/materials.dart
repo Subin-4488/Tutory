@@ -120,6 +120,7 @@ class _MaterialsState extends State<Materials> {
                           child: Column(
                             children: [
                               TextFormField(
+                                initialValue: topic,
                                 validator: ((value) {
                                   if (value!.length <= 0) return 'Enter Field';
                                 }),
@@ -196,7 +197,7 @@ class _MaterialsState extends State<Materials> {
                                       await Database(uid: '').addMaterials(
                                           MaterialModel(
                                               id: '',
-                                              topic: _topic,
+                                              topic: _topic.length>0?_topic:topic,
                                               subtopic: _subtopic,
                                               content: _content,
                                               grive: _grive));
