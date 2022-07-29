@@ -215,43 +215,43 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 5,
               ),
-              Center(
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          Color.fromARGB(255, 40, 38, 38),
-                        ),
-                        elevation: MaterialStateProperty.all(0)),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                      changeTab(4);
-                    },
-                    child: TextButton.icon(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                          changeTab(4);
-                        },
-                        icon: FaIcon(
-                          FontAwesomeIcons.person,
-                          color: Colors.white,
-                          size: 16,
-                        ),
-                        label: Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Text(
-                            "Profile",
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.white,
-                            ),
-                          ),
-                        )),
-                  ),
-                ),
-              ),
+              // Center(
+              //   child: Container(
+              //     height: 50,
+              //     width: double.infinity,
+              //     child: ElevatedButton(
+              //       style: ButtonStyle(
+              //           backgroundColor: MaterialStateProperty.all(
+              //             Color.fromARGB(255, 40, 38, 38),
+              //           ),
+              //           elevation: MaterialStateProperty.all(0)),
+              //       onPressed: () {
+              //         Navigator.of(context).pop();
+              //         changeTab(4);
+              //       },
+              //       child: TextButton.icon(
+              //           onPressed: () {
+              //             Navigator.of(context).pop();
+              //             changeTab(4);
+              //           },
+              //           icon: FaIcon(
+              //             FontAwesomeIcons.person,
+              //             color: Colors.white,
+              //             size: 16,
+              //           ),
+              //           label: Padding(
+              //             padding: const EdgeInsets.only(left: 20),
+              //             child: Text(
+              //               "Profile",
+              //               style: TextStyle(
+              //                 fontSize: 15,
+              //                 color: Colors.white,
+              //               ),
+              //             ),
+              //           )),
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: 200,
               ),
@@ -276,7 +276,7 @@ class _HomeState extends State<Home> {
           Study(),
           Practice(),
           Competition(),
-          Profile(),
+          //Profile(),
         ],
       ),
     );

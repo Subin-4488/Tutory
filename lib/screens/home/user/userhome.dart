@@ -33,7 +33,7 @@ class _UserHomeState extends State<UserHome> {
         '/study': (context) => const Study(),
         '/practice': (context) => const Practice(),
         '/competition': (context) => const Competition(),
-        '/profile': (context) => const Profile(),
+        //'/profile': (context) => const Profile(),
         '/level': (context) => const Level_scrn(),
         '/category': (context) => const Practice_Question_Category(),
         '/loading': (context) => const LoadingShared(),
