@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\values-hu\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,285,377,427,537,588,707,809,848,939,976,1014,1067,1153",
+                        "endColumns": "85,91,49,109,50,118,101,38,90,36,37,52,85,40",
+                        "endOffsets": "284,376,426,536,587,706,808,847,938,975,1013,1066,1152,1193"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2483,2573,2669,2723,2837,2892,3015,3121,3164,3259,3300,3342,3399,3489",
+                        "endColumns": "89,95,53,113,54,122,105,42,94,40,41,56,89,44",
+                        "endOffsets": "2568,2664,2718,2832,2887,3010,3116,3159,3254,3295,3337,3394,3484,3529"
+                    }
+                },
+                {
                     "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2",
@@ -30,11 +47,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "34",
                         "startColumns": "4",
-                        "startOffsets": "2483",
+                        "startOffsets": "3534",
                         "endColumns": "100",
-                        "endOffsets": "2579"
+                        "endOffsets": "3630"
                     }
                 },
                 {

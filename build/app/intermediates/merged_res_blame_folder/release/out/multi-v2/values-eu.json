@@ -4,6 +4,23 @@
             "outputFile": "D:\\flutter_projects\\tutory\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-eu\\values-eu.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\values-eu\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,281,389,441,564,614,732,823,863,957,991,1027,1083,1174",
+                        "endColumns": "81,107,51,122,49,117,90,39,93,33,35,55,90,44",
+                        "endOffsets": "280,388,440,563,613,731,822,862,956,990,1026,1082,1173,1218"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2330,2416,2528,2584,2711,2765,2887,2982,3026,3124,3162,3202,3262,3357",
+                        "endColumns": "85,111,55,126,53,121,94,43,97,37,39,59,94,48",
+                        "endOffsets": "2411,2523,2579,2706,2760,2882,2977,3021,3119,3157,3197,3257,3352,3401"
+                    }
+                },
+                {
                     "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -47,11 +64,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "34",
                         "startColumns": "4",
-                        "startOffsets": "2330",
+                        "startOffsets": "3406",
                         "endColumns": "100",
-                        "endOffsets": "2426"
+                        "endOffsets": "3502"
                     }
                 }
             ]

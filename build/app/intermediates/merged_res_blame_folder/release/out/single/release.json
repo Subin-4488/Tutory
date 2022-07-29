@@ -248,6 +248,10 @@
         "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
     },
     {
+        "merged": "D:\\flutter_projects\\tutory\\build\\app\\intermediates\\merged_res\\release\\drawable_admob_close_button_black_circle_white_cross.xml.flat",
+        "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\drawable\\admob_close_button_black_circle_white_cross.xml"
+    },
+    {
         "merged": "D:\\flutter_projects\\tutory\\build\\app\\intermediates\\merged_res\\release\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
@@ -278,6 +282,10 @@
     {
         "merged": "D:\\flutter_projects\\tutory\\build\\app\\intermediates\\merged_res\\release\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\c13d9e5ecb09d9c19ab8309c72c4c353\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\flutter_projects\\tutory\\build\\app\\intermediates\\merged_res\\release\\drawable_admob_close_button_white_circle_black_cross.xml.flat",
+        "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\drawable\\admob_close_button_white_circle_black_cross.xml"
     },
     {
         "merged": "D:\\flutter_projects\\tutory\\build\\app\\intermediates\\merged_res\\release\\color_common_google_signin_btn_tint.xml.flat",

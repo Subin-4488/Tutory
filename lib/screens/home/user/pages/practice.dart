@@ -3,12 +3,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:tutory/models/usermodel.dart';
 import 'package:tutory/screens/home/user/pages/prevpractise/topic.dart';
 import 'package:tutory/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tutory/services/database.dart';
 import 'package:tutory/shared/loading.dart';
+
+import '../../../../shared/ad_helper.dart';
 
 class Practice extends StatefulWidget {
   const Practice({Key? key}) : super(key: key);
@@ -19,6 +22,38 @@ class Practice extends StatefulWidget {
 
 class _PracticeState extends State<Practice> {
   int i = 0;
+
+  InterstitialAd? _intestitialAd;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _createIntestitialAd();
+  }
+
+  void _createIntestitialAd() {
+    InterstitialAd.load(
+        adUnitId: AdHelper.interstitialAdUnitId,
+        request: const AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+            onAdLoaded: ((ad) => _intestitialAd = ad),
+            onAdFailedToLoad: ((error) => _intestitialAd = null)));
+  }
+
+  void _showIntestitialAd() {
+    if (_intestitialAd != null) {
+      _intestitialAd!.fullScreenContentCallback =
+          FullScreenContentCallback(onAdDismissedFullScreenContent: ((ad) {
+        ad.dispose();
+        _createIntestitialAd();
+      }), onAdFailedToShowFullScreenContent: ((ad, error) {
+        ad.dispose();
+        _createIntestitialAd();
+      }));
+      _intestitialAd!.show();
+      _intestitialAd = null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +99,7 @@ class _PracticeState extends State<Practice> {
                   )),
               TextButton.icon(
                 onPressed: () {
+                  _showIntestitialAd();
                   Navigator.pushNamed(context, '/category');
                 },
                 icon: FaIcon(FontAwesomeIcons.paperclip),

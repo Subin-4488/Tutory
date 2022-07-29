@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tutory/screens/authenticate/signin.dart';
 import 'package:tutory/screens/home/user/pages/Quiz.dart';
 import 'package:tutory/screens/home/user/pages/competition.dart';
 import 'package:tutory/screens/home/user/pages/evaluate.dart';
@@ -20,6 +19,7 @@ class UserHome extends StatefulWidget {
 }
 
 class _UserHomeState extends State<UserHome> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

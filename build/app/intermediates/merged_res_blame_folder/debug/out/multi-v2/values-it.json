@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\values-it\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,278,379,429,545,603,729,821,863,962,997,1032,1085,1167",
+                        "endColumns": "78,100,49,115,57,125,91,41,98,34,34,52,81,44",
+                        "endOffsets": "277,378,428,544,602,728,820,862,961,996,1031,1084,1166,1211"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2277,2360,2465,2519,2639,2701,2831,2927,2973,3076,3115,3154,3211,3297",
+                        "endColumns": "82,104,53,119,61,129,95,45,102,38,38,56,85,48",
+                        "endOffsets": "2355,2460,2514,2634,2696,2826,2922,2968,3071,3110,3149,3206,3292,3341"
+                    }
+                },
+                {
                     "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2",
@@ -47,11 +64,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "34",
                         "startColumns": "4",
-                        "startOffsets": "2277",
+                        "startOffsets": "3346",
                         "endColumns": "100",
-                        "endOffsets": "2373"
+                        "endOffsets": "3442"
                     }
                 }
             ]

@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\values-bs\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,277,380,433,544,601,714,801,842,931,967,1000,1058,1143",
+                        "endColumns": "77,102,52,110,56,112,86,40,88,35,32,57,84,39",
+                        "endOffsets": "276,379,432,543,600,713,800,841,930,966,999,1057,1142,1182"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2248,2330,2437,2494,2609,2670,2787,2878,2923,3016,3056,3093,3155,3244",
+                        "endColumns": "81,106,56,114,60,116,90,44,92,39,36,61,88,43",
+                        "endOffsets": "2325,2432,2489,2604,2665,2782,2873,2918,3011,3051,3088,3150,3239,3283"
+                    }
+                },
+                {
                     "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2",
@@ -30,11 +47,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "34",
                         "startColumns": "4",
-                        "startOffsets": "2248",
+                        "startOffsets": "3288",
                         "endColumns": "100",
-                        "endOffsets": "2344"
+                        "endOffsets": "3384"
                     }
                 },
                 {

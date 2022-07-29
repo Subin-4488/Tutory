@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\544c9082d1f79f80153a729f5f44048e\\transformed\\jetified-play-services-ads-21.0.0\\res\\values-am\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,271,356,406,501,559,662,733,770,844,876,912,958,1022",
+                        "endColumns": "71,84,49,94,57,102,70,36,73,31,35,45,63,38",
+                        "endOffsets": "270,355,405,500,558,661,732,769,843,875,911,957,1021,1060"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2061,2137,2226,2280,2379,2441,2548,2623,2664,2742,2778,2818,2868,2936",
+                        "endColumns": "75,88,53,98,61,106,74,40,77,35,39,49,67,42",
+                        "endOffsets": "2132,2221,2275,2374,2436,2543,2618,2659,2737,2773,2813,2863,2931,2974"
+                    }
+                },
+                {
                     "source": "C:\\Users\\subin\\.gradle\\caches\\transforms-3\\51a4d184cd6599afdadd7a31dda0ee15\\transformed\\core-1.6.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
@@ -47,11 +64,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "34",
                         "startColumns": "4",
-                        "startOffsets": "2061",
+                        "startOffsets": "2979",
                         "endColumns": "100",
-                        "endOffsets": "2157"
+                        "endOffsets": "3075"
                     }
                 }
             ]

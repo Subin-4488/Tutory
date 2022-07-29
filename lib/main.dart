@@ -2,6 +2,7 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tutory/screens/misc/splash.dart';
 import 'package:tutory/screens/misc/tutorytheme.dart';
@@ -11,6 +12,7 @@ import 'package:tutory/services/auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
@@ -35,10 +37,10 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void navigate() async {
     try {
       SharedPreferences _preference = await SharedPreferences.getInstance();
-      late var r=_preference.getInt('register');
-      late var s=_preference.getInt('selected');
-      r!=null?Wrapper.reg=r:Wrapper.reg=0;
-      s!=null?Wrapper.selected=s:Wrapper.selected=0;
+      late var r = _preference.getInt('register');
+      late var s = _preference.getInt('selected');
+      r != null ? Wrapper.reg = r : Wrapper.reg = 0;
+      s != null ? Wrapper.selected = s : Wrapper.selected = 0;
     } catch (e) {
       print(e.toString());
     }
