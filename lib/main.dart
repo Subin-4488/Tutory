@@ -12,7 +12,7 @@ import 'package:tutory/services/auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+  await MobileAds.instance.initialize();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
