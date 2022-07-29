@@ -297,7 +297,7 @@ INJECTED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xm
 		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml
 activity#com.example.tutory.MainActivity
-ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:7:9-28:20
+ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:7:9-24:20
 	android:launchMode
 		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:10:13-43
 	android:hardwareAccelerated
@@ -312,30 +312,28 @@ ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:7
 		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:11:13-47
 	android:name
 		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:8:13-41
-meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:19:13-23:17
-	android:resource
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:22:15-52
-	android:value
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:21:15-69
-	android:name
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:20:15-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:20:13-23:29
 action#android.intent.action.MAIN
-ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:25:17-68
+ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:21:17-68
 	android:name
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:26:17-76
+ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:22:17-76
 	android:name
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:22:27-74
 meta-data#flutterEmbedding
-ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:31:9-33:33
+ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:27:9-29:33
 	android:value
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:33:13-30
+		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:29:13-30
 	android:name
-		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:32:13-44
+		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:28:13-44
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:30:10-33:17
+	android:value
+		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:32:15-69
+	android:name
+		ADDED from D:\flutter_projects\tutory\android\app\src\main\AndroidManifest.xml:31:15-71
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_auth] D:\flutter_projects\tutory\build\firebase_auth\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-14:19
 MERGED from [:cloud_firestore] D:\flutter_projects\tutory\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-14:19
