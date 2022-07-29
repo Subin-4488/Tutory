@@ -87,19 +87,19 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                   }
                 });
               }
-              if (exist) {
+              if (exist ) {
                 getQues(uid);
                 if (finalQues != null && finalQues.length == 11) {
                   return buildCompetitionGui(context, 1);
                 } else
-                  return LoadingShared();
+                  return const LoadingShared();
               } else {
-                return LoadingShared();
+                return const LoadingShared();
               }
             }))
         : userTwo
             ? buildCompetitionGui(context, 2)
-            : LoadingShared();
+            : const LoadingShared();
   }
 
   Future getQues(String uid) async {
@@ -200,24 +200,6 @@ class _OnlineQuizState extends State<OnlineQuiz> {
             ),
             Row(
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    if (score > 0) {
-                      score -= 5;
-                    }
-
-                    if (i > 0) {
-                      setState(() {
-                        i--;
-                        selected = '';
-                        btnTxt = 'Next';
-                      });
-                    }
-                    choosen = '';
-                  },
-                  style: ElevatedButton.styleFrom(primary: Colors.black),
-                  child: const Text('Previous'),
-                ),
                 const Expanded(child: SizedBox()),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.green),
@@ -317,9 +299,9 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                             ));
                           });
                       //wait for user 2
-                      // if (flag == 2) {
-                      //   Database(uid: '').deleteGame(uidTemp);
-
+                      if (flag == 2) {
+                        await Database(uid: '').deleteGame(uidTemp);
+                      }
                       Navigator.pop(context);
                     }
                   },

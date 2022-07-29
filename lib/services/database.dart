@@ -176,7 +176,6 @@ class Database {
 
   //add materials
   Future addMaterials(MaterialModel material) async {
-    print(Timestamp.now());
     if (material.subtopic.length > 0) {
       await _materials
           .doc(material.topic)
@@ -186,7 +185,7 @@ class Database {
         'subtopic': material.subtopic,
         'content': material.content,
         'gdrive': material.grive,
-        'timestamp':Timestamp.now()
+        'timestamp': Timestamp.now()
       });
     } else {
       await _materials.doc(material.topic).set({
@@ -345,6 +344,21 @@ class Database {
   }
 
   Future deleteGame(String uid) async {
-    _gameTable.doc(uid).delete();
+    await _gameTable.doc(uid).delete();
+    await _gameTable.doc(uid).collection('questions').get().then((value)async {
+      for (var i in value.docs) {
+        await _gameTable.doc(uid).collection('questions').doc(i.id).delete();
+      }
+    });
+    await _gameTable.doc(uid).collection('result1').get().then((value)async {
+      for (var i in value.docs) {
+        await _gameTable.doc(uid).collection('result1').doc(i.id).delete();
+      }
+    });
+    await _gameTable.doc(uid).collection('result2').get().then((value)async {
+      for (var i in value.docs) {
+        await _gameTable.doc(uid).collection('result2').doc(i.id).delete();
+      }
+    });
   }
 }
