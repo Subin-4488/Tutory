@@ -213,7 +213,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                       }
                       setState(() {
                         i++;
-                        selected = '';
+                        //selected = '';
                       });
                     }
                     if (i == finalQues.length - 1) {
