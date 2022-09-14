@@ -302,7 +302,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                           });
                       //wait for user 2
                       if (flag == 2) {
-                        //await Database(uid: '').deleteGame(uidTemp);
+                        await Database(uid: '').deleteGame(uidTemp);
                       }
                       Navigator.pop(context);
                     }
