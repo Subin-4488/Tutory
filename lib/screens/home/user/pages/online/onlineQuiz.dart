@@ -87,12 +87,13 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                   }
                 });
               }
-              if (exist ) {
+              if (exist) {
                 getQues(uid);
                 if (finalQues != null && finalQues.length == 11) {
                   return buildCompetitionGui(context, 1);
-                } else
+                } else {
                   return const LoadingShared();
+                }
               } else {
                 return const LoadingShared();
               }
@@ -247,6 +248,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                                       child: ListView.separated(
                                         itemCount: finalQues.length,
                                         itemBuilder: (context, index) {
+                                          print(ansChoosed);
                                           return ListTile(
                                             title:
                                                 Text(finalQues[index].question),
@@ -300,7 +302,7 @@ class _OnlineQuizState extends State<OnlineQuiz> {
                           });
                       //wait for user 2
                       if (flag == 2) {
-                        await Database(uid: '').deleteGame(uidTemp);
+                        //await Database(uid: '').deleteGame(uidTemp);
                       }
                       Navigator.pop(context);
                     }
